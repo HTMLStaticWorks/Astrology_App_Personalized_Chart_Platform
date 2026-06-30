@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   injectComponents();
   generateStarfields();
   initScrollReveal();
+  initScrollToTop();
 });
 
 // 1. Theme (Dark/Light) Management
@@ -377,6 +378,41 @@ function initScrollReveal() {
   revealElements.forEach(el => {
     el.classList.add('opacity-0', 'translate-y-8', 'transition', 'duration-700', 'ease-out');
     observer.observe(el);
+  });
+}
+
+// 7. Scroll to Top Button
+function initScrollToTop() {
+  const btn = document.createElement('button');
+  btn.id = 'scroll-to-top';
+  // Check if we are on dashboard where we might want the button positioned differently?
+  // Using end-6 works well for LTR/RTL support.
+  btn.className = 'fixed bottom-6 end-6 z-50 p-3 bg-amber-500 hover:bg-amber-600 text-slate-950 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 translate-y-4 gold-hover-ring focus:outline-none';
+  btn.setAttribute('aria-label', 'Scroll to top');
+  btn.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7" />
+    </svg>
+  `;
+  
+  document.body.appendChild(btn);
+
+  window.addEventListener('scroll', () => {
+    // Only show button if we've scrolled down at least 300px
+    if (window.scrollY > 300) {
+      btn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+      btn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+    } else {
+      btn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+      btn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+    }
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   });
 }
 
