@@ -273,7 +273,7 @@ function appendMessage(sender, text) {
     bubble.innerHTML = `
       <div class="bg-slate-200 dark:bg-indigo-950/50 text-slate-900 dark:text-slate-100 border border-indigo-900/20 text-xs px-4 py-2 rounded-lg max-w-xs shadow-md">
         <p>${text}</p>
-        <span class="text-[9px] block mt-1 text-slate-400">Astrologer Aria</span>
+        <span class="text-[9px] block mt-1 text-slate-600 dark:text-slate-400">Astrologer Aria</span>
       </div>
     `;
   }
@@ -339,7 +339,7 @@ function handleFiles(files) {
     const item = document.createElement('div');
     item.className = 'flex items-center justify-between text-xs bg-indigo-950/20 p-2.5 rounded border border-slate-800/80 mb-2';
     item.innerHTML = `
-      <div class="flex items-center space-x-2 rtl:space-x-reverse text-slate-300">
+      <div class="flex items-center space-x-2 rtl:space-x-reverse text-slate-700 dark:text-slate-300">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>

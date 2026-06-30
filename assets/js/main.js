@@ -193,7 +193,7 @@ function injectComponents() {
               <div class="w-px h-6 bg-slate-200 dark:bg-slate-800"></div>
 
               <!-- RTL Toggle -->
-              <button onclick="toggleRTL()" class="rtl-toggle h-10 w-12 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
+              <button onclick="toggleRTL()" class="rtl-toggle h-10 w-12 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-700 dark:text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
                 ${isRtl ? 'EN' : 'عربي'}
               </button>
 
@@ -208,10 +208,10 @@ function injectComponents() {
               <button onclick="toggleTheme()" class="theme-toggle p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-900/30">
                 <!-- Dynamic Theme Icon -->
               </button>
-              <button onclick="toggleRTL()" class="rtl-toggle text-xs px-2 py-1 border border-slate-700 rounded text-slate-300">
+              <button onclick="toggleRTL()" class="rtl-toggle text-xs px-2 py-1 border border-slate-700 rounded text-slate-700 dark:text-slate-300">
                 ${isRtl ? 'EN' : 'عربي'}
               </button>
-              <button onclick="toggleMobileNav()" class="p-2 text-slate-300 hover:text-amber-500 focus:outline-none">
+              <button onclick="toggleMobileNav()" class="p-2 text-slate-700 dark:text-slate-300 hover:text-amber-500 focus:outline-none">
                 <svg id="mobile-menu-burger" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
