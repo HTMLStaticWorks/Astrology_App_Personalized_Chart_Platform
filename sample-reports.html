@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Astrology - Interactive Sample Report</title>
+  <meta name="description" content="Explore a sample natal birth chart report. Interact with planetary placements and read expert astrologer notes." />
+  
+  <!-- Tailwind CSS CDN v3 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cosmicIndigo: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c084fc',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#1e1b4b',
+              950: '#090514',
+            },
+            celestialGold: {
+              50: '#fefbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+              800: '#92400e',
+              950: '#451a03',
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-cosmicIndigo-950 dark:text-slate-100 transition-colors duration-300">
+
+  <!-- Header root -->
+  <div id="header-root"></div>
+
+  <!-- Main Content Wrapper -->
+  <main class="pt-20">
+
+    <!-- SECTION 1: HERO -->
+    <section class="relative min-h-[45vh] flex items-center justify-center overflow-hidden border-b border-indigo-950/20 py-16">
+      <div class="starfield" data-stars="40"></div>
+      <div class="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-color-dodge" style="background-image: url('assets/images/cosmic_bg.webp');"></div>
+      
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6 scroll-reveal">
+        <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-semibold uppercase tracking-widest">
+          <span>📊 Exploration Suite</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-serif text-slate-100 font-bold leading-tight">
+          Explore a Sample <span class="gradient-text-gold glow-gold">Astrology Reading</span>
+        </h1>
+        <p class="text-sm text-slate-400 font-light max-w-xl mx-auto">
+          Review a live interactive report showing Sun, Moon, and Ascendant positions along with expert interpretations and relationship synastry excerpts.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: SUN, MOON & RISING BREAKDOWN -->
+    <section class="py-24 border-b border-indigo-950/20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center space-y-4 mb-16 scroll-reveal">
+          <h2 class="text-3xl sm:text-5xl font-bold text-indigo-950 dark:text-slate-100">The Cosmic Triad</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto">The three primary anchors defining your external mask, internal emotional triggers, and core life goals.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 scroll-reveal">
+          
+          <!-- Sun Card -->
+          <div class="glass-panel p-8 rounded-lg border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-amber-500 text-3xl font-serif">☉ Sun</span>
+              <span class="text-xs text-slate-500 font-semibold tracking-wider">CANCER • 14°</span>
+            </div>
+            <p class="text-xs text-slate-400 font-light leading-relaxed">
+              <strong>Core Identity & Vitality.</strong> Your Sun in Cancer (10th House) directs your life path toward nurturing leadership. You find ultimate fulfillment in careers that allow you to protect, structure, and guide others.
+            </p>
+            <div class="pt-4 border-t border-slate-900 text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+              Element: Water • Modality: Cardinal
+            </div>
+          </div>
+
+          <!-- Moon Card -->
+          <div class="glass-panel p-8 rounded-lg border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-amber-500 text-3xl font-serif">☽ Moon</span>
+              <span class="text-xs text-slate-500 font-semibold tracking-wider">SCORPIO • 2°</span>
+            </div>
+            <p class="text-xs text-slate-400 font-light leading-relaxed">
+              <strong>Subconscious & Emotional Security.</strong> With the Moon in Scorpio (2nd House), your inner security is tied to depth and emotional trust. You possess a private emotional register, feeling changes in your environment before they manifest.
+            </p>
+            <div class="pt-4 border-t border-slate-900 text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+              Element: Water • Modality: Fixed
+            </div>
+          </div>
+
+          <!-- Ascendant Card -->
+          <div class="glass-panel p-8 rounded-lg border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-amber-500 text-3xl font-serif">ASC Ascendant</span>
+              <span class="text-xs text-slate-500 font-semibold tracking-wider">LIBRA • 21°</span>
+            </div>
+            <p class="text-xs text-slate-400 font-light leading-relaxed">
+              <strong>Perception, Presentation & Horizon.</strong> Ascendant in Libra (1st House) gives you a socially graceful, balanced presentation. You seek harmony, mediation, and design beauty in your surroundings, projecting calm.
+            </p>
+            <div class="pt-4 border-t border-slate-900 text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+              Element: Air • Modality: Cardinal
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: INTERACTIVE CHART WHEEL VISUAL -->
+    <section class="py-24 border-b border-indigo-950/20 bg-slate-950/20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- SVG Canvas Anchor -->
+        <div class="flex flex-col items-center justify-center glass-panel p-8 rounded-lg relative scroll-reveal">
+          <h3 class="font-serif text-amber-500 font-semibold text-sm tracking-wider uppercase mb-6">Interactive Vector Map Blueprint</h3>
+          <div id="sample-interactive-chart" class="w-full max-w-[340px]">
+            <!-- Dynamic SVG chart renders here via chart.js -->
+          </div>
+          <p class="text-[10px] text-slate-500 mt-6 text-center">Click planetary nodes (e.g. ☉, ☽) to load specific interpretation overlays.</p>
+        </div>
+
+        <!-- Detail list -->
+        <div class="space-y-6 scroll-reveal">
+          <h2 class="text-3xl sm:text-5xl font-bold text-indigo-950 dark:text-slate-100">Planetary Placements Coordinate Table</h2>
+          <p class="text-sm text-slate-400 font-light">
+            Our coordinate computation maps the exact mathematical locations of nodes. Hover nodes on the left chart to highlight details.
+          </p>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="border-b border-slate-800 text-slate-500 uppercase tracking-widest font-serif font-bold">
+                  <th class="py-2">Planet</th>
+                  <th class="py-2">Zodiac Sign</th>
+                  <th class="py-2">Degree</th>
+                  <th class="py-2">House</th>
+                </tr>
+              </thead>
+              <tbody class="text-slate-300 font-light">
+                <tr class="border-b border-slate-900">
+                  <td class="py-3 font-serif font-semibold">☉ Sun</td>
+                  <td class="py-3">Cancer</td>
+                  <td class="py-3">14° 22'</td>
+                  <td class="py-3">House 10 (Midheaven)</td>
+                </tr>
+                <tr class="border-b border-slate-900">
+                  <td class="py-3 font-serif font-semibold">☽ Moon</td>
+                  <td class="py-3">Scorpio</td>
+                  <td class="py-3">02° 11'</td>
+                  <td class="py-3">House 2 (Assets)</td>
+                </tr>
+                <tr class="border-b border-slate-900">
+                  <td class="py-3 font-serif font-semibold">☿ Mercury</td>
+                  <td class="py-3">Cancer</td>
+                  <td class="py-3">28° 45'</td>
+                  <td class="py-3">House 10 (Career)</td>
+                </tr>
+                <tr class="border-b border-slate-900">
+                  <td class="py-3 font-serif font-semibold">♀ Venus</td>
+                  <td class="py-3">Gemini</td>
+                  <td class="py-3">04° 19'</td>
+                  <td class="py-3">House 9 (Wisdom)</td>
+                </tr>
+                <tr class="border-b border-slate-900">
+                  <td class="py-3 font-serif font-semibold">♂ Mars</td>
+                  <td class="py-3">Leo</td>
+                  <td class="py-3">18° 33'</td>
+                  <td class="py-3">House 11 (Alliances)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: COMPATIBILITY / SYNASTRY EXCERPT -->
+    <section class="py-24 border-b border-indigo-950/20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center space-y-4 mb-16 scroll-reveal">
+          <h2 class="text-3xl sm:text-5xl font-bold text-indigo-950 dark:text-slate-100">Synastry Comparison Excerpt</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto">A quick look at a comparative chart analysis between Marcus and Sarah.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 scroll-reveal">
+          <!-- Alignment Card 1 -->
+          <div class="glass-panel p-6 rounded-lg space-y-3">
+            <h4 class="font-serif text-amber-500 font-bold text-sm">Emotional Harmony (92%)</h4>
+            <p class="text-xs text-slate-400 font-light leading-relaxed">
+              Marcus's Scorpio Moon conjuncts Sarah's Scorpio Mars, creating immediate emotional attraction and passion. Shared water sign placements ease vulnerability.
+            </p>
+          </div>
+
+          <!-- Alignment Card 2 -->
+          <div class="glass-panel p-6 rounded-lg space-y-3">
+            <h4 class="font-serif text-amber-500 font-bold text-sm">Communication Cues (79%)</h4>
+            <p class="text-xs text-slate-400 font-light leading-relaxed">
+              Marcus's Cancer Mercury squares Sarah's Libra Ascendant, which may cause occasional conversational mismatches. Developing shared vocabulary is recommended.
+            </p>
+          </div>
+
+          <!-- Alignment Card 3 -->
+          <div class="glass-panel p-6 rounded-lg space-y-3">
+            <h4 class="font-serif text-amber-500 font-bold text-sm">Long-Term Viabilities (85%)</h4>
+            <p class="text-xs text-slate-400 font-light leading-relaxed">
+              Sarah's Saturn sextiles Marcus's Midheaven, providing stability and support for shared career ambitions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: ASTROLOGER NOTES -->
+    <section class="py-24 border-b border-indigo-950/20 bg-slate-950/20 relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="glass-panel p-8 rounded-lg border border-amber-500/20 relative scroll-reveal">
+          <div class="absolute -top-5 start-8 w-10 h-10 rounded-full bg-slate-950 border border-amber-500 flex items-center justify-center text-amber-500 text-lg">✍️</div>
+          <h3 class="text-xl font-serif font-bold text-slate-100 mb-4 pt-2">Senior Astrologer Interpretation Notes</h3>
+          
+          <div class="space-y-4 text-xs font-light text-slate-300 leading-relaxed italic">
+            <p>
+              "In reviewing this subject's Tenth House placements, the conjunction between the Sun and Mercury at 14° and 28° Cancer stands out. This configuration points to an individual whose communication skills are tied to their professional reputation."
+            </p>
+            <p>
+              "The challenge lies in the Moon's placement at 2° Scorpio. Moon in Scorpio (2nd House) can sometimes cause financial anxiety. Developing trust in personal value creation will help navigate this."
+            </p>
+            <p>
+              "Recommendation: The upcoming Jupiter transit through Taurus in late autumn will sextile the Natal Sun. This represents a key window for expanding operations or initiating projects."
+            </p>
+          </div>
+
+          <div class="flex items-center space-x-3 rtl:space-x-reverse mt-6 pt-4 border-t border-slate-900">
+            <img src="assets/images/astrologer.webp" alt="Aria Thorne" class="w-10 h-10 rounded-full object-cover border border-amber-500/30" />
+            <div>
+              <h5 class="text-xs font-serif font-bold text-slate-100">Aria Thorne</h5>
+              <span class="text-[9px] text-slate-500 font-semibold uppercase tracking-wider">Aura Senior Synastry Reader</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: DOWNLOAD SAMPLE PDF CTA -->
+    <section class="py-24 border-b border-indigo-950/20 relative">
+      <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center scroll-reveal">
+        <div class="glass-panel p-8 rounded-lg space-y-6 border border-slate-800">
+          <div class="flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-serif text-slate-100 font-bold">Download Full Sample Report PDF</h3>
+          <p class="text-xs text-slate-400 font-light">
+            Download a sample 25-page PDF report detailing house interpretations, transits, and elemental balances.
+          </p>
+          <button onclick="alert('Sample report PDF downloaded (Simulation).')" class="px-8 py-3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs uppercase tracking-wider rounded transition-all">
+            Download PDF Report
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CTA -->
+    <section class="py-20 relative overflow-hidden">
+      <div class="starfield" data-stars="30"></div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6 glass-panel p-10 rounded-lg border border-amber-500/20 scroll-reveal">
+        <h2 class="text-2xl sm:text-4xl font-serif text-slate-100 font-bold">Map Your Own Coordinates</h2>
+        <p class="text-xs text-slate-400 font-light max-w-lg mx-auto">Generate a complete natal report mapped to your birth location and date, complete with personalized transit forecasts.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="signup.html" class="px-6 py-3 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-xs tracking-wider uppercase rounded shadow transition-all gold-hover-ring">Get My Birth Chart</a>
+          <a href="pricing.html" class="px-6 py-3 border border-slate-700 hover:border-amber-500 text-slate-300 font-bold text-xs tracking-wider uppercase rounded transition-all">View Astrological Tiers</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Root -->
+  <div id="footer-root"></div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/chart.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof createBirthChart === 'function') {
+        createBirthChart('sample-interactive-chart');
+      }
+    });
+  </script>
+</body>
+</html>

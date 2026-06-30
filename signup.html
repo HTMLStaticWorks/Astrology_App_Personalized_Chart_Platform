@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Astrology - Join Portal Portal</title>
+  <meta name="description" content="Initialize your cosmic coordinates. Sign up to receive interactive birth charts, forecasts, and schedules." />
+  
+  <!-- Tailwind CSS CDN v3 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cosmicIndigo: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c084fc',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#1e1b4b',
+              950: '#090514',
+            },
+            celestialGold: {
+              50: '#fefbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+              800: '#92400e',
+              950: '#451a03',
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-cosmicIndigo-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex items-center justify-center relative p-4">
+
+  <!-- Twinkling background -->
+  <div class="starfield" data-stars="50"></div>
+  <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('assets/images/cosmic_bg.webp');"></div>
+
+  <!-- Top bar utility toggles -->
+  <div class="absolute top-4 end-4 flex items-center space-x-3 rtl:space-x-reverse z-20">
+    <!-- RTL Toggle -->
+    <button onclick="toggleRTL()" class="rtl-toggle h-10 w-12 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-300 hover:text-amber-400 font-medium bg-slate-950/30 transition-all duration-200 whitespace-nowrap flex-shrink-0">
+      عربي
+    </button>
+    <!-- Theme Toggle -->
+    <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 bg-slate-950/30 hover:bg-slate-100 dark:hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
+      <!-- Dynamic Theme Icon -->
+    </button>
+  </div>
+
+  <!-- Centered Card Layout -->
+  <div class="glass-panel max-w-md w-full p-8 rounded-lg border border-amber-500/25 shadow-2xl relative z-10 space-y-6">
+    <div class="text-center space-y-2">
+      <!-- Logo -->
+      <a href="index.html" class="inline-flex items-center space-x-2 rtl:space-x-reverse text-amber-500 font-bold text-xl tracking-wider justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+        <span class="font-serif text-slate-100">Aura Astro</span>
+      </a>
+      <h2 class="text-xl font-serif text-slate-100 font-bold">Initialize Your Celestial Coordinates</h2>
+      <p class="text-[10px] text-slate-500 font-light leading-normal">Sign up to calculate your charts, forecasts, and schedules.</p>
+    </div>
+
+    <!-- Form -->
+    <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';" class="space-y-4 text-xs">
+      
+      <!-- Name -->
+      <div class="flex flex-col space-y-1">
+        <label for="signup-name" class="text-slate-400 font-semibold uppercase tracking-wider">Full Name</label>
+        <input type="text" id="signup-name" placeholder="Your Name" class="bg-indigo-950/20 border border-slate-800 rounded p-2.5 text-slate-200 focus:outline-none focus:border-amber-500" required />
+      </div>
+
+      <!-- Email -->
+      <div class="flex flex-col space-y-1">
+        <label for="signup-email" class="text-slate-400 font-semibold uppercase tracking-wider">Email Address</label>
+        <input type="email" id="signup-email" placeholder="email@address.com" class="bg-indigo-950/20 border border-slate-800 rounded p-2.5 text-slate-200 focus:outline-none focus:border-amber-500" required />
+      </div>
+
+      <!-- Password -->
+      <div class="flex flex-col space-y-1 relative">
+        <label for="signup-password" class="text-slate-400 font-semibold uppercase tracking-wider">Password</label>
+        <div class="relative flex items-center">
+          <input type="password" id="signup-password" placeholder="••••••••" class="bg-indigo-950/20 border border-slate-800 rounded p-2.5 text-slate-200 focus:outline-none focus:border-amber-500 w-full pe-10" required />
+          <button type="button" onclick="togglePasswordVis('signup-password', this)" class="absolute end-3 text-slate-500 hover:text-amber-500 focus:outline-none">
+            👁️
+          </button>
+        </div>
+      </div>
+
+      <!-- Date of Birth -->
+      <div class="flex flex-col space-y-1">
+        <label for="signup-dob" class="text-slate-400 font-semibold uppercase tracking-wider">Date of Birth</label>
+        <input type="date" id="signup-dob" class="bg-indigo-950/20 border border-slate-800 rounded p-2.5 text-slate-200 focus:outline-none focus:border-amber-500" required />
+      </div>
+
+      <!-- Time of Birth -->
+      <div class="flex flex-col space-y-1 relative group">
+        <div class="flex justify-between items-center">
+          <label for="signup-tob" class="text-slate-400 font-semibold uppercase tracking-wider">Time of Birth (Optional)</label>
+          <span class="text-amber-500 cursor-help font-bold text-xs">[?]</span>
+        </div>
+        <input type="time" id="signup-tob" class="bg-indigo-950/20 border border-slate-800 rounded p-2.5 text-slate-200 focus:outline-none focus:border-amber-500" />
+        <div class="absolute bottom-full start-0 mb-2 w-56 p-2 bg-slate-900 border border-amber-500/40 text-[10px] text-slate-300 font-light rounded shadow-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+          Determining your exact birth time sets the Ascendant (ASC) degree, defining your house cusps.
+        </div>
+      </div>
+
+      <!-- Place of Birth -->
+      <div class="flex flex-col space-y-1">
+        <label for="signup-pob" class="text-slate-400 font-semibold uppercase tracking-wider">Place of Birth (City, Country)</label>
+        <input type="text" id="signup-pob" placeholder="e.g. Cairo, Egypt" class="bg-indigo-950/20 border border-slate-800 rounded p-2.5 text-slate-200 focus:outline-none focus:border-amber-500" required />
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="w-full py-3 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold uppercase tracking-wider rounded shadow gold-hover-ring transition-all">
+        Sign Up & Compute Chart
+      </button>
+    </form>
+
+    <!-- Social Sign In -->
+    <div class="space-y-4 pt-2">
+      <div class="flex items-center justify-between text-[10px] text-slate-500 uppercase font-semibold">
+        <hr class="w-1/3 border-slate-800/80" />
+        <span>Or connect with</span>
+        <hr class="w-1/3 border-slate-800/80" />
+      </div>
+      
+      <button onclick="window.location.href='dashboard.html';" class="w-full py-2.5 border border-slate-800 hover:border-amber-500 hover:bg-slate-950/50 text-slate-300 rounded font-semibold flex items-center justify-center space-x-2 rtl:space-x-reverse transition-all">
+        <span>🔑</span> <span>Sign In With Google</span>
+      </button>
+    </div>
+
+    <!-- Redirect link -->
+    <div class="text-center text-[10px] text-slate-500">
+      <span>Already calculated your coordinates? </span>
+      <a href="login.html" class="text-amber-500 hover:text-amber-400 font-bold transition-all">Log In here</a>
+    </div>
+
+  </div>
+
+  <!-- Shared Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    function togglePasswordVis(id, btn) {
+      const input = document.getElementById(id);
+      if (input.type === 'password') {
+        input.type = 'text';
+        btn.textContent = '🔒';
+      } else {
+        input.type = 'password';
+        btn.textContent = '👁️';
+      }
+    }
+  </script>
+</body>
+</html>

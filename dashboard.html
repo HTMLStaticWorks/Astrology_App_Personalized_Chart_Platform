@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Astrology - Client Portal Dashboard</title>
+  <meta name="description" content="View your personalized birth charts, daily transit calendars, compatibility assessments, and chat directly with your assigned astrologer." />
+  
+  <!-- Tailwind CSS CDN v3 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cosmicIndigo: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c084fc',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#1e1b4b',
+              950: '#090514',
+            },
+            celestialGold: {
+              50: '#fefbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+              800: '#92400e',
+              950: '#451a03',
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-cosmicIndigo-950 dark:text-slate-100 transition-colors duration-300">
+
+  <!-- 1. COSMIC PROGRESS CALCULATION OVERLAY -->
+  <div id="calculation-overlay" class="fixed inset-0 z-50 bg-slate-950 flex flex-col justify-center items-center p-6 transition-all duration-500">
+    <div class="max-w-md w-full text-center space-y-6">
+      <div class="text-amber-500 text-5xl animate-spin-slow">⚛️</div>
+      <h3 class="text-2xl font-serif font-bold text-slate-100 uppercase tracking-widest">Generating Natal Blueprint</h3>
+      <p id="calc-progress-text" class="text-xs text-slate-400 font-light">Loading ephemeris coordinates...</p>
+      <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden border border-slate-800">
+        <div id="calc-progress-bar" class="bg-amber-500 h-full w-0 transition-all duration-300"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard Container -->
+  <div class="min-h-screen flex flex-col md:flex-row relative">
+
+    <!-- 2. SIDEBAR NAVIGATION -->
+    <aside id="dashboard-sidebar" class="fixed md:static inset-y-0 start-0 w-64 bg-slate-950 border-r border-indigo-950/40 z-30 transform -translate-x-full rtl:translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out flex flex-col justify-between">
+      
+      <!-- Top Section -->
+      <div class="p-6 space-y-8">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse text-amber-500 font-bold text-lg tracking-wider">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <span class="font-serif text-slate-100">Aura Astro</span>
+        </a>
+
+        <!-- Menu items -->
+        <nav class="space-y-1.5 flex flex-col text-xs font-semibold tracking-wider text-slate-400">
+          <a href="#" data-panel="overview" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse bg-amber-500/10 text-amber-500 border-s-4 border-amber-500">
+            <span>🪐</span> <span>Overview</span>
+          </a>
+          <a href="#" data-panel="chart" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
+            <span>⚛️</span> <span>My Birth Chart</span>
+          </a>
+          <a href="#" data-panel="horoscope" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
+            <span>🌙</span> <span>Daily Horoscope</span>
+          </a>
+          <a href="#" data-panel="compatibility" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
+            <span>💞</span> <span>Compatibility Reports</span>
+          </a>
+          <a href="#" data-panel="transits" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
+            <span>📅</span> <span>Transit Forecasts</span>
+          </a>
+          <a href="#" data-panel="saved" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
+            <span>📄</span> <span>Saved Reports</span>
+          </a>
+          <a href="#" data-panel="messages" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
+            <span>✉️</span> <span>Messages</span>
+          </a>
+          <a href="#" data-panel="schedule" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
+            <span>📞</span> <span>Schedule Reading</span>
+          </a>
+          <a href="#" data-panel="profile" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
+            <span>⚙️</span> <span>Settings & Profile</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Logout bottom area -->
+      <div class="p-6 border-t border-slate-900">
+        <a href="index.html" class="px-4 py-2.5 bg-red-950/20 border border-red-900/30 hover:bg-red-900/10 text-red-400 text-xs font-bold uppercase tracking-wider rounded text-center block transition-all">
+          Logout Session
+        </a>
+      </div>
+    </aside>
+
+    <!-- 3. MAIN INTERACTION WINDOW -->
+    <div class="flex-1 flex flex-col overflow-y-auto">
+      
+      <!-- Top Utilities Bar -->
+      <header class="h-20 border-b border-indigo-950/20 bg-slate-950/40 backdrop-blur-md px-6 flex items-center justify-between z-20">
+        
+        <!-- Toggle button (Mobile only) -->
+        <button id="sidebar-toggle-btn" class="md:hidden p-2 text-slate-300 hover:text-amber-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <h2 class="font-serif font-semibold text-lg text-slate-100 hidden sm:block">Aura Portal Dashboard</h2>
+
+        <!-- Toggles & Toggles Right -->
+        <div class="flex items-center space-x-3 rtl:space-x-reverse">
+          
+          <!-- RTL Toggle -->
+          <button onclick="toggleRTL()" class="rtl-toggle h-10 w-12 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
+            عربي
+          </button>
+
+          <!-- Dark/Light Theme Toggle -->
+          <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
+            <!-- Dynamic Theme Icon -->
+          </button>
+          
+          <div class="w-px h-6 bg-slate-800"></div>
+
+          <!-- User badge -->
+          <div class="flex items-center space-x-2 rtl:space-x-reverse text-xs">
+            <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 font-bold flex items-center justify-center">CV</div>
+            <span class="font-serif font-semibold text-slate-200 hidden md:inline">Cosmic Voyager</span>
+          </div>
+
+        </div>
+      </header>
+
+      <!-- PANELS RENDER AREA -->
+      <div class="p-6 md:p-8 space-y-8 flex-1">
+
+        <!-- ======================================= -->
+        <!-- PANEL A: OVERVIEW -->
+        <!-- ======================================= -->
+        <div id="overview-panel" class="dashboard-panel space-y-8">
+          
+          <!-- Top Welcome Banner -->
+          <div class="glass-panel p-6 rounded-lg border border-amber-500/20 grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+            <div class="lg:col-span-2 space-y-2">
+              <h3 class="text-2xl font-serif font-bold text-slate-100">Welcome Back, Cosmic Voyager</h3>
+              <p class="text-xs text-slate-400 font-light">Your natal alignment anchors: Sun in Cancer ☉, Moon in Scorpio ☽, Ascendant in Libra ASC. The heavens indicate key opportunities this month.</p>
+            </div>
+            <!-- Placements icons -->
+            <div class="flex justify-end space-x-3 rtl:space-x-reverse text-2xl text-amber-500">
+              <span title="Sun in Cancer">☉</span>
+              <span title="Moon in Scorpio">☽</span>
+              <span title="Ascendant in Libra">♎</span>
+            </div>
+          </div>
+
+          <!-- Mid Section: Horoscope Snippet & Transits Alert -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            
+            <!-- Daily Horoscope Card -->
+            <div class="glass-panel p-6 rounded-lg space-y-4">
+              <h4 class="font-serif text-amber-500 text-sm font-semibold tracking-wider uppercase border-b border-slate-900 pb-2">Today's Lunar Horoscope</h4>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                Today, the Moon trines Saturn in your transit sector. You will feel a strong impulse to settle structural affairs at work. Listen to your gut feelings. A subtle shift in your communication style will resolve an ongoing misunderstanding.
+              </p>
+              <a href="#" onclick="document.querySelector('[data-panel=horoscope]').click()" class="text-amber-500 text-[10px] uppercase font-bold hover:text-amber-400 tracking-wider">Explore Daily Feed →</a>
+            </div>
+
+            <!-- Major Transit Alert Banner -->
+            <div class="glass-panel p-6 rounded-lg space-y-4 border border-violet-800/30 bg-violet-950/15">
+              <div class="flex items-center space-x-2 rtl:space-x-reverse text-violet-400">
+                <span>⚠️</span> <h4 class="font-serif text-sm font-semibold tracking-wider uppercase">Upcoming Major Transit Alert</h4>
+              </div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                <strong>Mars enters Leo (Transit Shift)</strong> is approaching in <strong>14 Days</strong>. This alignment triggers your Eleventh House of alliances. Expect major changes in social interactions and group initiatives.
+              </p>
+              <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-violet-600 h-full" style="width: 65%"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom: Mini Chart preview -->
+          <div class="glass-panel p-6 rounded-lg grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="flex justify-center flex-col items-center">
+              <h4 class="font-serif text-amber-500 text-xs font-semibold tracking-widest uppercase mb-4">Interactive Natal Blueprint Preview</h4>
+              <div id="natal-chart-container" class="w-full max-w-[240px]">
+                <!-- SVG Birth Chart renders here -->
+              </div>
+            </div>
+            <div class="space-y-4">
+              <h4 class="text-lg font-serif font-bold">Chart Vector Blueprint</h4>
+              <p class="text-xs text-slate-400 font-light leading-relaxed">Your birth map details houses, planets, and aspects. Click on the navigation menu to explore full placement coordinate tables.</p>
+              <button onclick="document.querySelector('[data-panel=chart]').click()" class="px-6 py-2.5 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-[10px] uppercase tracking-wider rounded shadow gold-hover-ring transition-all">Explore Placements</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ======================================= -->
+        <!-- PANEL B: MY BIRTH CHART -->
+        <!-- ======================================= -->
+        <div id="chart-panel" class="dashboard-panel space-y-8 hidden">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            
+            <!-- Vector Wheel column -->
+            <div class="glass-panel p-6 rounded-lg flex flex-col items-center">
+              <h4 class="font-serif text-amber-500 text-xs font-semibold tracking-widest uppercase mb-6">Vector Natal Chart Wheel</h4>
+              <div id="natal-chart-container-large" class="w-full max-w-[320px]">
+                <!-- Large dynamic SVG chart renders here -->
+              </div>
+              <p class="text-[10px] text-slate-500 mt-4 text-center">Hover planetary symbols for detailed coordinate data.</p>
+            </div>
+
+            <!-- Coordinate data column -->
+            <div class="space-y-6">
+              <h3 class="text-xl font-serif font-bold text-slate-100 border-b border-slate-900 pb-3">Planetary Placements Details</h3>
+              
+              <div class="overflow-x-auto text-xs">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr class="border-b border-slate-800 text-slate-500 uppercase tracking-widest font-serif font-bold">
+                      <th class="py-2">Planet</th>
+                      <th class="py-2">Zodiac Sign</th>
+                      <th class="py-2">Degree</th>
+                      <th class="py-2">House</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-slate-300 font-light">
+                    <tr class="border-b border-slate-900">
+                      <td class="py-2.5 font-serif">☉ Sun</td>
+                      <td class="py-2.5">Cancer</td>
+                      <td class="py-2.5">14° 22'</td>
+                      <td class="py-2.5">House 10 (Career)</td>
+                    </tr>
+                    <tr class="border-b border-slate-900">
+                      <td class="py-2.5 font-serif">☽ Moon</td>
+                      <td class="py-2.5">Scorpio</td>
+                      <td class="py-2.5">02° 11'</td>
+                      <td class="py-2.5">House 2 (Assets)</td>
+                    </tr>
+                    <tr class="border-b border-slate-900">
+                      <td class="py-2.5 font-serif">☿ Mercury</td>
+                      <td class="py-2.5">Cancer</td>
+                      <td class="py-2.5">28° 45'</td>
+                      <td class="py-2.5">House 10 (Career)</td>
+                    </tr>
+                    <tr class="border-b border-slate-900">
+                      <td class="py-2.5 font-serif">♀ Venus</td>
+                      <td class="py-2.5">Gemini</td>
+                      <td class="py-2.5">04° 19'</td>
+                      <td class="py-2.5">House 9 (Wisdom)</td>
+                    </tr>
+                    <tr class="border-b border-slate-900">
+                      <td class="py-2.5 font-serif">♂ Mars</td>
+                      <td class="py-2.5">Leo</td>
+                      <td class="py-2.5">18° 33'</td>
+                      <td class="py-2.5">House 11 (Alliances)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ======================================= -->
+        <!-- PANEL C: DAILY HOROSCOPE -->
+        <!-- ======================================= -->
+        <div id="horoscope-panel" class="dashboard-panel space-y-8 hidden">
+          
+          <!-- Filters tab row -->
+          <div class="flex border-b border-slate-800 space-x-1 rtl:space-x-reverse text-xs">
+            <button class="horoscope-tab px-4 py-2 border-b-2 border-amber-500 bg-amber-500/20 text-amber-400 font-bold" data-range="today">Today</button>
+            <button class="horoscope-tab px-4 py-2 border-b-2 border-transparent text-slate-400 hover:text-amber-500 font-semibold" data-range="tomorrow">Tomorrow</button>
+            <button class="horoscope-tab px-4 py-2 border-b-2 border-transparent text-slate-400 hover:text-amber-500 font-semibold" data-range="weekly">Weekly</button>
+            <button class="horoscope-tab px-4 py-2 border-b-2 border-transparent text-slate-400 hover:text-amber-500 font-semibold" data-range="monthly">Monthly</button>
+          </div>
+
+          <!-- Feed Text Card -->
+          <div class="glass-panel p-6 rounded-lg space-y-4">
+            <div class="flex items-center justify-between text-xs border-b border-slate-900 pb-2">
+              <span class="text-slate-500">Horoscope Feed Alignment</span>
+              <span id="horo-indicator-mood" class="text-amber-500 font-semibold uppercase">Intuitive & Focus</span>
+            </div>
+            <p id="horoscope-feed-text" class="text-xs text-slate-300 font-light leading-relaxed">
+              Today, the Moon trines Saturn in your transit sector. You will feel a strong impulse to settle structural affairs at work. Listen to your gut feelings. A subtle shift in your communication style will resolve an ongoing misunderstanding.
+            </p>
+          </div>
+
+          <!-- Gauges indicators -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Gauge 1 -->
+            <div class="glass-panel p-6 rounded-lg space-y-2">
+              <div class="flex justify-between text-xs text-slate-400 uppercase tracking-widest">
+                <span>Love & Intimacy</span> <span class="bar-val font-serif font-bold text-amber-500">85%</span>
+              </div>
+              <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden border border-slate-800">
+                <div id="horo-bar-love" class="bg-amber-500 h-full transition-all duration-500" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <!-- Gauge 2 -->
+            <div class="glass-panel p-6 rounded-lg space-y-2">
+              <div class="flex justify-between text-xs text-slate-400 uppercase tracking-widest">
+                <span>Career & Focus</span> <span class="bar-val font-serif font-bold text-amber-500">70%</span>
+              </div>
+              <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden border border-slate-800">
+                <div id="horo-bar-career" class="bg-amber-500 h-full transition-all duration-500" style="width: 70%"></div>
+              </div>
+            </div>
+
+            <!-- Gauge 3 -->
+            <div class="glass-panel p-6 rounded-lg space-y-2">
+              <div class="flex justify-between text-xs text-slate-400 uppercase tracking-widest">
+                <span>Energy & Vitality</span> <span class="bar-val font-serif font-bold text-amber-500">90%</span>
+              </div>
+              <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden border border-slate-800">
+                <div id="horo-bar-energy" class="bg-amber-500 h-full transition-all duration-500" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ======================================= -->
+        <!-- PANEL D: COMPATIBILITY REPORTS -->
+        <!-- ======================================= -->
+        <div id="compatibility-panel" class="dashboard-panel space-y-8 hidden">
+          
+          <!-- Input Form -->
+          <div class="glass-panel p-6 rounded-lg border border-slate-800 space-y-6">
+            <h3 class="text-base font-serif font-bold text-slate-100 border-b border-slate-900 pb-2">Generate Synastry Compatibility Chart</h3>
+            
+            <form id="compatibility-calc-form" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+              <div class="flex flex-col space-y-1">
+                <label for="compat-partner-name" class="text-slate-400 font-semibold uppercase tracking-wider">Partner Name</label>
+                <input type="text" id="compat-partner-name" placeholder="Partner Name" class="bg-indigo-950/20 border border-slate-800 p-2.5 rounded text-slate-200 focus:outline-none focus:border-amber-500" required />
+              </div>
+              <div class="flex flex-col space-y-1">
+                <label for="compat-partner-dob" class="text-slate-400 font-semibold uppercase tracking-wider">Birth Date</label>
+                <input type="date" id="compat-partner-dob" class="bg-indigo-950/20 border border-slate-800 p-2.5 rounded text-slate-200 focus:outline-none focus:border-amber-500" required />
+              </div>
+              <div class="flex flex-col space-y-1">
+                <label for="compat-partner-tob" class="text-slate-400 font-semibold uppercase tracking-wider">Birth Time (Optional)</label>
+                <input type="time" id="compat-partner-tob" class="bg-indigo-950/20 border border-slate-800 p-2.5 rounded text-slate-200 focus:outline-none focus:border-amber-500" />
+              </div>
+              <div class="flex flex-col space-y-1">
+                <label for="compat-partner-pob" class="text-slate-400 font-semibold uppercase tracking-wider">Place of Birth</label>
+                <input type="text" id="compat-partner-pob" placeholder="e.g. Cairo, Egypt" class="bg-indigo-950/20 border border-slate-800 p-2.5 rounded text-slate-200 focus:outline-none focus:border-amber-500" required />
+              </div>
+              <div class="md:col-span-2">
+                <button type="submit" class="w-full py-3 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold uppercase tracking-wider rounded shadow transition-all gold-hover-ring">
+                  Calculate Compatibility
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Recalculated results container (Hidden initially) -->
+          <div id="compatibility-results" class="hidden grid grid-cols-1 lg:grid-cols-2 gap-8 items-center pt-4">
+            
+            <!-- Scores circular indices -->
+            <div class="grid grid-cols-2 gap-4">
+              <div class="glass-panel p-4 rounded text-center">
+                <h4 class="text-[10px] text-slate-500 uppercase tracking-wider mb-1 font-serif">Emotional Harmony</h4>
+                <div id="score-emotional" class="text-2xl font-serif text-amber-500 font-bold">0%</div>
+              </div>
+              <div class="glass-panel p-4 rounded text-center">
+                <h4 class="text-[10px] text-slate-500 uppercase tracking-wider mb-1 font-serif">Physical Magnetism</h4>
+                <div id="score-romantic" class="text-2xl font-serif text-amber-500 font-bold">0%</div>
+              </div>
+              <div class="glass-panel p-4 rounded text-center">
+                <h4 class="text-[10px] text-slate-500 uppercase tracking-wider mb-1 font-serif">Intellectual Cues</h4>
+                <div id="score-communication" class="text-2xl font-serif text-amber-500 font-bold">0%</div>
+              </div>
+              <div class="glass-panel p-4 rounded text-center">
+                <h4 class="text-[10px] text-slate-500 uppercase tracking-wider mb-1 font-serif">Long-Term Goals</h4>
+                <div id="score-longterm" class="text-2xl font-serif text-amber-500 font-bold">0%</div>
+              </div>
+            </div>
+
+            <!-- Comparison Chart wheel SVG container -->
+            <div class="glass-panel p-6 rounded flex flex-col items-center">
+              <h4 class="font-serif text-amber-500 text-xs font-semibold tracking-wider uppercase mb-4">Overlapping Synastry Wheel</h4>
+              <div id="compatibility-chart-container" class="w-full max-w-[240px]">
+                <!-- JS dynamically renders partner SVG here -->
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ======================================= -->
+        <!-- PANEL E: TRANSIT FORECASTS -->
+        <!-- ======================================= -->
+        <div id="transits-panel" class="dashboard-panel space-y-8 hidden">
+          
+          <h3 class="text-xl font-serif font-bold text-slate-100 border-b border-slate-900 pb-3">Upcoming Major Planetary Transits</h3>
+          
+          <div class="space-y-6 relative border-s border-amber-500/20 ps-6 max-w-xl">
+            <!-- Transit item 1 -->
+            <div class="relative">
+              <div class="absolute -left-[30px] top-1 w-4 h-4 bg-slate-950 border border-amber-500 rounded-full flex items-center justify-center text-[7px] text-amber-500">☉</div>
+              <h4 class="text-xs font-serif font-bold text-slate-100">Mars enters Leo (July 14, 2026)</h4>
+              <p class="text-[10px] text-slate-400 font-light mt-1">Triggers your Eleventh House of alliances. Expect high social energy and opportunities in collaborations.</p>
+            </div>
+
+            <!-- Transit item 2 -->
+            <div class="relative">
+              <div class="absolute -left-[30px] top-1 w-4 h-4 bg-slate-950 border border-amber-500 rounded-full flex items-center justify-center text-[7px] text-amber-500">☿</div>
+              <h4 class="text-xs font-serif font-bold text-slate-100">Mercury Retrograde in Cancer (August 02, 2026)</h4>
+              <p class="text-[10px] text-slate-400 font-light mt-1">Triggers your Tenth House of career. Excellent window to review past proposals, adjust branding guidelines, and delay new agreements.</p>
+            </div>
+
+            <!-- Transit item 3 -->
+            <div class="relative">
+              <div class="absolute -left-[30px] top-1 w-4 h-4 bg-slate-950 border border-amber-500 rounded-full flex items-center justify-center text-[7px] text-amber-500">♃</div>
+              <h4 class="text-xs font-serif font-bold text-slate-100">Jupiter Sextiles Sun (August 28, 2026)</h4>
+              <p class="text-[10px] text-slate-400 font-light mt-1">Sextiles your Natal Sun placement, creating a rare window for vocational expansions or financial additions.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ======================================= -->
+        <!-- PANEL F: SAVED REPORTS -->
+        <!-- ======================================= -->
+        <div id="saved-panel" class="dashboard-panel space-y-8 hidden">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            
+            <!-- Existing Files -->
+            <div class="space-y-4">
+              <h3 class="text-base font-serif font-bold text-slate-100 border-b border-slate-900 pb-2">Your Astrological Dossier</h3>
+              
+              <div class="space-y-3 text-xs">
+                <!-- File Item 1 -->
+                <div class="flex items-center justify-between p-3.5 bg-indigo-950/20 border border-slate-800 rounded">
+                  <div class="flex items-center space-x-2.5 rtl:space-x-reverse">
+                    <span class="text-lg">📄</span>
+                    <div>
+                      <h4 class="font-serif font-bold text-slate-200">Standard Natal Blueprint.pdf</h4>
+                      <p class="text-[9px] text-slate-500 font-semibold uppercase tracking-wider">Generated • 25 Pages</p>
+                    </div>
+                  </div>
+                  <button onclick="alert('Downloading standard report (Simulation).')" class="px-3 py-1.5 bg-indigo-900/50 hover:bg-amber-500 hover:text-slate-950 text-[10px] font-bold uppercase rounded tracking-wider border border-indigo-800/30 transition-all">Download</button>
+                </div>
+
+                <!-- File Item 2 -->
+                <div class="flex items-center justify-between p-3.5 bg-indigo-950/20 border border-slate-800 rounded">
+                  <div class="flex items-center space-x-2.5 rtl:space-x-reverse">
+                    <span class="text-lg">📄</span>
+                    <div>
+                      <h4 class="font-serif font-bold text-slate-200">12-Month Transit Forecast.pdf</h4>
+                      <p class="text-[9px] text-slate-500 font-semibold uppercase tracking-wider">Generated • 12 Pages</p>
+                    </div>
+                  </div>
+                  <button onclick="alert('Downloading transits report.')" class="px-3 py-1.5 bg-indigo-900/50 hover:bg-amber-500 hover:text-slate-950 text-[10px] font-bold uppercase rounded tracking-wider border border-indigo-800/30 transition-all">Download</button>
+                </div>
+
+                <!-- File Item 3 -->
+                <div class="flex items-center justify-between p-3.5 bg-indigo-950/20 border border-slate-800 rounded">
+                  <div class="flex items-center space-x-2.5 rtl:space-x-reverse">
+                    <span class="text-lg">📄</span>
+                    <div>
+                      <h4 class="font-serif font-bold text-slate-200">Vocation Alignment Blueprint.pdf</h4>
+                      <p class="text-[9px] text-slate-500 font-semibold uppercase tracking-wider text-amber-500">Reviewed by Astrologer • Pending</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] text-amber-500 font-bold uppercase tracking-wider px-3 py-1.5 border border-amber-500/20 rounded bg-amber-500/5">In Review</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Upload Zone -->
+            <div class="space-y-4">
+              <h3 class="text-base font-serif font-bold text-slate-100 border-b border-slate-900 pb-2">Upload Past Reports</h3>
+              <p class="text-xs text-slate-500 font-light leading-relaxed">Drag past coordinate PDFs or certificates to preserve in your dossier.</p>
+              
+              <!-- Drag and drop container -->
+              <div id="upload-dropzone" class="border-2 border-dashed border-slate-800 hover:border-amber-500/50 rounded-lg p-12 text-center bg-indigo-950/10 cursor-pointer transition-all duration-300">
+                <span class="text-3xl block mb-2">📁</span>
+                <p class="text-xs text-slate-400 font-semibold">Drag & Drop file or click to browse</p>
+                <p class="text-[9px] text-slate-500 mt-1 uppercase tracking-wider">PDF, PNG up to 10MB</p>
+                <label for="upload-file-input" class="sr-only">Upload file</label>
+                <input type="file" id="upload-file-input" class="hidden" multiple />
+              </div>
+
+              <!-- List of uploaded files -->
+              <div id="uploaded-files-list" class="mt-4">
+                <!-- Javascript will render files here -->
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ======================================= -->
+        <!-- PANEL G: MESSAGES (CHAT) -->
+        <!-- ======================================= -->
+        <div id="messages-panel" class="dashboard-panel space-y-6 hidden">
+          
+          <!-- Chat box container -->
+          <div class="glass-panel rounded-lg border border-slate-800 flex flex-col h-[50vh] overflow-hidden max-w-xl">
+            
+            <!-- Chat header -->
+            <div class="p-4 border-b border-slate-900 bg-slate-950 flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="assets/images/astrologer.webp" alt="Aria Thorne" class="w-9 h-9 rounded-full object-cover border border-amber-500/20" />
+              <div>
+                <h4 class="text-xs font-serif font-bold text-slate-100">Aria Thorne</h4>
+                <span class="text-[9px] text-emerald-500 font-bold uppercase tracking-wider">Senior Astrologer • Online</span>
+              </div>
+            </div>
+
+            <!-- Messages Log -->
+            <div id="chat-message-log" class="p-4 flex-1 overflow-y-auto space-y-4">
+              <!-- Message 1 -->
+              <div class="flex justify-start">
+                <div class="bg-indigo-950/50 text-slate-100 border border-indigo-900/20 text-xs px-4 py-2 rounded-lg max-w-xs shadow-md">
+                  <p>Greetings Voyager. I am reviewing your Tenth House Sun-Mercury configurations. Your Saturn return is finishing, meaning clarity is coming to your relationships soon.</p>
+                  <span class="text-[9px] block mt-1 text-slate-400">10:45 AM</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Input area -->
+            <form id="chat-send-form" class="p-3 border-t border-slate-900 bg-slate-950 flex space-x-2 rtl:space-x-reverse">
+              <label for="chat-message-input" class="sr-only">Message input</label>
+              <input type="text" id="chat-message-input" placeholder="Ask your astrologer..." class="bg-indigo-950/20 border border-slate-800 rounded px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-amber-500 w-full" required />
+              <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-4 rounded text-xs transition-colors">Send</button>
+            </form>
+
+          </div>
+
+        </div>
+
+        <!-- ======================================= -->
+        <!-- PANEL H: SCHEDULE READING -->
+        <!-- ======================================= -->
+        <div id="schedule-panel" class="dashboard-panel space-y-8 hidden">
+          
+          <div class="max-w-xl space-y-6">
+            <h3 class="text-xl font-serif font-bold text-slate-100 border-b border-slate-900 pb-3">Book Live Video Consultation</h3>
+            <p class="text-xs text-slate-400 font-light leading-relaxed">Book 1-on-1 virtual sessions with Aria Thorne. Select a date slot to coordinate approvals.</p>
+            
+            <!-- Dates grid -->
+            <div class="space-y-4 text-xs">
+              
+              <!-- July 02 -->
+              <div class="p-4 bg-indigo-950/20 border border-slate-800 rounded space-y-3">
+                <h4 class="font-serif font-bold text-slate-200">July 02, 2026 (Thursday)</h4>
+                <div class="grid grid-cols-2 gap-2 text-[10px]">
+                  <button class="schedule-slot border border-slate-800 bg-indigo-950/40 p-2.5 rounded text-center text-slate-300 hover:border-amber-500 font-semibold transition-all" data-date="July 02, 2026" data-time="09:00 AM UTC">09:00 AM UTC</button>
+                  <button class="schedule-slot border border-slate-800 bg-indigo-950/40 p-2.5 rounded text-center text-slate-300 hover:border-amber-500 font-semibold transition-all" data-date="July 02, 2026" data-time="03:00 PM UTC">03:00 PM UTC</button>
+                </div>
+              </div>
+
+              <!-- July 03 -->
+              <div class="p-4 bg-indigo-950/20 border border-slate-800 rounded space-y-3">
+                <h4 class="font-serif font-bold text-slate-200">July 03, 2026 (Friday)</h4>
+                <div class="grid grid-cols-2 gap-2 text-[10px]">
+                  <button class="schedule-slot border border-slate-800 bg-indigo-950/40 p-2.5 rounded text-center text-slate-300 hover:border-amber-500 font-semibold transition-all" data-date="July 03, 2026" data-time="11:30 AM UTC">11:30 AM UTC</button>
+                  <button class="schedule-slot border border-slate-800 bg-indigo-950/40 p-2.5 rounded text-center text-slate-300 hover:border-amber-500 font-semibold transition-all" data-date="July 03, 2026" data-time="05:30 PM UTC">05:30 PM UTC</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ======================================= -->
+        <!-- PANEL I: PROFILE & SETTINGS -->
+        <!-- ======================================= -->
+        <div id="profile-panel" class="dashboard-panel space-y-8 hidden">
+          
+          <div class="max-w-xl space-y-6">
+            <h3 class="text-xl font-serif font-bold text-slate-100 border-b border-slate-900 pb-3">Client Parameters & Coordinates</h3>
+            
+            <form onsubmit="event.preventDefault(); alert('Profile coordinates updated.');" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+              <div class="flex flex-col space-y-1">
+                <label for="profile-username" class="text-slate-400 font-semibold uppercase tracking-wider">Client Username</label>
+                <input type="text" id="profile-username" value="Cosmic Voyager" class="bg-indigo-950/20 border border-slate-800 p-2.5 rounded text-slate-200 focus:outline-none focus:border-amber-500" required />
+              </div>
+              <div class="flex flex-col space-y-1">
+                <label for="profile-email" class="text-slate-400 font-semibold uppercase tracking-wider">Email Coordinates</label>
+                <input type="email" id="profile-email" value="voyager@auraastro.com" class="bg-indigo-950/20 border border-slate-800 p-2.5 rounded text-slate-200 focus:outline-none focus:border-amber-500" required />
+              </div>
+              <div class="flex flex-col space-y-1">
+                <label for="profile-dob" class="text-slate-400 font-semibold uppercase tracking-wider">Birth Date</label>
+                <input type="date" id="profile-dob" value="1995-07-06" class="bg-indigo-950/20 border border-slate-800 p-2.5 rounded text-slate-200 focus:outline-none focus:border-amber-500" required />
+              </div>
+              <div class="flex flex-col space-y-1">
+                <label for="profile-tob" class="text-slate-400 font-semibold uppercase tracking-wider">Birth Time</label>
+                <input type="time" id="profile-tob" value="14:30" class="bg-indigo-950/20 border border-slate-800 p-2.5 rounded text-slate-200 focus:outline-none focus:border-amber-500" />
+              </div>
+              <div class="flex flex-col space-y-1 md:col-span-2">
+                <label for="profile-pob" class="text-slate-400 font-semibold uppercase tracking-wider">Birth Location (City, Country)</label>
+                <input type="text" id="profile-pob" value="Cairo, Egypt" class="bg-indigo-950/20 border border-slate-800 p-2.5 rounded text-slate-200 focus:outline-none focus:border-amber-500" required />
+              </div>
+              <div class="flex flex-col space-y-1 md:col-span-2">
+                <label for="profile-arch" class="text-slate-400 font-semibold uppercase tracking-wider">Preferred Astrology Mapping Architecture</label>
+                <select id="profile-arch" class="bg-indigo-950/20 border border-slate-800 p-2.5 rounded text-slate-200 focus:outline-none focus:border-amber-500">
+                  <option value="western" selected>Western Tropical System (Placidus)</option>
+                  <option value="vedic">Vedic Sidereal System (Jyotish)</option>
+                </select>
+              </div>
+              <div class="md:col-span-2 pt-2">
+                <button type="submit" class="px-6 py-2.5 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold uppercase tracking-wider rounded shadow gold-hover-ring transition-all">
+                  Update Settings
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Shared scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/chart.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

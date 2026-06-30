@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Astrology - Contact & Book Live Reading</title>
+  <meta name="description" content="Reach out to Aura. Schedule a live virtual consultation or submit your pre-booking coordinates for natal and synastry reviews." />
+  
+  <!-- Tailwind CSS CDN v3 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cosmicIndigo: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c084fc',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#1e1b4b',
+              950: '#090514',
+            },
+            celestialGold: {
+              50: '#fefbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+              800: '#92400e',
+              950: '#451a03',
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-cosmicIndigo-950 dark:text-slate-100 transition-colors duration-300">
+
+  <!-- Header root -->
+  <div id="header-root"></div>
+
+  <!-- Main Content Wrapper -->
+  <main class="pt-20">
+
+    <!-- SECTION 1: HERO -->
+    <section class="relative min-h-[45vh] flex items-center justify-center overflow-hidden border-b border-indigo-950/20 py-16">
+      <div class="starfield" data-stars="40"></div>
+      <div class="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-color-dodge" style="background-image: url('assets/images/cosmic_bg.webp');"></div>
+      
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6 scroll-reveal">
+        <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-semibold uppercase tracking-widest">
+          <span>📞 Connect With Us</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-serif text-slate-100 font-bold leading-tight">
+          Connect With The <span class="gradient-text-gold glow-gold">Cosmos</span>
+        </h1>
+        <p class="text-sm text-slate-400 font-light max-w-xl mx-auto">
+          Submit pre-booking coordinates or schedule a live video consultation with a certified astrologer.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CONTACT FORM WITH BIRTH INFO -->
+    <section class="py-24 border-b border-indigo-950/20 relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="glass-panel p-8 rounded-lg border border-slate-800 space-y-6 scroll-reveal">
+          <h3 class="text-xl font-serif text-slate-100 font-bold border-b border-slate-900 pb-3">Submit Inquiry & Coordinates</h3>
+          
+          <form onsubmit="event.preventDefault(); alert('Inquiry received. Checking planetary coordinates.'); this.reset();" class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+            <!-- Name -->
+            <div class="flex flex-col space-y-1">
+              <label for="contact-name" class="text-slate-400 font-semibold uppercase tracking-wider">Full Name</label>
+              <input type="text" id="contact-name" placeholder="Your Name" class="bg-indigo-950/20 border border-slate-800 rounded p-3 text-slate-200 focus:outline-none focus:border-amber-500" required />
+            </div>
+
+            <!-- Email -->
+            <div class="flex flex-col space-y-1">
+              <label for="contact-email" class="text-slate-400 font-semibold uppercase tracking-wider">Email Address</label>
+              <input type="email" id="contact-email" placeholder="email@address.com" class="bg-indigo-950/20 border border-slate-800 rounded p-3 text-slate-200 focus:outline-none focus:border-amber-500" required />
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="flex flex-col space-y-1">
+              <label for="contact-dob" class="text-slate-400 font-semibold uppercase tracking-wider">Date of Birth</label>
+              <input type="date" id="contact-dob" class="bg-indigo-950/20 border border-slate-800 rounded p-3 text-slate-200 focus:outline-none focus:border-amber-500" required />
+            </div>
+
+            <!-- Time of Birth -->
+            <div class="flex flex-col space-y-1 relative group">
+              <div class="flex justify-between items-center">
+                <label for="contact-tob" class="text-slate-400 font-semibold uppercase tracking-wider">Time of Birth (Optional)</label>
+                <span class="text-amber-500 cursor-help font-bold text-xs">[?]</span>
+              </div>
+              <input type="time" id="contact-tob" class="bg-indigo-950/20 border border-slate-800 rounded p-3 text-slate-200 focus:outline-none focus:border-amber-500" />
+              <!-- Tooltip element -->
+              <div class="absolute bottom-full start-0 mb-2 w-56 p-2 bg-slate-900 border border-amber-500/40 text-[10px] text-slate-300 font-light rounded shadow-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                Determining your exact birth time sets the Ascendant (ASC) degree, defining your house cusps.
+              </div>
+            </div>
+
+            <!-- Place of Birth -->
+            <div class="flex flex-col space-y-1 md:col-span-2">
+              <label for="contact-pob" class="text-slate-400 font-semibold uppercase tracking-wider">Place of Birth (City, Country)</label>
+              <input type="text" id="contact-pob" placeholder="e.g. Cairo, Egypt" class="bg-indigo-950/20 border border-slate-800 rounded p-3 text-slate-200 focus:outline-none focus:border-amber-500" required />
+            </div>
+
+            <!-- Message -->
+            <div class="flex flex-col space-y-1 md:col-span-2">
+              <label for="contact-inquiry" class="text-slate-400 font-semibold uppercase tracking-wider">Your Inquiry</label>
+              <textarea id="contact-inquiry" placeholder="Write your message here..." rows="4" class="bg-indigo-950/20 border border-slate-800 rounded p-3 text-slate-200 focus:outline-none focus:border-amber-500" required></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div class="md:col-span-2">
+              <button type="submit" class="w-full py-3 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-xs uppercase tracking-widest rounded shadow transition-all gold-hover-ring">
+                Submit Cosmic Inquiry
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CALENDAR BOOKING -->
+    <section class="py-24 border-b border-indigo-950/20 bg-slate-950/20 relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center space-y-4 mb-16 scroll-reveal">
+          <h2 class="text-3xl sm:text-5xl font-bold text-indigo-950 dark:text-slate-100">Schedule Live Session</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto">Book direct virtual consulting slots. Select a preferred coordinate slot.</p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-lg border border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-8 scroll-reveal">
+          
+          <!-- Column 1: Date Choice -->
+          <div class="space-y-4">
+            <h4 class="font-serif text-slate-100 font-bold text-sm">1. Select Consultation Date</h4>
+            <div class="grid grid-cols-3 gap-2 text-xs">
+              <button class="date-btn border border-slate-800 bg-indigo-950/20 rounded p-2.5 text-center text-slate-300 hover:border-amber-500 transition-all font-semibold" data-date="July 02, 2026">July 02</button>
+              <button class="date-btn border border-slate-800 bg-indigo-950/20 rounded p-2.5 text-center text-slate-300 hover:border-amber-500 transition-all font-semibold" data-date="July 03, 2026">July 03</button>
+              <button class="date-btn border border-slate-800 bg-indigo-950/20 rounded p-2.5 text-center text-slate-300 hover:border-amber-500 transition-all font-semibold" data-date="July 04, 2026">July 04</button>
+            </div>
+            <p id="selected-date-label" class="text-[10px] text-amber-500 font-semibold tracking-wider uppercase pt-2">Selected: July 02, 2026</p>
+          </div>
+
+          <!-- Column 2: Time Slots -->
+          <div class="space-y-4">
+            <h4 class="font-serif text-slate-100 font-bold text-sm">2. Available Slots</h4>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <button class="slot-btn border border-slate-800 bg-indigo-950/20 rounded p-2.5 text-center text-slate-300 hover:border-amber-500 transition-all font-semibold" data-time="09:00 AM UTC">09:00 AM UTC</button>
+              <button class="slot-btn border border-slate-800 bg-indigo-950/20 rounded p-2.5 text-center text-slate-300 hover:border-amber-500 transition-all font-semibold" data-time="11:30 AM UTC">11:30 AM UTC</button>
+              <button class="slot-btn border border-slate-800 bg-indigo-950/20 rounded p-2.5 text-center text-slate-300 hover:border-amber-500 transition-all font-semibold" data-time="03:00 PM UTC">03:00 PM UTC</button>
+              <button class="slot-btn border border-slate-800 bg-indigo-950/20 rounded p-2.5 text-center text-slate-300 hover:border-amber-500 transition-all font-semibold" data-time="05:30 PM UTC">05:30 PM UTC</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: CONTACT INFO BLOCK -->
+    <section class="py-24 border-b border-indigo-950/20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center scroll-reveal">
+        <!-- Card 1 -->
+        <div class="glass-panel p-6 rounded-lg space-y-2 border border-slate-800">
+          <div class="text-amber-500 text-2xl">✉️</div>
+          <h4 class="font-serif text-slate-100 font-bold text-sm">Email Address</h4>
+          <p class="text-xs text-slate-400 font-light">consult@auraastrology.com</p>
+          <p class="text-[10px] text-slate-500 font-light">Standard response in 24 hours.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-panel p-6 rounded-lg space-y-2 border border-slate-800">
+          <div class="text-amber-500 text-2xl">📞</div>
+          <h4 class="font-serif text-slate-100 font-bold text-sm">Direct Phone</h4>
+          <p class="text-xs text-slate-400 font-light">+1 (800) 555-AURA</p>
+          <p class="text-[10px] text-slate-500 font-light">Mon-Fri, 9AM - 5PM UTC.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-panel p-6 rounded-lg space-y-2 border border-slate-800">
+          <div class="text-amber-500 text-2xl">🪐</div>
+          <h4 class="font-serif text-slate-100 font-bold text-sm">Social Coordinates</h4>
+          <p class="text-xs text-slate-400 font-light">@AuraAstro • Instagram / Twitter</p>
+          <p class="text-[10px] text-slate-500 font-light">Daily planetary alerts feed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: FAQ GRID -->
+    <section class="py-24 border-b border-indigo-950/20 bg-slate-950/20 relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center space-y-4 mb-16 scroll-reveal">
+          <h2 class="text-3xl sm:text-5xl font-bold text-indigo-950 dark:text-slate-100">Booking & Calendars FAQ</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto">Answers regarding live consultations booking and rescheduling parameters.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 scroll-reveal">
+          <!-- FAQ 1 -->
+          <div class="glass-panel p-6 rounded space-y-2">
+            <h4 class="font-serif text-amber-500 font-bold text-sm">Can I reschedule my live session?</h4>
+            <p class="text-xs text-slate-400 font-light leading-relaxed">
+              Yes, you can reschedule your booking free of charge up to 24 hours prior to the session. Rescheduling links are sent with your confirmation email or can be handled from the client dashboard.
+            </p>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="glass-panel p-6 rounded space-y-2">
+            <h4 class="font-serif text-amber-500 font-bold text-sm">What software do you use for video calls?</h4>
+            <p class="text-xs text-slate-400 font-light leading-relaxed">
+              All video consults occur via our integrated web application, requiring no downloads. The direct link is activated in your dashboard 10 minutes prior to the slot.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: REMOTE TIMEZONE INFO -->
+    <section class="py-24 border-b border-indigo-950/20 relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="glass-panel p-8 rounded-lg border border-slate-800 text-center space-y-4 scroll-reveal">
+          <div class="text-2xl text-amber-500">🌍</div>
+          <h3 class="text-xl font-serif text-slate-100 font-bold">Global Timezone Calculations</h3>
+          <p class="text-xs text-slate-400 font-light leading-relaxed max-w-xl mx-auto">
+            All booking options on our calendars default to UTC. Once you initialize your client profile, the scheduler dynamically converts available slots to match your local timezone, avoiding coordination errors.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CTA -->
+    <section class="py-20 relative overflow-hidden">
+      <div class="starfield" data-stars="30"></div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6 glass-panel p-10 rounded-lg border border-amber-500/20 scroll-reveal">
+        <h2 class="text-2xl sm:text-4xl font-serif text-slate-100 font-bold">Embark on Your Personal Journey</h2>
+        <p class="text-xs text-slate-400 font-light max-w-lg mx-auto">Unlock your coordinate metrics immediately or book consulting packages with our certified astrologer team.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="signup.html" class="px-6 py-3 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-xs tracking-wider uppercase rounded shadow transition-all gold-hover-ring">Get My Birth Chart</a>
+          <a href="pricing.html" class="px-6 py-3 border border-slate-700 hover:border-amber-500 text-slate-300 font-bold text-xs tracking-wider uppercase rounded transition-all">View Astrological Tiers</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Root -->
+  <div id="footer-root"></div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let selectedDate = "July 02, 2026";
+      let selectedTime = "";
+
+      // Handle date selections
+      const dateBtns = document.querySelectorAll('.date-btn');
+      const dateLabel = document.getElementById('selected-date-label');
+      dateBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          dateBtns.forEach(b => b.classList.remove('border-amber-500', 'bg-amber-500/10'));
+          btn.classList.add('border-amber-500', 'bg-amber-500/10');
+          selectedDate = btn.dataset.date;
+          dateLabel.textContent = `Selected: ${selectedDate} ${selectedTime ? '@ ' + selectedTime : ''}`;
+        });
+      });
+
+      // Handle time slot selections
+      const slotBtns = document.querySelectorAll('.slot-btn');
+      slotBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          slotBtns.forEach(b => b.classList.remove('border-amber-500', 'bg-amber-500/10'));
+          btn.classList.add('border-amber-500', 'bg-amber-500/10');
+          selectedTime = btn.dataset.time;
+          dateLabel.textContent = `Selected: ${selectedDate} @ ${selectedTime}`;
+          
+          setTimeout(() => {
+            alert(`Draft booking: ${selectedDate} at ${selectedTime}. Submit coordinate inquiry to confirm reservation.`);
+          }, 100);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
