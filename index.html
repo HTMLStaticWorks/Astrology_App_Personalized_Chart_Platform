@@ -72,7 +72,7 @@
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Text Content -->
-        <div class="space-y-6 text-center lg:text-left scroll-reveal">
+        <div class="space-y-6 text-center lg:text-start scroll-reveal">
           <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-semibold uppercase tracking-widest">
             <span>✨ Unfold Your Stellar Destiny</span>
           </div>
@@ -82,11 +82,11 @@
           <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 font-light max-w-xl">
             Aura Astrology integrates high-precision astronomical calculations with historical celestial sciences to craft a deeply authentic blueprint of your personality, career, and relationships.
           </p>
-          <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
-            <a href="signup.html" class="px-8 py-3.5 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-sm tracking-wider uppercase rounded shadow-lg shadow-indigo-950/40 hover:from-violet-600 hover:to-indigo-700 transition-all duration-300 gold-hover-ring">
+          <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+            <a href="signup.html" class="w-full sm:w-64 text-center px-8 py-3.5 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-sm tracking-wider uppercase rounded shadow-lg shadow-indigo-950/40 hover:from-violet-600 hover:to-indigo-700 transition-all duration-300 gold-hover-ring">
               Get My Birth Chart
             </a>
-            <a href="sample-reports.html" class="px-8 py-3.5 border border-amber-500/30 hover:border-amber-500/70 hover:bg-amber-500/5 text-amber-400 font-bold text-sm tracking-wider uppercase rounded transition-all duration-300">
+            <a href="sample-reports.html" class="w-full sm:w-64 text-center px-8 py-3.5 border border-amber-500/30 hover:border-amber-500/70 hover:bg-amber-500/5 text-amber-400 font-bold text-sm tracking-wider uppercase rounded transition-all duration-300">
               View Sample Reading
             </a>
           </div>
@@ -111,45 +111,51 @@
     <!-- SECTION 2: TRUST INDICATORS -->
     <section class="py-16 border-b border-indigo-950/20 bg-slate-200 dark:bg-slate-950/40 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-center scroll-reveal">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-stretch scroll-reveal">
           
           <!-- Indicator 1 -->
-          <div class="space-y-2 p-6 glass-panel rounded-lg">
-            <!-- Image 1: Badge icon SVG -->
-            <div class="flex justify-center mb-3">
-              <svg class="w-8 h-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
+          <div class="space-y-2 p-6 glass-panel rounded-lg h-full flex flex-col justify-between">
+            <div>
+              <!-- Image 1: Badge icon SVG -->
+              <div class="flex justify-center mb-3">
+                <svg class="w-8 h-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 class="text-3xl font-serif text-slate-900 dark:text-slate-100 font-bold">1.2M+</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-widest font-semibold">Charts Calculated</p>
             </div>
-            <h3 class="text-3xl font-serif text-slate-900 dark:text-slate-100 font-bold">1.2M+</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-widest font-semibold">Charts Calculated</p>
-            <p class="text-xs text-slate-500 font-light">With orbital precision down to the exact second of birth.</p>
+            <p class="text-xs text-slate-500 font-light mt-2">With orbital precision down to the exact second of birth.</p>
           </div>
 
           <!-- Indicator 2 -->
-          <div class="space-y-2 p-6 glass-panel rounded-lg">
-            <!-- Image 2: Certificate icon SVG -->
-            <div class="flex justify-center mb-3">
-              <svg class="w-8 h-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
+          <div class="space-y-2 p-6 glass-panel rounded-lg h-full flex flex-col justify-between">
+            <div>
+              <!-- Image 2: Certificate icon SVG -->
+              <div class="flex justify-center mb-3">
+                <svg class="w-8 h-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 class="text-3xl font-serif text-slate-900 dark:text-slate-100 font-bold">4.92/5</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-widest font-semibold">Accuracy Score</p>
             </div>
-            <h3 class="text-3xl font-serif text-slate-900 dark:text-slate-100 font-bold">4.92/5</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-widest font-semibold">Accuracy Score</p>
-            <p class="text-xs text-slate-500 font-light">Rated by individuals finding resonant guidance in their path.</p>
+            <p class="text-xs text-slate-500 font-light mt-2">Rated by individuals finding resonant guidance in their path.</p>
           </div>
 
           <!-- Indicator 3 -->
-          <div class="space-y-2 p-6 glass-panel rounded-lg">
-            <!-- Image 3: Staff icon SVG -->
-            <div class="flex justify-center mb-3">
-              <svg class="w-8 h-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
+          <div class="space-y-2 p-6 glass-panel rounded-lg h-full flex flex-col justify-between">
+            <div>
+              <!-- Image 3: Staff icon SVG -->
+              <div class="flex justify-center mb-3">
+                <svg class="w-8 h-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 class="text-3xl font-serif text-slate-900 dark:text-slate-100 font-bold">12+</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-widest font-semibold">Astrologers on Staff</p>
             </div>
-            <h3 class="text-3xl font-serif text-slate-900 dark:text-slate-100 font-bold">12+</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-widest font-semibold">Astrologers on Staff</p>
-            <p class="text-xs text-slate-500 font-light">Certified members of international astrological associations.</p>
+            <p class="text-xs text-slate-500 font-light mt-2">Certified members of international astrological associations.</p>
           </div>
 
         </div>
@@ -304,9 +310,9 @@
             </div>
           </div>
 
-          <div class="pt-4 flex flex-wrap justify-center lg:justify-start gap-4">
-            <a href="sample-reports.html" class="px-6 py-3 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-xs tracking-wider uppercase rounded shadow hover:from-violet-600 hover:to-indigo-700 transition-all gold-hover-ring">Explore Full Sample</a>
-            <a href="signup.html" class="px-6 py-3 border border-amber-500/30 hover:border-amber-500/80 text-amber-400 font-bold text-xs tracking-wider uppercase rounded transition-all">Generate My Map</a>
+          <div class="pt-4 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+            <a href="sample-reports.html" class="w-full sm:w-auto text-center px-6 py-3 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-xs tracking-wider uppercase rounded shadow hover:from-violet-600 hover:to-indigo-700 transition-all gold-hover-ring">Explore Full Sample</a>
+            <a href="signup.html" class="w-full sm:w-auto text-center px-6 py-3 border border-amber-500/30 hover:border-amber-500/80 text-amber-400 font-bold text-xs tracking-wider uppercase rounded transition-all">Generate My Map</a>
           </div>
         </div>
 
@@ -377,11 +383,11 @@
         <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-xl mx-auto">
           Begin your journey today. Map your planetary alignments, understand relationship dynamics, or book consultations with certified celestial researchers.
         </p>
-        <div class="flex flex-wrap justify-center gap-4 pt-4">
-          <a href="signup.html" class="px-8 py-3.5 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-xs tracking-wider uppercase rounded shadow shadow-indigo-950/30 transition-all duration-300 gold-hover-ring">
+        <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+          <a href="signup.html" class="w-full sm:w-auto text-center px-8 py-3.5 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-xs tracking-wider uppercase rounded shadow shadow-indigo-950/30 transition-all duration-300 gold-hover-ring">
             Calculate My Birth Chart
           </a>
-          <a href="pricing.html" class="px-8 py-3.5 border border-slate-700 hover:border-amber-500 hover:bg-amber-500/5 text-slate-700 dark:text-slate-300 hover:text-amber-400 font-bold text-xs tracking-wider uppercase rounded transition-all duration-300">
+          <a href="pricing.html" class="w-full sm:w-auto text-center px-8 py-3.5 border border-slate-700 hover:border-amber-500 hover:bg-amber-500/5 text-slate-700 dark:text-slate-300 hover:text-amber-400 font-bold text-xs tracking-wider uppercase rounded transition-all duration-300">
             View Astrology Tiers
           </a>
         </div>
@@ -394,7 +400,7 @@
   <div id="footer-root"></div>
 
   <!-- Shared core scripts -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=5"></script>
   <script src="assets/js/chart.js"></script>
   <script>
     // Draw demo natal wheel on load

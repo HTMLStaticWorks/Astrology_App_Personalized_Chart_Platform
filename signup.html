@@ -59,13 +59,13 @@
 
   <!-- Top bar utility toggles -->
   <div class="absolute top-4 end-4 flex items-center space-x-3 rtl:space-x-reverse z-20">
-    <!-- RTL Toggle -->
-    <button onclick="toggleRTL()" class="rtl-toggle h-10 w-12 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-700 dark:text-slate-300 hover:text-amber-400 font-medium bg-slate-950/30 transition-all duration-200 whitespace-nowrap flex-shrink-0">
-      عربي
-    </button>
     <!-- Theme Toggle -->
     <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 bg-slate-950/30 hover:bg-slate-100 dark:hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
       <!-- Dynamic Theme Icon -->
+    </button>
+    <!-- RTL Toggle -->
+    <button onclick="toggleRTL()" class="rtl-toggle h-10 w-12 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-700 dark:text-slate-300 hover:text-amber-400 font-medium bg-slate-950/30 transition-all duration-200 whitespace-nowrap flex-shrink-0">
+      عربي
     </button>
   </div>
 
@@ -122,7 +122,7 @@
           <span class="text-amber-500 cursor-help font-bold text-xs">[?]</span>
         </div>
         <input type="time" id="signup-tob" class="bg-slate-100 dark:bg-indigo-950/20 border border-slate-300 dark:border-slate-800 rounded p-2.5 text-slate-800 dark:text-slate-200 focus:outline-none focus:border-amber-500" />
-        <div class="absolute bottom-full start-0 mb-2 w-56 p-2 bg-slate-900 border border-amber-500/40 text-[10px] text-slate-700 dark:text-slate-300 font-light rounded shadow-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+        <div class="absolute bottom-full start-0 mb-2 w-56 p-2 bg-slate-900 border border-amber-500/40 text-[10px] text-slate-200 font-light rounded shadow-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
           Determining your exact birth time sets the Ascendant (ASC) degree, defining your house cusps.
         </div>
       </div>
@@ -132,9 +132,15 @@
         <label for="signup-pob" class="text-slate-600 dark:text-slate-400 font-semibold uppercase tracking-wider">Place of Birth (City, Country)</label>
         <input type="text" id="signup-pob" placeholder="e.g. Cairo, Egypt" class="bg-slate-100 dark:bg-indigo-950/20 border border-slate-300 dark:border-slate-800 rounded p-2.5 text-slate-800 dark:text-slate-200 focus:outline-none focus:border-amber-500" required />
       </div>
+      <div class="flex items-center space-x-2 rtl:space-x-reverse pt-2 pb-2">
+        <input type="checkbox" id="signup-terms" class="w-4 h-4 rounded border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-indigo-950/20 text-amber-500 focus:ring-amber-500 focus:ring-2 accent-amber-500" required>
+        <label for="signup-terms" class="text-[10px] text-slate-600 dark:text-slate-400">
+          I agree to the <a href="#" class="text-amber-500 hover:text-amber-400 hover:underline">Terms & Conditions</a>
+        </label>
+      </div>
 
       <!-- Submit -->
-      <button type="submit" class="w-full py-3 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold uppercase tracking-wider rounded shadow gold-hover-ring transition-all">
+      <button type="submit" class="w-full py-3 bg-gradient-to-r from-violet-700 to-indigo-800 hover:from-violet-600 hover:to-indigo-700 text-white font-bold uppercase tracking-wider rounded shadow gold-hover-ring transition-all">
         Sign Up & Compute Chart
       </button>
     </form>
@@ -150,18 +156,21 @@
       <button onclick="window.location.href='dashboard.html';" class="w-full py-2.5 border border-slate-300 dark:border-slate-800 hover:border-amber-500 hover:bg-slate-950/50 text-slate-700 dark:text-slate-300 rounded font-semibold flex items-center justify-center space-x-2 rtl:space-x-reverse transition-all">
         <span>🔑</span> <span>Sign In With Google</span>
       </button>
+      <button onclick="window.location.href='dashboard.html';" class="w-full py-2.5 border border-slate-300 dark:border-slate-800 hover:border-amber-500 hover:bg-slate-950/50 text-slate-700 dark:text-slate-300 rounded font-semibold flex items-center justify-center space-x-2 rtl:space-x-reverse transition-all mt-3">
+        <span>🍎</span> <span>Sign In With Apple</span>
+      </button>
     </div>
 
     <!-- Redirect link -->
     <div class="text-center text-[10px] text-slate-500">
       <span>Already calculated your coordinates? </span>
-      <a href="login.html" class="text-amber-500 hover:text-amber-400 font-bold transition-all">Log In here</a>
+      <a href="login.html" class="text-amber-500 hover:text-amber-400 hover:underline font-bold transition-all">Log In here</a>
     </div>
 
   </div>
 
   <!-- Shared Scripts -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=5"></script>
   <script>
     function togglePasswordVis(id, btn) {
       const input = document.getElementById(id);

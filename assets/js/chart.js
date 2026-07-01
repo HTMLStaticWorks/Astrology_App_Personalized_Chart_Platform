@@ -321,11 +321,37 @@ function showChartTooltip(e, title, desc) {
   
   chartTooltip.style.opacity = '1';
   
-  // Position
+  // Get dimensions of tooltip
+  const tooltipWidth = chartTooltip.offsetWidth || 240;
+  const tooltipHeight = chartTooltip.offsetHeight || 80;
+  
   const mouseX = e.clientX;
   const mouseY = e.clientY;
-  chartTooltip.style.left = `${mouseX + 15}px`;
-  chartTooltip.style.top = `${mouseY + 15}px`;
+  
+  let leftPos = mouseX + 20;
+  let topPos = mouseY - tooltipHeight - 10; // Position above the cursor
+  
+  // If mouse is on the right half of the screen, or if the tooltip would overlap the right column on desktop, render tooltip to the left of the cursor
+  if (mouseX > window.innerWidth / 2 || (window.innerWidth >= 1024 && mouseX + 20 + tooltipWidth > window.innerWidth / 2)) {
+    leftPos = mouseX - tooltipWidth - 20;
+  }
+  
+  // If the tooltip would go off the top of the screen, render it below the cursor
+  if (topPos < 10) {
+    topPos = mouseY + 20;
+  }
+  
+  // Final bounds checks
+  if (leftPos < 10) leftPos = 10;
+  if (leftPos + tooltipWidth > window.innerWidth - 10) {
+    leftPos = window.innerWidth - tooltipWidth - 10;
+  }
+  if (topPos + tooltipHeight > window.innerHeight - 10) {
+    topPos = window.innerHeight - tooltipHeight - 10;
+  }
+  
+  chartTooltip.style.left = `${leftPos}px`;
+  chartTooltip.style.top = `${topPos}px`;
 }
 
 function hideChartTooltip() {

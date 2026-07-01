@@ -51,7 +51,7 @@ function initDashboardRouter() {
 
       // Close mobile sidebar if open
       if (sidebar && !sidebar.classList.contains('-translate-x-full')) {
-        sidebar.classList.add('-translate-x-full');
+        sidebar.classList.add('-translate-x-full', 'rtl:translate-x-full');
       }
     });
   });
@@ -60,6 +60,7 @@ function initDashboardRouter() {
   if (sidebarToggle && sidebar) {
     sidebarToggle.addEventListener('click', () => {
       sidebar.classList.toggle('-translate-x-full');
+      sidebar.classList.toggle('rtl:translate-x-full');
     });
   }
 }

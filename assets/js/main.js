@@ -162,7 +162,7 @@ function injectComponents() {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex items-center justify-between h-20">
             <!-- Brand Logo -->
-            <div class="flex items-center">
+            <div class="flex items-center lg:flex-1">
               <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse text-amber-500 font-bold text-xl tracking-wider whitespace-nowrap">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -172,47 +172,52 @@ function injectComponents() {
             </div>
 
             <!-- Navigation Links -->
-            <div class="hidden lg:flex items-center space-x-3 rtl:space-x-reverse text-sm font-medium">
-              <a href="index.html" data-t-home class="text-slate-600 dark:text-slate-300 hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'index.html' ? 'text-amber-500 font-semibold' : ''}">${t.home}</a>
-              <a href="pricing.html" data-t-pricing class="text-slate-600 dark:text-slate-300 hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'pricing.html' ? 'text-amber-500 font-semibold' : ''}">${t.pricing}</a>
-              <a href="sample-reports.html" data-t-samples class="text-slate-600 dark:text-slate-300 hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'sample-reports.html' ? 'text-amber-500 font-semibold' : ''}">${t.samples}</a>
-              <a href="compatibility.html" data-t-compatibility class="text-slate-600 dark:text-slate-300 hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'compatibility.html' ? 'text-amber-500 font-semibold' : ''}">${t.compatibility}</a>
-              <a href="about.html" data-t-about class="text-slate-600 dark:text-slate-300 hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'about.html' ? 'text-amber-500 font-semibold' : ''}">${t.about}</a>
-              <a href="contact.html" data-t-contact class="text-slate-600 dark:text-slate-300 hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'contact.html' ? 'text-amber-500 font-semibold' : ''}">${t.contact}</a>
-              <a href="dashboard.html" data-t-dashboard class="text-slate-600 dark:text-slate-300 hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'dashboard.html' ? 'text-amber-500 font-semibold' : ''}">${t.dashboard}</a>
+            <div class="hidden lg:flex items-center justify-center space-x-2 xl:space-x-4 rtl:space-x-reverse text-xs xl:text-sm font-medium">
+              <a href="index.html" data-t-home class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'index.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.home}</a>
+              <a href="about.html" data-t-about class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'about.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.about}</a>
+              <a href="pricing.html" data-t-pricing class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'pricing.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.pricing}</a>
+              <a href="sample-reports.html" data-t-samples class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'sample-reports.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.samples}</a>
+              <a href="compatibility.html" data-t-compatibility class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'compatibility.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.compatibility}</a>
+              <a href="contact.html" data-t-contact class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'contact.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.contact}</a>
+              <a href="dashboard.html" data-t-dashboard class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'dashboard.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.dashboard}</a>
             </div>
 
             <!-- Right-Side Utilities & CTAs -->
-            <div class="hidden lg:flex items-center space-x-2 rtl:space-x-reverse">
+            <div class="hidden lg:flex items-center justify-end lg:flex-1 space-x-1.5 xl:space-x-2 rtl:space-x-reverse">
               <!-- Secondary CTA -->
-              <a href="sample-reports.html" data-t-cta-secondary class="h-10 flex items-center justify-center px-4 border border-amber-500/30 hover:border-amber-500/80 hover:bg-amber-500/5 text-amber-400 font-semibold text-xs tracking-wider uppercase rounded transition-all duration-300 whitespace-nowrap flex-shrink-0">${t.ctaSecondary}</a>
+              <a href="sample-reports.html" data-t-cta-secondary class="h-10 flex items-center justify-center px-2.5 xl:px-4 border border-amber-500/30 hover:border-amber-500/80 hover:bg-amber-500/5 text-amber-400 font-semibold text-[11px] xl:text-xs tracking-wider uppercase rounded transition-all duration-300 whitespace-nowrap flex-shrink-0">${t.ctaSecondary}</a>
               
               <!-- Primary CTA -->
-              <a href="signup.html" data-t-cta-primary class="h-10 flex items-center justify-center px-4 bg-gradient-to-r from-violet-700 to-indigo-800 hover:from-violet-600 hover:to-indigo-700 text-white font-semibold text-xs tracking-wider uppercase rounded shadow-lg shadow-indigo-900/30 transition-all duration-300 gold-hover-ring whitespace-nowrap flex-shrink-0">${t.ctaPrimary}</a>
+              <a href="signup.html" data-t-cta-primary class="h-10 flex items-center justify-center px-2.5 xl:px-4 bg-gradient-to-r from-violet-700 to-indigo-800 hover:from-violet-600 hover:to-indigo-700 text-white font-semibold text-[11px] xl:text-xs tracking-wider uppercase rounded shadow-lg shadow-indigo-900/30 transition-all duration-300 gold-hover-ring whitespace-nowrap flex-shrink-0">${t.ctaPrimary}</a>
               
               <!-- Divider -->
               <div class="w-px h-6 bg-slate-200 dark:bg-slate-800"></div>
-
-              <!-- RTL Toggle -->
-              <button onclick="toggleRTL()" class="rtl-toggle h-10 w-12 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-700 dark:text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
-                ${isRtl ? 'EN' : 'عربي'}
-              </button>
 
               <!-- Dark/Light Theme Toggle -->
               <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
                 <!-- Inner HTML is dynamically generated by updateThemeUI() -->
               </button>
+
+              <!-- RTL Toggle -->
+              <button onclick="toggleRTL()" class="rtl-toggle h-10 w-10 xl:w-12 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-700 dark:text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
+                ${isRtl ? 'EN' : 'عربي'}
+              </button>
             </div>
 
             <!-- Mobile Hamburger Toggle -->
             <div class="flex lg:hidden items-center space-x-2 rtl:space-x-reverse">
-              <button onclick="toggleTheme()" class="theme-toggle p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-900/30">
-                <!-- Dynamic Theme Icon -->
+              <!-- Dark/Light Theme Toggle -->
+              <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
+                <!-- Inner HTML is dynamically generated by updateThemeUI() -->
               </button>
-              <button onclick="toggleRTL()" class="rtl-toggle text-xs px-2 py-1 border border-slate-700 rounded text-slate-700 dark:text-slate-300">
+
+              <!-- RTL Toggle -->
+              <button onclick="toggleRTL()" class="rtl-toggle h-10 w-10 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-700 dark:text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
                 ${isRtl ? 'EN' : 'عربي'}
               </button>
-              <button onclick="toggleMobileNav()" class="p-2 text-slate-700 dark:text-slate-300 hover:text-amber-500 focus:outline-none">
+
+              <!-- Mobile Hamburger Toggle -->
+              <button onclick="toggleMobileNav()" class="w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900/30 text-slate-700 dark:text-slate-300 hover:text-amber-500 focus:outline-none transition-all duration-200 flex-shrink-0">
                 <svg id="mobile-menu-burger" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
@@ -226,13 +231,13 @@ function injectComponents() {
 
         <!-- Mobile Menu Container -->
         <div id="mobile-menu" class="hidden lg:hidden border-t border-indigo-950/20 bg-white dark:bg-slate-950/95 px-4 pt-2 pb-6 space-y-3 flex flex-col text-base font-medium shadow-2xl transition-all duration-300">
-          <a href="index.html" data-t-home class="text-slate-600 dark:text-slate-300 py-2 border-b border-slate-800/40">${t.home}</a>
-          <a href="pricing.html" data-t-pricing class="text-slate-600 dark:text-slate-300 py-2 border-b border-slate-800/40">${t.pricing}</a>
-          <a href="sample-reports.html" data-t-samples class="text-slate-600 dark:text-slate-300 py-2 border-b border-slate-800/40">${t.samples}</a>
-          <a href="compatibility.html" data-t-compatibility class="text-slate-600 dark:text-slate-300 py-2 border-b border-slate-800/40">${t.compatibility}</a>
-          <a href="about.html" data-t-about class="text-slate-600 dark:text-slate-300 py-2 border-b border-slate-800/40">${t.about}</a>
-          <a href="contact.html" data-t-contact class="text-slate-600 dark:text-slate-300 py-2 border-b border-slate-800/40">${t.contact}</a>
-          <a href="dashboard.html" data-t-dashboard class="text-slate-600 dark:text-slate-300 py-2 border-b border-slate-800/40">${t.dashboard}</a>
+          <a href="index.html" data-t-home class="py-2 border-b border-slate-800/40 ${currentPath === 'index.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.home}</a>
+          <a href="about.html" data-t-about class="py-2 border-b border-slate-800/40 ${currentPath === 'about.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.about}</a>
+          <a href="pricing.html" data-t-pricing class="py-2 border-b border-slate-800/40 ${currentPath === 'pricing.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.pricing}</a>
+          <a href="sample-reports.html" data-t-samples class="py-2 border-b border-slate-800/40 ${currentPath === 'sample-reports.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.samples}</a>
+          <a href="compatibility.html" data-t-compatibility class="py-2 border-b border-slate-800/40 ${currentPath === 'compatibility.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.compatibility}</a>
+          <a href="contact.html" data-t-contact class="py-2 border-b border-slate-800/40 ${currentPath === 'contact.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.contact}</a>
+          <a href="dashboard.html" data-t-dashboard class="py-2 border-b border-slate-800/40 ${currentPath === 'dashboard.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.dashboard}</a>
           
           <div class="flex flex-col gap-2 pt-2">
             <a href="sample-reports.html" data-t-cta-secondary class="w-full text-center px-4 py-2 border border-amber-500/30 text-amber-400 font-semibold text-sm rounded transition-all">${t.ctaSecondary}</a>
@@ -258,6 +263,23 @@ function injectComponents() {
               <span data-t-logo class="font-serif text-slate-100">${t.logo}</span>
             </div>
             <p data-t-footer-tag class="text-sm font-light text-slate-500">${t.footerTag}</p>
+            <div class="flex space-x-4 rtl:space-x-reverse pt-2">
+              <!-- Twitter/X -->
+              <a href="#" class="text-slate-400 hover:text-amber-500 transition-colors">
+                <span class="sr-only">Twitter</span>
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <!-- Facebook -->
+              <a href="#" class="text-slate-400 hover:text-amber-500 transition-colors">
+                <span class="sr-only">Facebook</span>
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+              </a>
+              <!-- Instagram -->
+              <a href="#" class="text-slate-400 hover:text-amber-500 transition-colors">
+                <span class="sr-only">Instagram</span>
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+              </a>
+            </div>
           </div>
 
           <!-- Column 2: Navigation Links -->

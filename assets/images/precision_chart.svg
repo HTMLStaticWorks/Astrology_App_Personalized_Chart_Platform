@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(16, 185, 129, 0.3)" />
+      <stop offset="100%" stop-color="rgba(15, 23, 42, 0)" />
+    </radialGradient>
+  </defs>
+  <rect width="500" height="500" fill="transparent" />
+  <circle cx="250" cy="250" r="230" fill="url(#glow2)" />
+  <circle cx="250" cy="250" r="210" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="2 4" opacity="0.8" />
+  <circle cx="250" cy="250" r="170" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.6" />
+  
+  <g stroke="#10b981" stroke-width="1" opacity="0.5">
+    <!-- Grid lines -->
+    <line x1="20" y1="20" x2="480" y2="480" />
+    <line x1="20" y1="480" x2="480" y2="20" />
+    <line x1="250" y1="20" x2="250" y2="480" />
+    <line x1="20" y1="250" x2="480" y2="250" />
+  </g>
+  
+  <!-- Rings and notches -->
+  <g stroke="#3b82f6" stroke-width="2" opacity="0.7">
+    <path d="M 250 40 A 210 210 0 0 1 460 250" fill="none" />
+    <path d="M 250 460 A 210 210 0 0 1 40 250" fill="none" />
+  </g>
+  
+  <g fill="#f59e0b">
+    <polygon points="250,230 270,270 230,270" />
+    <polygon points="250,20 260,40 240,40" />
+    <polygon points="250,480 260,460 240,460" />
+    <polygon points="20,250 40,240 40,260" />
+    <polygon points="480,250 460,240 460,260" />
+  </g>
+</svg>
