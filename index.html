@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aura Astrology - Personalized Birth Charts & Celestial Insights</title>
-  <meta name="description" content="Discover your true planetary alignments. Get personalized birth charts, daily horoscopes, compatibility analysis, and live consultations." />
-  
+  <meta name="description"
+    content="Discover your true planetary alignments. Get personalized birth charts, daily horoscopes, compatibility analysis, and live consultations." />
+
   <!-- Tailwind CSS CDN v3 -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -51,6 +53,7 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
 </head>
+
 <body class="bg-slate-50 text-slate-900 dark:bg-cosmicIndigo-950 dark:text-slate-100 transition-colors duration-300">
 
   <!-- Header root -->
@@ -60,33 +63,43 @@
   <main class="pt-20">
 
     <!-- SECTION 1: HERO -->
-    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden border-b border-indigo-950/20 py-20">
+    <section
+      class="relative min-h-[90vh] flex items-center justify-center overflow-hidden border-b border-indigo-950/20 py-20">
       <!-- Twinkling Starfield -->
       <div class="starfield" data-stars="60"></div>
-      
-      <!-- Ambient Image Background -->
-      <div class="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none mix-blend-color-dodge" style="background-image: url('assets/images/cosmic_bg.webp');"></div>
-      
-      <!-- Radial Aura Gradient -->
-      <div class="absolute w-[min(600px,100vw)] h-[min(600px,100vw)] rounded-full bg-violet-900/10 blur-[120px] top-1/4 left-1/4"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Ambient Image Background -->
+      <div class="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none mix-blend-color-dodge"
+        style="background-image: url('assets/images/cosmic_bg.webp');"></div>
+
+      <!-- Radial Aura Gradient -->
+      <div
+        class="absolute w-[min(600px,100vw)] h-[min(600px,100vw)] rounded-full bg-violet-900/10 blur-[120px] top-1/4 left-1/4">
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Text Content -->
         <div class="space-y-6 text-center lg:text-start scroll-reveal">
-          <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-semibold uppercase tracking-widest">
+          <div
+            class="inline-flex items-center space-x-2 rtl:space-x-reverse px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-semibold uppercase tracking-widest">
             <span>✨ Unfold Your Stellar Destiny</span>
           </div>
-          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-indigo-950 dark:text-slate-100">
+          <h1
+            class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-indigo-950 dark:text-slate-100">
             Discover What The <span class="gradient-text-gold glow-gold">Stars Reveal</span> About You
           </h1>
           <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 font-light max-w-xl">
-            Aura Astrology integrates high-precision astronomical calculations with historical celestial sciences to craft a deeply authentic blueprint of your personality, career, and relationships.
+            Aura Astrology integrates high-precision astronomical calculations with historical celestial sciences to
+            craft a deeply authentic blueprint of your personality, career, and relationships.
           </p>
           <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
-            <a href="signup.html" class="w-full sm:w-64 text-center px-8 py-3.5 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-sm tracking-wider uppercase rounded shadow-lg shadow-indigo-950/40 hover:from-violet-600 hover:to-indigo-700 transition-all duration-300 gold-hover-ring">
+            <a href="signup.html"
+              class="w-full sm:w-64 text-center px-8 py-3.5 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-sm tracking-wider uppercase rounded shadow-lg shadow-indigo-950/40 hover:from-violet-600 hover:to-indigo-700 transition-all duration-300 gold-hover-ring">
               Get My Birth Chart
             </a>
-            <a href="sample-reports.html" class="w-full sm:w-64 text-center px-8 py-3.5 border border-amber-500/30 hover:border-amber-500/70 hover:bg-amber-500/5 text-amber-400 font-bold text-sm tracking-wider uppercase rounded transition-all duration-300">
+            <a href="sample-reports.html"
+              class="w-full sm:w-64 text-center px-8 py-3.5 border border-amber-500/30 hover:border-amber-500/70 hover:bg-amber-500/5 text-amber-400 font-bold text-sm tracking-wider uppercase rounded transition-all duration-300">
               View Sample Reading
             </a>
           </div>
@@ -96,12 +109,16 @@
         <div class="relative flex justify-center items-center scroll-reveal">
           <!-- Image 1: Spinner Chart background -->
           <div class="w-72 h-72 sm:w-96 sm:h-96 rounded-full border border-amber-500/15 p-4 animate-spin-slow">
-            <img src="assets/images/birth_chart.webp" alt="Birth Chart Wheel Template" class="w-full h-full object-contain rounded-full opacity-80" />
+            <img src="assets/images/birth_chart.webp" alt="Birth Chart Wheel Template"
+              class="w-full h-full object-contain rounded-full opacity-80" />
           </div>
           <!-- Image 2: Central solar graphic -->
-          <div class="absolute w-20 h-20 bg-slate-950 rounded-full border border-amber-500/40 flex items-center justify-center shadow-2xl">
-            <svg class="w-10 h-10 text-amber-500 animate-spin-medium" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          <div
+            class="absolute w-20 h-20 bg-slate-950 rounded-full border border-amber-500/40 flex items-center justify-center shadow-2xl">
+            <svg class="w-10 h-10 text-amber-500 animate-spin-medium" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
             </svg>
           </div>
         </div>
@@ -112,20 +129,23 @@
     <section class="py-16 border-b border-indigo-950/20 bg-slate-200 dark:bg-slate-950/40 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-stretch scroll-reveal">
-          
+
           <!-- Indicator 1 -->
           <div class="space-y-2 p-6 glass-panel rounded-lg h-full flex flex-col justify-between">
             <div>
               <!-- Image 1: Badge icon SVG -->
               <div class="flex justify-center mb-3">
                 <svg class="w-8 h-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
               <h3 class="text-3xl font-serif text-slate-900 dark:text-slate-100 font-bold">1.2M+</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-widest font-semibold">Charts Calculated</p>
+              <p class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-widest font-semibold">Charts
+                Calculated</p>
             </div>
-            <p class="text-xs text-slate-500 font-light mt-2">With orbital precision down to the exact second of birth.</p>
+            <p class="text-xs text-slate-500 font-light mt-2">With orbital precision down to the exact second of birth.
+            </p>
           </div>
 
           <!-- Indicator 2 -->
@@ -134,13 +154,16 @@
               <!-- Image 2: Certificate icon SVG -->
               <div class="flex justify-center mb-3">
                 <svg class="w-8 h-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
               <h3 class="text-3xl font-serif text-slate-900 dark:text-slate-100 font-bold">4.92/5</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-widest font-semibold">Accuracy Score</p>
+              <p class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-widest font-semibold">Accuracy
+                Score</p>
             </div>
-            <p class="text-xs text-slate-500 font-light mt-2">Rated by individuals finding resonant guidance in their path.</p>
+            <p class="text-xs text-slate-500 font-light mt-2">Rated by individuals finding resonant guidance in their
+              path.</p>
           </div>
 
           <!-- Indicator 3 -->
@@ -149,13 +172,16 @@
               <!-- Image 3: Staff icon SVG -->
               <div class="flex justify-center mb-3">
                 <svg class="w-8 h-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
               <h3 class="text-3xl font-serif text-slate-900 dark:text-slate-100 font-bold">12+</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-widest font-semibold">Astrologers on Staff</p>
+              <p class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-widest font-semibold">Astrologers
+                on Staff</p>
             </div>
-            <p class="text-xs text-slate-500 font-light mt-2">Certified members of international astrological associations.</p>
+            <p class="text-xs text-slate-500 font-light mt-2">Certified members of international astrological
+              associations.</p>
           </div>
 
         </div>
@@ -166,60 +192,85 @@
     <section class="py-24 border-b border-indigo-950/20 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center space-y-4 mb-16 scroll-reveal">
-          <h2 class="text-3xl sm:text-5xl font-bold text-indigo-950 dark:text-slate-100">Gateway to the Celestial Portals</h2>
-          <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto">Explore our range of professional astrological systems mapped by our expert systems.</p>
+          <h2 class="text-3xl sm:text-5xl font-bold text-indigo-950 dark:text-slate-100">Gateway to the Celestial
+            Portals</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto">Explore our range of
+            professional astrological systems mapped by our expert systems.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 scroll-reveal">
-          
+
           <!-- Service Card 1 -->
-          <div class="glass-panel p-6 rounded-lg space-y-4 hover:border-amber-500/50 transition-all duration-300 group flex flex-col justify-between">
+          <div
+            class="glass-panel p-6 rounded-lg space-y-4 hover:border-amber-500/50 transition-all duration-300 group flex flex-col justify-between">
             <div>
               <!-- Image 1: SVG Symbol -->
               <div class="text-amber-500 text-3xl mb-4 group-hover:scale-110 transition-transform">♈</div>
-              <h3 class="text-xl font-serif text-indigo-950 dark:text-slate-100 font-bold">Natal Chart</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-400 font-light mt-2">A complete visual blueprint of the sky at the exact second you took your first breath.</p>
+              <div class="min-h-[4rem] flex items-start">
+                <h3 class="text-xl font-serif text-indigo-950 dark:text-slate-100 font-bold leading-tight">Natal Chart
+                </h3>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 font-light mt-2">A complete visual blueprint of the
+                sky at the exact second you took your first breath.</p>
             </div>
-            <a href="readings.html" class="text-amber-500 text-xs font-semibold tracking-wider hover:text-amber-400 mt-4 inline-flex items-center space-x-1 rtl:space-x-reverse">
+            <a href="readings.html"
+              class="text-amber-500 text-xs font-semibold tracking-wider hover:text-amber-400 mt-4 inline-flex items-center space-x-1 rtl:space-x-reverse">
               <span>Explore Map</span> <span>→</span>
             </a>
           </div>
 
           <!-- Service Card 2 -->
-          <div class="glass-panel p-6 rounded-lg space-y-4 hover:border-amber-500/50 transition-all duration-300 group flex flex-col justify-between">
+          <div
+            class="glass-panel p-6 rounded-lg space-y-4 hover:border-amber-500/50 transition-all duration-300 group flex flex-col justify-between">
             <div>
               <!-- Image 2: SVG Symbol -->
               <div class="text-amber-500 text-3xl mb-4 group-hover:scale-110 transition-transform">♊</div>
-              <h3 class="text-xl font-serif text-indigo-950 dark:text-slate-100 font-bold">Synastry</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-400 font-light mt-2">Compare your chart with another to analyze emotional, romantic, and long-term compatibility.</p>
+              <div class="min-h-[4rem] flex items-start">
+                <h3 class="text-xl font-serif text-indigo-950 dark:text-slate-100 font-bold leading-tight">Synastry</h3>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 font-light mt-2">Compare your chart with another to
+                analyze emotional, romantic, and long-term compatibility.</p>
             </div>
-            <a href="compatibility.html" class="text-amber-500 text-xs font-semibold tracking-wider hover:text-amber-400 mt-4 inline-flex items-center space-x-1 rtl:space-x-reverse">
+            <a href="compatibility.html"
+              class="text-amber-500 text-xs font-semibold tracking-wider hover:text-amber-400 mt-4 inline-flex items-center space-x-1 rtl:space-x-reverse">
               <span>Check Alignment</span> <span>→</span>
             </a>
           </div>
 
           <!-- Service Card 3 -->
-          <div class="glass-panel p-6 rounded-lg space-y-4 hover:border-amber-500/50 transition-all duration-300 group flex flex-col justify-between">
+          <div
+            class="glass-panel p-6 rounded-lg space-y-4 hover:border-amber-500/50 transition-all duration-300 group flex flex-col justify-between">
             <div>
               <!-- Image 3: SVG Symbol -->
               <div class="text-amber-500 text-3xl mb-4 group-hover:scale-110 transition-transform">♌</div>
-              <h3 class="text-xl font-serif text-indigo-950 dark:text-slate-100 font-bold">Transit Forecasts</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-400 font-light mt-2">Track real-time planetary cycles affecting your energy, communication, and opportunities.</p>
+              <div class="min-h-[4rem] flex items-start">
+                <h3 class="text-xl font-serif text-indigo-950 dark:text-slate-100 font-bold leading-tight">Forecasts
+                </h3>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 font-light mt-2">Track real-time planetary cycles
+                affecting your energy, communication, and opportunities.</p>
             </div>
-            <a href="readings.html" class="text-amber-500 text-xs font-semibold tracking-wider hover:text-amber-400 mt-4 inline-flex items-center space-x-1 rtl:space-x-reverse">
+            <a href="readings.html"
+              class="text-amber-500 text-xs font-semibold tracking-wider hover:text-amber-400 mt-4 inline-flex items-center space-x-1 rtl:space-x-reverse">
               <span>View Timeline</span> <span>→</span>
             </a>
           </div>
 
           <!-- Service Card 4 -->
-          <div class="glass-panel p-6 rounded-lg space-y-4 hover:border-amber-500/50 transition-all duration-300 group flex flex-col justify-between">
+          <div
+            class="glass-panel p-6 rounded-lg space-y-4 hover:border-amber-500/50 transition-all duration-300 group flex flex-col justify-between">
             <div>
               <!-- Image 4: SVG Symbol -->
               <div class="text-amber-500 text-3xl mb-4 group-hover:scale-110 transition-transform">♎</div>
-              <h3 class="text-xl font-serif text-indigo-950 dark:text-slate-100 font-bold">Live Readings</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-400 font-light mt-2">Book deep-dive virtual consults with certified Western, Vedic, or Chinese astrologers.</p>
+              <div class="min-h-[4rem] flex items-start">
+                <h3 class="text-xl font-serif text-indigo-950 dark:text-slate-100 font-bold leading-tight">Live Readings
+                </h3>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 font-light mt-2">Book deep-dive virtual consults with
+                certified Western, Vedic, or Chinese astrologers.</p>
             </div>
-            <a href="contact.html" class="text-amber-500 text-xs font-semibold tracking-wider hover:text-amber-400 mt-4 inline-flex items-center space-x-1 rtl:space-x-reverse">
+            <a href="contact.html"
+              class="text-amber-500 text-xs font-semibold tracking-wider hover:text-amber-400 mt-4 inline-flex items-center space-x-1 rtl:space-x-reverse">
               <span>Schedule Session</span> <span>→</span>
             </a>
           </div>
@@ -234,40 +285,53 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center space-y-4 mb-20 scroll-reveal">
           <h2 class="text-3xl sm:text-5xl font-bold text-indigo-950 dark:text-slate-100">Your Celestial Pathway</h2>
-          <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto">How we extract cosmic wisdom from the cosmos to deliver a premium report directly to you.</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto">How we extract cosmic
+            wisdom from the cosmos to deliver a premium report directly to you.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 relative scroll-reveal">
           <!-- Step 1 -->
           <div class="relative space-y-4 text-center">
             <!-- Image 1: Number Badge -->
-            <div class="mx-auto w-12 h-12 rounded-full border border-amber-500/40 bg-indigo-950/60 flex items-center justify-center text-amber-500 font-bold">I</div>
+            <div
+              class="mx-auto w-12 h-12 rounded-full border border-amber-500/40 bg-indigo-950/60 flex items-center justify-center text-amber-500 font-bold">
+              I</div>
             <h3 class="text-lg font-serif font-bold">Input Details</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-400 font-light">Submit your exact date, time, and city of birth. Even a five-minute difference changes the ASC cusp.</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400 font-light">Submit your exact date, time, and city of
+              birth. Even a five-minute difference changes the ASC cusp.</p>
           </div>
 
           <!-- Step 2 -->
           <div class="relative space-y-4 text-center">
             <!-- Image 2: Number Badge -->
-            <div class="mx-auto w-12 h-12 rounded-full border border-amber-500/40 bg-indigo-950/60 flex items-center justify-center text-amber-500 font-bold">II</div>
+            <div
+              class="mx-auto w-12 h-12 rounded-full border border-amber-500/40 bg-indigo-950/60 flex items-center justify-center text-amber-500 font-bold">
+              II</div>
             <h3 class="text-lg font-serif font-bold">Map Computation</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-400 font-light">Our specialized ephemeris algorithm calculates exact orbital coordinates for all solar system nodes.</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400 font-light">Our specialized ephemeris algorithm
+              calculates exact orbital coordinates for all solar system nodes.</p>
           </div>
 
           <!-- Step 3 -->
           <div class="relative space-y-4 text-center">
             <!-- Image 3: Number Badge -->
-            <div class="mx-auto w-12 h-12 rounded-full border border-amber-500/40 bg-indigo-950/60 flex items-center justify-center text-amber-500 font-bold">III</div>
+            <div
+              class="mx-auto w-12 h-12 rounded-full border border-amber-500/40 bg-indigo-950/60 flex items-center justify-center text-amber-500 font-bold">
+              III</div>
             <h3 class="text-lg font-serif font-bold">Astrologer Review</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-400 font-light">A certified astrologer inspects complex aspect pairings (squares, trines) to synthesize raw data.</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400 font-light">A certified astrologer inspects complex
+              aspect pairings (squares, trines) to synthesize raw data.</p>
           </div>
 
           <!-- Step 4 -->
           <div class="relative space-y-4 text-center">
             <!-- Image 4: Number Badge -->
-            <div class="mx-auto w-12 h-12 rounded-full border border-amber-500/40 bg-indigo-950/60 flex items-center justify-center text-amber-500 font-bold">IV</div>
+            <div
+              class="mx-auto w-12 h-12 rounded-full border border-amber-500/40 bg-indigo-950/60 flex items-center justify-center text-amber-500 font-bold">
+              IV</div>
             <h3 class="text-lg font-serif font-bold">Receive Analysis</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-400 font-light">Download your annotated PDF report and access interactive details in your client dashboard.</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400 font-light">Download your annotated PDF report and
+              access interactive details in your client dashboard.</p>
           </div>
         </div>
       </div>
@@ -275,44 +339,53 @@
 
     <!-- SECTION 5: SAMPLE CHART PREVIEW -->
     <section class="py-24 border-b border-indigo-950/20 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
         <!-- Live SVG Chart Render -->
         <div class="flex justify-center flex-col items-center glass-panel p-6 rounded-lg relative scroll-reveal">
-          <h4 class="text-center font-serif text-amber-500 text-sm font-semibold tracking-wider mb-4 uppercase">Interactive Natal Blueprint</h4>
+          <h4 class="text-center font-serif text-amber-500 text-sm font-semibold tracking-wider mb-4 uppercase">
+            Interactive Natal Blueprint</h4>
           <div id="demo-home-chart" class="w-full max-w-[280px] md:max-w-[320px]">
             <!-- JS Renders Interactive SVG Birth Chart here -->
           </div>
-          <p class="text-[10px] text-slate-500 mt-4 text-center">Hover nodes on the chart to inspect degrees & houses.</p>
+          <p class="text-[10px] text-slate-500 mt-4 text-center">Hover nodes on the chart to inspect degrees & houses.
+          </p>
         </div>
 
         <!-- Text details -->
         <div class="space-y-6 scroll-reveal text-center lg:text-left">
           <h2 class="text-3xl sm:text-5xl font-bold text-indigo-950 dark:text-slate-100">Visualizing the Skies</h2>
           <p class="text-sm text-slate-600 dark:text-slate-400 font-light">
-            Our platform renders high-definition birth chart vectors. Explore each celestial node's placement and the aspects connecting them, mapping your energetic blueprint.
+            Our platform renders high-definition birth chart vectors. Explore each celestial node's placement and the
+            aspects connecting them, mapping your energetic blueprint.
           </p>
-          
+
           <div class="space-y-3">
-            <div class="flex items-center space-x-3 rtl:space-x-reverse text-sm">
-              <span class="text-amber-500">☉</span>
+            <div class="flex items-start space-x-3 rtl:space-x-reverse text-sm">
+              <span class="text-amber-500 flex-shrink-0 mt-0.5">☉</span>
               <div>
                 <strong class="font-serif">Sun, Moon, and Ascendant Cusp</strong>
                 <p class="text-xs text-slate-500">The sacred triad detailing your identity, emotion, and perception.</p>
               </div>
             </div>
-            <div class="flex items-center space-x-3 rtl:space-x-reverse text-sm">
-              <span class="text-amber-500">☽</span>
+            <div class="flex items-start space-x-3 rtl:space-x-reverse text-sm">
+              <span class="text-amber-500 flex-shrink-0 mt-0.5">☽</span>
               <div>
                 <strong class="font-serif">Aspect Configurations</strong>
-                <p class="text-xs text-slate-500">Colored visual indicators mapping conjuncts, trines, and oppositions.</p>
+                <p class="text-xs text-slate-500">Colored visual indicators mapping conjuncts, trines, and oppositions.
+                </p>
               </div>
             </div>
           </div>
 
           <div class="pt-4 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-            <a href="sample-reports.html" class="w-full sm:w-auto text-center px-6 py-3 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-xs tracking-wider uppercase rounded shadow hover:from-violet-600 hover:to-indigo-700 transition-all gold-hover-ring">Explore Full Sample</a>
-            <a href="signup.html" class="w-full sm:w-auto text-center px-6 py-3 border border-amber-500/30 hover:border-amber-500/80 text-amber-400 font-bold text-xs tracking-wider uppercase rounded transition-all">Generate My Map</a>
+            <a href="sample-reports.html"
+              class="w-full sm:w-auto text-center px-6 py-3 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-xs tracking-wider uppercase rounded shadow hover:from-violet-600 hover:to-indigo-700 transition-all gold-hover-ring">Explore
+              Full Sample</a>
+            <a href="signup.html"
+              class="w-full sm:w-auto text-center px-6 py-3 border border-amber-500/30 hover:border-amber-500/80 text-amber-400 font-bold text-xs tracking-wider uppercase rounded transition-all">Generate
+              My Map</a>
           </div>
         </div>
 
@@ -324,17 +397,21 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center space-y-4 mb-16 scroll-reveal">
           <h2 class="text-3xl sm:text-5xl font-bold text-indigo-950 dark:text-slate-100">Client Reflections</h2>
-          <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto">Real journeys of individuals who have aligned their paths through celestial coordination.</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto">Real journeys of
+            individuals who have aligned their paths through celestial coordination.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 scroll-reveal">
           <!-- Testimonial 1 -->
           <div class="glass-panel p-6 rounded-lg space-y-4 flex flex-col justify-between">
             <p class="text-xs font-light text-slate-700 dark:text-slate-300 leading-relaxed italic">
-              "The Natal Chart Reading was incredibly accurate. It named specific transit windows that corresponded to major professional career shifts. I highly recommend the Standard Package."
+              "The Natal Chart Reading was incredibly accurate. It named specific transit windows that corresponded to
+              major professional career shifts. I highly recommend the Standard Package."
             </p>
             <div class="flex items-center space-x-3 rtl:space-x-reverse pt-4 border-t border-slate-900">
-              <div class="w-8 h-8 rounded-full bg-indigo-800 text-xs font-bold flex items-center justify-center text-amber-500">MK</div>
+              <div
+                class="w-8 h-8 rounded-full bg-indigo-800 text-xs font-bold flex items-center justify-center text-amber-500">
+                MK</div>
               <div>
                 <h5 class="text-xs font-serif font-bold text-slate-900 dark:text-slate-100">Marcus K.</h5>
                 <span class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Sun in Taurus</span>
@@ -345,10 +422,13 @@
           <!-- Testimonial 2 -->
           <div class="glass-panel p-6 rounded-lg space-y-4 flex flex-col justify-between">
             <p class="text-xs font-light text-slate-700 dark:text-slate-300 leading-relaxed italic">
-              "My partner and I ordered a Compatibility Report. The report detailed differences in our communication cues that we had struggled to articulate. The insights helped us bridge that gap."
+              "My partner and I ordered a Compatibility Report. The report detailed differences in our communication
+              cues that we had struggled to articulate. The insights helped us bridge that gap."
             </p>
             <div class="flex items-center space-x-3 rtl:space-x-reverse pt-4 border-t border-slate-900">
-              <div class="w-8 h-8 rounded-full bg-indigo-800 text-xs font-bold flex items-center justify-center text-amber-500">SR</div>
+              <div
+                class="w-8 h-8 rounded-full bg-indigo-800 text-xs font-bold flex items-center justify-center text-amber-500">
+                SR</div>
               <div>
                 <h5 class="text-xs font-serif font-bold text-slate-900 dark:text-slate-100">Sarah R.</h5>
                 <span class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Sun in Libra</span>
@@ -359,10 +439,13 @@
           <!-- Testimonial 3 -->
           <div class="glass-panel p-6 rounded-lg space-y-4 flex flex-col justify-between">
             <p class="text-xs font-light text-slate-700 dark:text-slate-300 leading-relaxed italic">
-              "Booking a live session was amazing. The astrologer was structured, data-focused, and clarified how the upcoming Mars transit will affect my career path. Pure gold."
+              "Booking a live session was amazing. The astrologer was structured, data-focused, and clarified how the
+              upcoming Mars transit will affect my career path. Pure gold."
             </p>
             <div class="flex items-center space-x-3 rtl:space-x-reverse pt-4 border-t border-slate-900">
-              <div class="w-8 h-8 rounded-full bg-indigo-800 text-xs font-bold flex items-center justify-center text-amber-500">AN</div>
+              <div
+                class="w-8 h-8 rounded-full bg-indigo-800 text-xs font-bold flex items-center justify-center text-amber-500">
+                AN</div>
               <div>
                 <h5 class="text-xs font-serif font-bold text-slate-900 dark:text-slate-100">Aron N.</h5>
                 <span class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Sun in Scorpio</span>
@@ -376,18 +459,24 @@
     <!-- SECTION 7: CALL TO ACTION -->
     <section class="py-24 relative overflow-hidden">
       <div class="starfield" data-stars="40"></div>
-      <div class="absolute inset-0 bg-cover bg-center opacity-10 pointer-events-none" style="background-image: url('assets/images/cosmic_bg.webp');"></div>
+      <div class="absolute inset-0 bg-cover bg-center opacity-10 pointer-events-none"
+        style="background-image: url('assets/images/cosmic_bg.webp');"></div>
 
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8 glass-panel p-6 sm:p-12 rounded-xl border border-amber-500/25 scroll-reveal">
-        <h2 class="text-3xl sm:text-5xl font-serif text-slate-900 dark:text-slate-100 font-bold leading-tight">Unlock Your <span class="gradient-text-gold glow-gold">Celestial Map</span></h2>
+      <div
+        class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8 glass-panel p-6 sm:p-12 rounded-xl border border-amber-500/25 scroll-reveal">
+        <h2 class="text-3xl sm:text-5xl font-serif text-slate-900 dark:text-slate-100 font-bold leading-tight">Unlock
+          Your <span class="gradient-text-gold glow-gold">Celestial Map</span></h2>
         <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-xl mx-auto">
-          Begin your journey today. Map your planetary alignments, understand relationship dynamics, or book consultations with certified celestial researchers.
+          Begin your journey today. Map your planetary alignments, understand relationship dynamics, or book
+          consultations with certified celestial researchers.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-          <a href="signup.html" class="w-full sm:w-auto text-center px-8 py-3.5 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-xs tracking-wider uppercase rounded shadow shadow-indigo-950/30 transition-all duration-300 gold-hover-ring">
+          <a href="signup.html"
+            class="w-full sm:w-auto text-center px-8 py-3.5 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-xs tracking-wider uppercase rounded shadow shadow-indigo-950/30 transition-all duration-300 gold-hover-ring">
             Calculate My Birth Chart
           </a>
-          <a href="pricing.html" class="w-full sm:w-auto text-center px-8 py-3.5 border border-slate-700 hover:border-amber-500 hover:bg-amber-500/5 text-slate-700 dark:text-slate-300 hover:text-amber-400 font-bold text-xs tracking-wider uppercase rounded transition-all duration-300">
+          <a href="pricing.html"
+            class="w-full sm:w-auto text-center px-8 py-3.5 border border-slate-700 hover:border-amber-500 hover:bg-amber-500/5 text-slate-700 dark:text-slate-300 hover:text-amber-400 font-bold text-xs tracking-wider uppercase rounded transition-all duration-300">
             View Astrology Tiers
           </a>
         </div>
@@ -411,4 +500,5 @@
     });
   </script>
 </body>
+
 </html>

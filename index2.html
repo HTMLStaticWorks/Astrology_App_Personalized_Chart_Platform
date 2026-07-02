@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Astrology - Your Cosmic Blueprint Awaits</title>
+  <meta name="description" content="Get your personalized cosmic blueprint and understand your stellar destiny with precision astronomical calculations." />
+  
+  <!-- Tailwind CSS CDN v3 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cosmicIndigo: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c084fc',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#1e1b4b',
+              950: '#090514',
+            },
+            celestialGold: {
+              50: '#fefbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+              800: '#92400e',
+              950: '#451a03',
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-cosmicIndigo-950 dark:text-slate-100 transition-colors duration-300">
+
+  <!-- Header root -->
+  <div id="header-root"></div>
+
+  <!-- Main Content Wrapper -->
+  <main class="pt-20">
+
+    <!-- HERO SECTION (Split Layout) -->
+    <section class="relative min-h-[90vh] flex items-center overflow-hidden border-b border-indigo-950/20">
+      <div class="absolute inset-0 bg-[url('assets/images/cosmic_bg.webp')] bg-cover bg-center opacity-20 pointer-events-none mix-blend-screen"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20">
+        
+        <!-- Left Side: Copy & Quick Action -->
+        <div class="space-y-8 text-center lg:text-left scroll-reveal">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-violet-900/30 border border-violet-500/30 text-violet-300 text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
+            <span>✨ Unlock The Universe Within</span>
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight leading-tight text-indigo-950 dark:text-slate-50">
+            Your Cosmic <br/>
+            <span class="gradient-text-gold glow-gold">Blueprint</span> Awaits
+          </h1>
+          
+          <p class="text-lg text-slate-600 dark:text-slate-300 font-light max-w-xl mx-auto lg:mx-0">
+            Harness the power of high-precision celestial data to uncover the forces shaping your personality, career, and relationships.
+          </p>
+          
+          <!-- Quick Signup Form -->
+          <div class="glass-panel p-6 rounded-xl max-w-md mx-auto lg:mx-0 bg-white/10 dark:bg-slate-900/40 backdrop-blur-md border border-slate-200 dark:border-indigo-900/30">
+            <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-4 uppercase tracking-widest">Start Your Journey</h3>
+            <form action="signup.html" class="space-y-4">
+              <div>
+                <input type="email" placeholder="Enter your email address" class="w-full bg-slate-50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded px-4 py-3 text-sm focus:outline-none focus:border-amber-500 transition-colors" required>
+              </div>
+              <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-900 font-bold text-sm tracking-wider uppercase rounded py-3 shadow-lg shadow-amber-500/20 transition-all duration-300">
+                Generate My Chart
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right Side: Immersive Visual -->
+        <div class="relative flex justify-center items-center scroll-reveal hidden lg:flex">
+          <div class="absolute w-[500px] h-[500px] bg-violet-600/20 rounded-full blur-[100px] animate-pulse"></div>
+          <div class="relative w-full aspect-square max-w-[600px] flex items-center justify-center">
+             <!-- Outer rotating ring -->
+             <div class="absolute inset-0 border-[2px] border-dashed border-amber-500/20 rounded-full animate-spin-slow"></div>
+             <!-- Inner glowing element -->
+             <div class="relative w-3/4 h-3/4 bg-gradient-to-br from-indigo-900/80 to-violet-900/80 rounded-full border border-indigo-500/30 shadow-2xl flex items-center justify-center backdrop-blur-xl">
+               <svg class="w-32 h-32 text-amber-500 drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+               </svg>
+               <div class="absolute inset-0 bg-[url('assets/images/birth_chart.webp')] bg-cover bg-center rounded-full opacity-40 mix-blend-overlay animate-[spin_60s_linear_infinite_reverse]"></div>
+             </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS (3-Step Process) -->
+    <section class="py-24 bg-white dark:bg-slate-900 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16 scroll-reveal">
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100">The Path to Clarity</h2>
+          <div class="w-20 h-1 bg-amber-500 mx-auto mt-6 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center scroll-reveal relative">
+          <!-- Connecting Line for desktop -->
+          <div class="hidden md:block absolute top-1/2 left-1/6 right-1/6 h-0.5 bg-slate-200 dark:bg-slate-800 -translate-y-1/2 z-0"></div>
+
+          <!-- Step 1 -->
+          <div class="relative z-10 space-y-6">
+            <div class="w-20 h-20 mx-auto bg-slate-50 dark:bg-slate-950 border-2 border-indigo-200 dark:border-indigo-900 rounded-full flex items-center justify-center shadow-xl">
+              <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">01</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">Input Coordinates</h3>
+              <p class="text-slate-600 dark:text-slate-400 text-sm">Provide your exact time, date, and location of birth for ultimate precision.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative z-10 space-y-6">
+            <div class="w-20 h-20 mx-auto bg-slate-50 dark:bg-slate-950 border-2 border-amber-200 dark:border-amber-700 rounded-full flex items-center justify-center shadow-xl">
+              <span class="text-2xl font-bold text-amber-500">02</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">Celestial Calculation</h3>
+              <p class="text-slate-600 dark:text-slate-400 text-sm">Our algorithm maps the exact planetary alignments at your moment of arrival.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative z-10 space-y-6">
+            <div class="w-20 h-20 mx-auto bg-slate-50 dark:bg-slate-950 border-2 border-violet-200 dark:border-violet-900 rounded-full flex items-center justify-center shadow-xl">
+              <span class="text-2xl font-bold text-violet-600 dark:text-violet-400">03</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">Discover Insights</h3>
+              <p class="text-slate-600 dark:text-slate-400 text-sm">Receive your deeply personalized analysis and cosmic roadmap.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED READING -->
+    <section class="py-24 relative overflow-hidden border-t border-indigo-950/20">
+      <div class="absolute inset-0 bg-gradient-to-b from-indigo-950 to-slate-950 opacity-90"></div>
+      
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="glass-panel p-8 sm:p-12 rounded-2xl bg-white/5 dark:bg-white/5 border border-white/10 flex flex-col md:flex-row items-center gap-12 shadow-2xl">
+          
+          <div class="w-full md:w-1/2 space-y-6">
+            <div class="inline-flex px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-widest rounded border border-amber-500/30">
+              Most Popular
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-serif text-white font-bold">The Life Purpose Reading</h2>
+            <p class="text-slate-300 font-light leading-relaxed">
+              Dive deep into your North Node, Midheaven, and dominant elemental forces to uncover your true calling. This extensive 40-page report is designed for those seeking profound career and spiritual clarity.
+            </p>
+            <ul class="space-y-3 text-sm text-slate-400">
+              <li class="flex items-center space-x-3"><span class="text-amber-500">✦</span> <span>Karmic path analysis</span></li>
+              <li class="flex items-center space-x-3"><span class="text-amber-500">✦</span> <span>Career sector breakdown</span></li>
+              <li class="flex items-center space-x-3"><span class="text-amber-500">✦</span> <span>Hidden talents activation</span></li>
+            </ul>
+            <div class="pt-4">
+              <a href="pricing.html" class="inline-flex items-center justify-center px-8 py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm uppercase tracking-wider rounded transition-colors duration-300">
+                Unlock Premium Report
+              </a>
+            </div>
+          </div>
+          
+          <div class="w-full md:w-1/2 flex justify-center">
+            <div class="relative w-64 h-80 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(139,92,246,0.3)] transform rotate-3 hover:rotate-0 transition-transform duration-500 border border-white/20">
+              <img src="assets/images/cosmic_bg.webp" alt="Life Purpose Reading Cover" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent flex items-end p-6">
+                <div class="space-y-1">
+                  <h4 class="text-white font-serif font-bold text-lg">Life Purpose</h4>
+                  <p class="text-amber-400 text-xs uppercase tracking-widest">Premium PDF</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer root -->
+  <div id="footer-root"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
