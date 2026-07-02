@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:wght@100..900&display=swap');
 
 :root {
   --primary: #4C1D95; /* Deep Indigo */
@@ -18,14 +18,65 @@ html.dark {
 
 body {
   font-family: var(--font-sans);
+  font-weight: 420 !important;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, h5, h6, .astrologer-title {
+/* Typography Hierarchy Enforcement */
+h1 {
   font-family: var(--font-serif);
+  font-weight: 580 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   word-break: break-word;
   overflow-wrap: anywhere;
+}
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 560 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+h3, .astrologer-title {
+  font-family: var(--font-serif);
+  font-weight: 540 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Body & Subheading Weights */
+p, li {
+  font-weight: 420 !important;
+}
+.subheading, .lead {
+  font-weight: 480 !important;
+}
+strong, b {
+  font-weight: 550 !important;
+}
+
+/* UI Element Weights */
+button, .btn {
+  font-weight: 520 !important;
+}
+label, .nav-link, a {
+  font-weight: 480 !important;
+}
+small, .caption {
+  font-weight: 400 !important;
 }
 
 /* Prevent text overflow on all screen sizes */
