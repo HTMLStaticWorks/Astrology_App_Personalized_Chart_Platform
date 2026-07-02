@@ -41,7 +41,7 @@ function updateThemeUI() {
   themeToggles.forEach(toggle => {
     if (isLight) {
       toggle.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-indigo-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400 hover:text-amber-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
       `;
@@ -58,8 +58,9 @@ function updateThemeUI() {
 // 2. RTL (Right-To-Left) Management
 const translations = {
   en: {
-    logo: 'Aura Astro',
+    logo: 'ASTRO',
     home: 'Home',
+    home2: 'Home 2',
     readings: 'Readings',
     pricing: 'Pricing',
     samples: 'Sample Reports',
@@ -73,8 +74,9 @@ const translations = {
     footerTag: 'Guiding your path through celestial science.'
   },
   ar: {
-    logo: 'أورا أسترو',
+    logo: 'أسترو',
     home: 'الرئيسية',
+    home2: 'الرئيسية ٢',
     readings: 'القراءات',
     pricing: 'الأسعار',
     samples: 'تقارير عينة',
@@ -132,6 +134,7 @@ function translateLayout() {
   // Dynamic navbar translates
   document.querySelectorAll('[data-t-logo]').forEach(el => el.textContent = t.logo);
   document.querySelectorAll('[data-t-home]').forEach(el => el.textContent = t.home);
+  document.querySelectorAll('[data-t-home2]').forEach(el => el.textContent = t.home2);
   document.querySelectorAll('[data-t-readings]').forEach(el => el.textContent = t.readings);
   document.querySelectorAll('[data-t-pricing]').forEach(el => el.textContent = t.pricing);
   document.querySelectorAll('[data-t-samples]').forEach(el => el.textContent = t.samples);
@@ -158,66 +161,65 @@ function injectComponents() {
 
   if (headerRoot) {
     headerRoot.innerHTML = `
-      <nav class="fixed top-0 start-0 w-full z-50 border-b border-indigo-950/20 bg-white/80 dark:bg-slate-950/70 backdrop-blur-md transition-all duration-300">
+      <nav class="fixed top-0 start-0 w-full z-50 border-b border-indigo-950/20 bg-slate-950/70 backdrop-blur-md transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex items-center justify-between h-20">
             <!-- Brand Logo -->
-            <div class="flex items-center lg:flex-1">
+            <div class="flex items-center xl:flex-1">
               <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse text-amber-500 font-bold text-xl tracking-wider whitespace-nowrap">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                 </svg>
-                <span data-t-logo class="font-serif text-slate-900 dark:text-slate-100 whitespace-nowrap">${t.logo}</span>
+                <span data-t-logo class="font-serif text-slate-100 whitespace-nowrap">${t.logo}</span>
               </a>
             </div>
 
             <!-- Navigation Links -->
-            <div class="hidden lg:flex items-center justify-center space-x-2 xl:space-x-4 rtl:space-x-reverse text-xs xl:text-sm font-medium">
-              <a href="index.html" data-t-home class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'index.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.home}</a>
-              <a href="about.html" data-t-about class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'about.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.about}</a>
-              <a href="pricing.html" data-t-pricing class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'pricing.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.pricing}</a>
-              <a href="sample-reports.html" data-t-samples class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'sample-reports.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.samples}</a>
-              <a href="compatibility.html" data-t-compatibility class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'compatibility.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.compatibility}</a>
-              <a href="contact.html" data-t-contact class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'contact.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.contact}</a>
-              <a href="dashboard.html" data-t-dashboard class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'dashboard.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.dashboard}</a>
+            <div class="hidden xl:flex items-center justify-center space-x-2 xl:space-x-4 rtl:space-x-reverse text-xs xl:text-sm font-medium">
+              <a href="index.html" data-t-home class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'index.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.home}</a>
+              <a href="index2.html" data-t-home2 class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'index2.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.home2}</a>
+              <a href="about.html" data-t-about class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'about.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.about}</a>
+              <a href="pricing.html" data-t-pricing class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'pricing.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.pricing}</a>
+              <a href="sample-reports.html" data-t-samples class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'sample-reports.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.samples}</a>
+              <a href="compatibility.html" data-t-compatibility class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'compatibility.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.compatibility}</a>
+              <a href="contact.html" data-t-contact class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'contact.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.contact}</a>
+              <a href="dashboard.html" data-t-dashboard class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'dashboard.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.dashboard}</a>
             </div>
 
             <!-- Right-Side Utilities & CTAs -->
-            <div class="hidden lg:flex items-center justify-end lg:flex-1 space-x-1.5 xl:space-x-2 rtl:space-x-reverse">
-              <!-- Secondary CTA -->
-              <a href="sample-reports.html" data-t-cta-secondary class="h-10 flex items-center justify-center px-2.5 xl:px-4 border border-amber-500/30 hover:border-amber-500/80 hover:bg-amber-500/5 text-amber-400 font-semibold text-[11px] xl:text-xs tracking-wider uppercase rounded transition-all duration-300 whitespace-nowrap flex-shrink-0">${t.ctaSecondary}</a>
-              
+            <div class="hidden xl:flex items-center justify-end xl:flex-1 space-x-1.5 xl:space-x-2 rtl:space-x-reverse">
+              <!-- Secondary CTA Removed -->
               <!-- Primary CTA -->
               <a href="signup.html" data-t-cta-primary class="h-10 flex items-center justify-center px-2.5 xl:px-4 bg-gradient-to-r from-violet-700 to-indigo-800 hover:from-violet-600 hover:to-indigo-700 text-white font-semibold text-[11px] xl:text-xs tracking-wider uppercase rounded shadow-lg shadow-indigo-900/30 transition-all duration-300 gold-hover-ring whitespace-nowrap flex-shrink-0">${t.ctaPrimary}</a>
               
               <!-- Divider -->
-              <div class="w-px h-6 bg-slate-200 dark:bg-slate-800"></div>
+              <div class="w-px h-6 bg-slate-800"></div>
 
               <!-- Dark/Light Theme Toggle -->
-              <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
+              <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-800 hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
                 <!-- Inner HTML is dynamically generated by updateThemeUI() -->
               </button>
 
               <!-- RTL Toggle -->
-              <button onclick="toggleRTL()" class="rtl-toggle h-10 w-10 xl:w-12 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-700 dark:text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
+              <button onclick="toggleRTL()" class="rtl-toggle h-10 w-10 xl:w-12 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
                 ${isRtl ? 'EN' : 'عربي'}
               </button>
             </div>
 
             <!-- Mobile Hamburger Toggle -->
-            <div class="flex lg:hidden items-center space-x-2 rtl:space-x-reverse">
+            <div class="flex xl:hidden items-center space-x-2 rtl:space-x-reverse">
               <!-- Dark/Light Theme Toggle -->
-              <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
+              <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-800 hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
                 <!-- Inner HTML is dynamically generated by updateThemeUI() -->
               </button>
 
               <!-- RTL Toggle -->
-              <button onclick="toggleRTL()" class="rtl-toggle h-10 w-10 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-700 dark:text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
+              <button onclick="toggleRTL()" class="rtl-toggle h-10 w-10 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
                 ${isRtl ? 'EN' : 'عربي'}
               </button>
 
               <!-- Mobile Hamburger Toggle -->
-              <button onclick="toggleMobileNav()" class="w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900/30 text-slate-700 dark:text-slate-300 hover:text-amber-500 focus:outline-none transition-all duration-200 flex-shrink-0">
+              <button onclick="toggleMobileNav()" class="w-10 h-10 flex items-center justify-center rounded border border-slate-800 hover:bg-slate-900/30 text-slate-300 hover:text-amber-500 focus:outline-none transition-all duration-200 flex-shrink-0">
                 <svg id="mobile-menu-burger" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
@@ -230,17 +232,17 @@ function injectComponents() {
         </div>
 
         <!-- Mobile Menu Container -->
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-indigo-950/20 bg-white dark:bg-slate-950/95 px-4 pt-2 pb-6 space-y-3 flex flex-col text-base font-medium shadow-2xl transition-all duration-300">
-          <a href="index.html" data-t-home class="py-2 border-b border-slate-800/40 ${currentPath === 'index.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.home}</a>
-          <a href="about.html" data-t-about class="py-2 border-b border-slate-800/40 ${currentPath === 'about.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.about}</a>
-          <a href="pricing.html" data-t-pricing class="py-2 border-b border-slate-800/40 ${currentPath === 'pricing.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.pricing}</a>
-          <a href="sample-reports.html" data-t-samples class="py-2 border-b border-slate-800/40 ${currentPath === 'sample-reports.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.samples}</a>
-          <a href="compatibility.html" data-t-compatibility class="py-2 border-b border-slate-800/40 ${currentPath === 'compatibility.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.compatibility}</a>
-          <a href="contact.html" data-t-contact class="py-2 border-b border-slate-800/40 ${currentPath === 'contact.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.contact}</a>
-          <a href="dashboard.html" data-t-dashboard class="py-2 border-b border-slate-800/40 ${currentPath === 'dashboard.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.dashboard}</a>
+        <div id="mobile-menu" class="hidden xl:hidden border-t border-indigo-950/20 bg-slate-950/95 px-4 pt-2 pb-6 space-y-3 flex flex-col text-base font-medium shadow-2xl transition-all duration-300">
+          <a href="index.html" data-t-home class="py-2 border-b border-slate-800/40 ${currentPath === 'index.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.home}</a>
+          <a href="index2.html" data-t-home2 class="py-2 border-b border-slate-800/40 ${currentPath === 'index2.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.home2}</a>
+          <a href="about.html" data-t-about class="py-2 border-b border-slate-800/40 ${currentPath === 'about.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.about}</a>
+          <a href="pricing.html" data-t-pricing class="py-2 border-b border-slate-800/40 ${currentPath === 'pricing.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.pricing}</a>
+          <a href="sample-reports.html" data-t-samples class="py-2 border-b border-slate-800/40 ${currentPath === 'sample-reports.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.samples}</a>
+          <a href="compatibility.html" data-t-compatibility class="py-2 border-b border-slate-800/40 ${currentPath === 'compatibility.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.compatibility}</a>
+          <a href="contact.html" data-t-contact class="py-2 border-b border-slate-800/40 ${currentPath === 'contact.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.contact}</a>
+          <a href="dashboard.html" data-t-dashboard class="py-2 border-b border-slate-800/40 ${currentPath === 'dashboard.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.dashboard}</a>
           
           <div class="flex flex-col gap-2 pt-2">
-            <a href="sample-reports.html" data-t-cta-secondary class="w-full text-center px-4 py-2 border border-amber-500/30 text-amber-400 font-semibold text-sm rounded transition-all">${t.ctaSecondary}</a>
             <a href="signup.html" data-t-cta-primary class="w-full text-center px-4 py-2 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-semibold text-sm rounded shadow-lg transition-all">${t.ctaPrimary}</a>
           </div>
         </div>
@@ -256,12 +258,12 @@ function injectComponents() {
           
           <!-- Column 1: Brand -->
           <div class="space-y-4">
-            <div class="flex items-center space-x-2 rtl:space-x-reverse text-amber-500 font-bold text-lg tracking-wider">
+            <a href="index.html" class="inline-flex items-center space-x-2 rtl:space-x-reverse text-amber-500 hover:text-amber-400 transition-colors font-bold text-lg tracking-wider">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
               </svg>
-              <span data-t-logo class="font-serif text-slate-100">${t.logo}</span>
-            </div>
+              <span data-t-logo class="font-serif">${t.logo}</span>
+            </a>
             <p data-t-footer-tag class="text-sm font-light text-slate-500">${t.footerTag}</p>
             <div class="flex space-x-4 rtl:space-x-reverse pt-2">
               <!-- Twitter/X -->
