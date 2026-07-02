@@ -52,6 +52,7 @@ function initDashboardRouter() {
       // Close mobile sidebar if open
       if (sidebar && !sidebar.classList.contains('-translate-x-full')) {
         sidebar.classList.add('-translate-x-full', 'rtl:translate-x-full');
+        document.body.classList.remove('overflow-hidden');
       }
     });
   });
@@ -61,6 +62,16 @@ function initDashboardRouter() {
     sidebarToggle.addEventListener('click', () => {
       sidebar.classList.toggle('-translate-x-full');
       sidebar.classList.toggle('rtl:translate-x-full');
+      document.body.classList.toggle('overflow-hidden');
+    });
+  }
+
+  // Mobile sidebar close button handler
+  const sidebarClose = document.getElementById('sidebar-close-btn');
+  if (sidebarClose && sidebar) {
+    sidebarClose.addEventListener('click', () => {
+      sidebar.classList.add('-translate-x-full', 'rtl:translate-x-full');
+      document.body.classList.remove('overflow-hidden');
     });
   }
 }

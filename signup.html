@@ -51,21 +51,24 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-cosmicIndigo-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex items-center justify-center relative p-4">
+<body class="bg-slate-50 text-slate-900 dark:bg-cosmicIndigo-950 dark:text-slate-100 transition-colors duration-300">
+<main class="min-h-screen relative flex items-center justify-center pt-24 pb-12 px-4 sm:px-6">
 
   <!-- Twinkling background -->
   <div class="starfield" data-stars="50"></div>
   <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('assets/images/cosmic_bg.webp');"></div>
 
   <!-- Top bar utility toggles -->
-  <div class="absolute top-4 end-4 flex items-center space-x-3 rtl:space-x-reverse z-20">
+  <div class="fixed top-4 end-4 flex items-center space-x-3 rtl:space-x-reverse z-50">
     <!-- Theme Toggle -->
     <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 bg-slate-950/30 hover:bg-slate-100 dark:hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
       <!-- Dynamic Theme Icon -->
     </button>
     <!-- RTL Toggle -->
-    <button onclick="toggleRTL()" class="rtl-toggle h-10 w-12 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-700 dark:text-slate-300 hover:text-amber-400 font-medium bg-slate-950/30 transition-all duration-200 whitespace-nowrap flex-shrink-0">
-      عربي
+    <button onclick="toggleRTL()" class="rtl-toggle absolute top-6 start-16 xl:start-6 h-10 w-10 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 z-50 bg-slate-900/50 backdrop-blur-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+      </svg>
     </button>
   </div>
 
@@ -73,11 +76,11 @@
   <div class="glass-panel max-w-md w-full p-8 rounded-lg border border-amber-500/25 shadow-2xl relative z-10 space-y-6">
     <div class="text-center space-y-2">
       <!-- Logo -->
-      <a href="index.html" class="inline-flex items-center space-x-2 rtl:space-x-reverse text-amber-500 font-bold text-xl tracking-wider justify-center">
+      <a href="index.html" class="flex items-center justify-center space-x-2 rtl:space-x-reverse text-amber-500 font-bold text-3xl tracking-wider mb-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
-        <span class="font-serif text-slate-900 dark:text-slate-100">Aura Astro</span>
+        <span class="font-serif">ASTRO</span>
       </a>
       <h2 class="text-xl font-serif text-slate-900 dark:text-slate-100 font-bold">Initialize Your Celestial Coordinates</h2>
       <p class="text-[10px] text-slate-500 font-light leading-normal">Sign up to calculate your charts, forecasts, and schedules.</p>
