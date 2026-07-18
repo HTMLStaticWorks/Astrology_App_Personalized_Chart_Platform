@@ -58,7 +58,7 @@
   <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('assets/images/cosmic_bg.webp');"></div>
 
   <!-- Top bar utility toggles -->
-  <div class="absolute top-4 end-4 flex items-center space-x-3 rtl:space-x-reverse z-20">
+  <div class="absolute top-4 end-4 flex items-center gap-3 z-20">
     <!-- Theme Toggle -->
     <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 bg-slate-950/30 hover:bg-slate-100 dark:hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
       <!-- Dynamic Theme Icon -->
@@ -73,11 +73,11 @@
   <div class="glass-panel max-w-md w-full p-8 rounded-lg border border-amber-500/25 shadow-2xl relative z-10 space-y-6">
     <div class="text-center space-y-2">
       <!-- Logo -->
-      <a href="index.html" class="inline-flex items-center space-x-2 rtl:space-x-reverse text-amber-500 font-bold text-xl tracking-wider justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+      <a href="index.html" class="inline-flex items-center space-x-2 rtl:space-x-reverse text-[#cf9b44] font-bold text-xl tracking-wider justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-15deg);">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
-        <span class="font-serif text-slate-900 dark:text-slate-100">Aura Astro</span>
+        <span class="font-serif text-slate-900 dark:text-slate-100 tracking-[0.2em]">ASTRO</span>
       </a>
       <h2 class="text-xl font-serif text-slate-900 dark:text-slate-100 font-bold">Initialize Your Celestial Coordinates</h2>
       <p class="text-[10px] text-slate-500 font-light leading-normal">Sign up to calculate your charts, forecasts, and schedules.</p>
@@ -104,7 +104,7 @@
         <div class="relative flex items-center">
           <input type="password" id="signup-password" placeholder="••••••••" class="bg-slate-100 dark:bg-indigo-950/20 border border-slate-300 dark:border-slate-800 rounded p-2.5 text-slate-800 dark:text-slate-200 focus:outline-none focus:border-amber-500 w-full pe-10" required />
           <button type="button" onclick="togglePasswordVis('signup-password', this)" class="absolute end-3 text-slate-500 hover:text-amber-500 focus:outline-none">
-            👁️
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
           </button>
         </div>
       </div>
@@ -154,10 +154,20 @@
       </div>
       
       <button onclick="window.location.href='dashboard.html';" class="w-full py-2.5 border border-slate-300 dark:border-slate-800 hover:border-amber-500 hover:bg-slate-950/50 text-slate-700 dark:text-slate-300 rounded font-semibold flex items-center justify-center space-x-2 rtl:space-x-reverse transition-all">
-        <span>🔑</span> <span>Sign In With Google</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-4 h-4">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+          <path fill="none" d="M0 0h48v48H0z"/>
+        </svg>
+        <span>Sign In With Google</span>
       </button>
       <button onclick="window.location.href='dashboard.html';" class="w-full py-2.5 border border-slate-300 dark:border-slate-800 hover:border-amber-500 hover:bg-slate-950/50 text-slate-700 dark:text-slate-300 rounded font-semibold flex items-center justify-center space-x-2 rtl:space-x-reverse transition-all mt-3">
-        <span>🍎</span> <span>Sign In With Apple</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="w-4 h-4 text-slate-900 dark:text-white" fill="currentColor">
+          <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+        </svg>
+        <span>Sign In With Apple</span>
       </button>
     </div>
 

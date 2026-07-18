@@ -53,17 +53,7 @@
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-cosmicIndigo-950 dark:text-slate-100 transition-colors duration-300">
 
-  <!-- 1. COSMIC PROGRESS CALCULATION OVERLAY -->
-  <div id="calculation-overlay" class="fixed inset-0 z-50 bg-slate-950 flex flex-col justify-center items-center p-6 transition-all duration-500">
-    <div class="max-w-md w-full text-center space-y-6">
-      <div class="text-amber-500 text-5xl animate-spin-slow">⚛️</div>
-      <h3 class="text-2xl font-serif font-bold text-slate-100 uppercase tracking-widest">Generating Natal Blueprint</h3>
-      <p id="calc-progress-text" class="text-xs text-slate-400 font-light">Loading ephemeris coordinates...</p>
-      <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden border border-slate-800">
-        <div id="calc-progress-bar" class="bg-amber-500 h-full w-0 transition-all duration-300"></div>
-      </div>
-    </div>
-  </div>
+
 
   <!-- Dashboard Container -->
   <div class="min-h-screen flex flex-col md:flex-row relative">
@@ -74,41 +64,41 @@
       <!-- Top Section -->
       <div class="p-6 space-y-8">
         <!-- Logo -->
-        <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse text-amber-500 font-bold text-lg tracking-wider">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse text-[#cf9b44] font-bold text-lg tracking-wider">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-15deg);">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
-          <span class="font-serif text-slate-100">Aura Astro</span>
+          <span class="font-serif text-slate-100 tracking-[0.2em]">ASTRO</span>
         </a>
 
         <!-- Menu items -->
         <nav class="space-y-1.5 flex flex-col text-xs font-semibold tracking-wider text-slate-400">
           <a href="#" data-panel="overview" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse bg-amber-500/10 text-amber-500 border-s-4 border-amber-500">
-            <span>🪐</span> <span>Overview</span>
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg> <span>Overview</span>
           </a>
           <a href="#" data-panel="chart" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
-            <span>⚛️</span> <span>My Birth Chart</span>
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/></svg> <span>My Birth Chart</span>
           </a>
           <a href="#" data-panel="horoscope" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
-            <span>🌙</span> <span>Daily Horoscope</span>
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg> <span>Daily Horoscope</span>
           </a>
           <a href="#" data-panel="compatibility" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
-            <span>💞</span> <span>Compatibility Reports</span>
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg> <span>Compatibility Reports</span>
           </a>
           <a href="#" data-panel="transits" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
-            <span>📅</span> <span>Transit Forecasts</span>
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg> <span>Transit Forecasts</span>
           </a>
           <a href="#" data-panel="saved" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
-            <span>📄</span> <span>Saved Reports</span>
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> <span>Saved Reports</span>
           </a>
           <a href="#" data-panel="messages" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
-            <span>✉️</span> <span>Messages</span>
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> <span>Messages</span>
           </a>
           <a href="#" data-panel="schedule" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
-            <span>📞</span> <span>Schedule Reading</span>
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg> <span>Schedule Reading</span>
           </a>
           <a href="#" data-panel="profile" class="sidebar-item px-4 py-3 rounded hover:bg-amber-500/5 hover:text-amber-500 transition-all flex items-center space-x-3 rtl:space-x-reverse">
-            <span>⚙️</span> <span>Settings & Profile</span>
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg> <span>Settings & Profile</span>
           </a>
         </nav>
       </div>
@@ -133,7 +123,7 @@
         <div class="sm:hidden w-8"></div>
 
         <!-- Toggles & Toggles Right -->
-        <div class="flex items-center space-x-3 rtl:space-x-reverse">
+        <div class="flex items-center gap-3">
           
           <!-- Dark/Light Theme Toggle -->
           <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
@@ -199,7 +189,7 @@
             <!-- Major Transit Alert Banner -->
             <div class="glass-panel p-6 rounded-lg space-y-4 border border-violet-800/30 bg-violet-950/15">
               <div class="flex items-center space-x-2 rtl:space-x-reverse text-violet-400">
-                <span>⚠️</span> <h4 class="font-serif text-sm font-semibold tracking-wider uppercase">Upcoming Major Transit Alert</h4>
+                <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg> <h4 class="font-serif text-sm font-semibold tracking-wider uppercase">Upcoming Major Transit Alert</h4>
               </div>
               <p class="text-xs text-slate-700 dark:text-slate-300 font-light leading-relaxed">
                 <strong>Mars enters Leo (Transit Shift)</strong> is approaching in <strong>14 Days</strong>. This alignment triggers your Eleventh House of alliances. Expect major changes in social interactions and group initiatives.
@@ -436,21 +426,27 @@
           <div class="space-y-6 relative border-s border-amber-500/20 ps-6 max-w-xl">
             <!-- Transit item 1 -->
             <div class="relative">
-              <div class="absolute -left-[30px] top-1 w-4 h-4 bg-slate-950 border border-amber-500 rounded-full flex items-center justify-center text-[7px] text-amber-500">☉</div>
+              <div class="absolute -left-[30px] top-1 w-4 h-4 bg-slate-950 border border-amber-500 rounded-full flex items-center justify-center text-[7px] text-amber-500">
+                <svg class="w-3 h-3 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="5" stroke-width="2"/><circle cx="12" cy="12" r="1.5" stroke-width="2"/></svg>
+              </div>
               <h4 class="text-xs font-serif font-bold text-slate-900 dark:text-slate-100">Mars enters Leo (July 14, 2026)</h4>
               <p class="text-[10px] text-slate-600 dark:text-slate-400 font-light mt-1">Triggers your Eleventh House of alliances. Expect high social energy and opportunities in collaborations.</p>
             </div>
 
             <!-- Transit item 2 -->
             <div class="relative">
-              <div class="absolute -left-[30px] top-1 w-4 h-4 bg-slate-950 border border-amber-500 rounded-full flex items-center justify-center text-[7px] text-amber-500">☿</div>
+              <div class="absolute -left-[30px] top-1 w-4 h-4 bg-slate-950 border border-amber-500 rounded-full flex items-center justify-center text-[7px] text-amber-500">
+                <svg class="w-3 h-3 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v4m0 0a4 4 0 100 8 4 4 0 000-8zm0 8v4m-3-12h6M9 6v2m6-2v2"/></svg>
+              </div>
               <h4 class="text-xs font-serif font-bold text-slate-900 dark:text-slate-100">Mercury Retrograde in Cancer (August 02, 2026)</h4>
               <p class="text-[10px] text-slate-600 dark:text-slate-400 font-light mt-1">Triggers your Tenth House of career. Excellent window to review past proposals, adjust branding guidelines, and delay new agreements.</p>
             </div>
 
             <!-- Transit item 3 -->
             <div class="relative">
-              <div class="absolute -left-[30px] top-1 w-4 h-4 bg-slate-950 border border-amber-500 rounded-full flex items-center justify-center text-[7px] text-amber-500">♃</div>
+              <div class="absolute -left-[30px] top-1 w-4 h-4 bg-slate-950 border border-amber-500 rounded-full flex items-center justify-center text-[7px] text-amber-500">
+                <svg class="w-3 h-3 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8l5-5 5 5M7 16l5 5 5-5M12 4v16"/></svg>
+              </div>
               <h4 class="text-xs font-serif font-bold text-slate-900 dark:text-slate-100">Jupiter Sextiles Sun (August 28, 2026)</h4>
               <p class="text-[10px] text-slate-600 dark:text-slate-400 font-light mt-1">Sextiles your Natal Sun placement, creating a rare window for vocational expansions or financial additions.</p>
             </div>
@@ -473,7 +469,7 @@
                 <!-- File Item 1 -->
                 <div class="flex items-center justify-between p-3.5 bg-slate-100 dark:bg-indigo-950/20 border border-slate-300 dark:border-slate-800 rounded">
                   <div class="flex items-center space-x-2.5 rtl:space-x-reverse">
-                    <span class="text-lg">📄</span>
+                    <svg class="w-5 h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                     <div>
                       <h4 class="font-serif font-bold text-slate-800 dark:text-slate-200">Standard Natal Blueprint.pdf</h4>
                       <p class="text-[9px] text-slate-500 font-semibold uppercase tracking-wider">Generated • 25 Pages</p>
@@ -485,7 +481,7 @@
                 <!-- File Item 2 -->
                 <div class="flex items-center justify-between p-3.5 bg-slate-100 dark:bg-indigo-950/20 border border-slate-300 dark:border-slate-800 rounded">
                   <div class="flex items-center space-x-2.5 rtl:space-x-reverse">
-                    <span class="text-lg">📄</span>
+                    <svg class="w-5 h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                     <div>
                       <h4 class="font-serif font-bold text-slate-800 dark:text-slate-200">12-Month Transit Forecast.pdf</h4>
                       <p class="text-[9px] text-slate-500 font-semibold uppercase tracking-wider">Generated • 12 Pages</p>
@@ -497,7 +493,7 @@
                 <!-- File Item 3 -->
                 <div class="flex items-center justify-between p-3.5 bg-slate-100 dark:bg-indigo-950/20 border border-slate-300 dark:border-slate-800 rounded">
                   <div class="flex items-center space-x-2.5 rtl:space-x-reverse">
-                    <span class="text-lg">📄</span>
+                    <svg class="w-5 h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                     <div>
                       <h4 class="font-serif font-bold text-slate-800 dark:text-slate-200">Vocation Alignment Blueprint.pdf</h4>
                       <p class="text-[9px] text-slate-500 font-semibold uppercase tracking-wider text-amber-500">Reviewed by Astrologer • Pending</p>
@@ -515,7 +511,9 @@
               
               <!-- Drag and drop container -->
               <div id="upload-dropzone" class="border-2 border-dashed border-slate-300 dark:border-slate-800 hover:border-amber-500/50 rounded-lg p-12 text-center bg-indigo-950/10 cursor-pointer transition-all duration-300">
-                <span class="text-3xl block mb-2">📁</span>
+                <div class="flex justify-center mb-2">
+                  <svg class="w-8 h-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+                </div>
                 <p class="text-xs text-slate-600 dark:text-slate-400 font-semibold">Drag & Drop file or click to browse</p>
                 <p class="text-[9px] text-slate-500 mt-1 uppercase tracking-wider">PDF, PNG up to 10MB</p>
                 <label for="upload-file-input" class="sr-only">Upload file</label>

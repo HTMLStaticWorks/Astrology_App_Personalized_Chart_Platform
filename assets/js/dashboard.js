@@ -68,51 +68,13 @@ function initDashboardRouter() {
 // 2. Cosmic Progress Bar Simulator
 function runCalculationOverlay(headline, onComplete) {
   const overlay = document.getElementById('calculation-overlay');
-  const progressText = document.getElementById('calc-progress-text');
-  const progressBar = document.getElementById('calc-progress-bar');
   
-  if (!overlay || !progressText || !progressBar) {
-    if (onComplete) onComplete();
-    return;
+  if (overlay) {
+    overlay.classList.add('hidden');
+    document.body.classList.remove('modal-open');
   }
-
-  overlay.classList.remove('hidden');
-  document.body.classList.add('modal-open');
-
-  const steps = [
-    { text: 'Syncing planetary degrees...', limit: 25 },
-    { text: 'Mapping houses & Ascendant cusp...', limit: 50 },
-    { text: 'Calculating aspect configurations (trines, squares)...', limit: 75 },
-    { text: 'Finalizing celestial report profile...', limit: 95 },
-    { text: 'Cosmic alignment complete.', limit: 100 }
-  ];
-
-  let progress = 0;
-  let stepIndex = 0;
   
-  progressBar.style.width = '0%';
-  progressText.textContent = steps[0].text;
-
-  const interval = setInterval(() => {
-    progress += Math.floor(Math.random() * 8) + 2;
-    if (progress >= 100) progress = 100;
-    
-    progressBar.style.width = `${progress}%`;
-    
-    if (stepIndex < steps.length && progress >= steps[stepIndex].limit) {
-      progressText.textContent = steps[stepIndex].text;
-      stepIndex++;
-    }
-
-    if (progress === 100) {
-      clearInterval(interval);
-      setTimeout(() => {
-        overlay.classList.add('hidden');
-        document.body.classList.remove('modal-open');
-        if (onComplete) onComplete();
-      }, 700);
-    }
-  }, 100);
+  if (onComplete) onComplete();
 }
 
 // 3. Horoscope Feed Range Switching

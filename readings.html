@@ -89,80 +89,77 @@
           <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto">Select a cosmic gateway tailored to your active life coordinates.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-reveal">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 scroll-reveal auto-rows-[250px]">
           
-          <!-- Category 1 -->
-          <div class="glass-panel p-8 rounded-lg space-y-4 hover:border-amber-500/50 transition-all group">
-            <span class="text-amber-500 text-4xl block group-hover:scale-110 transition-transform">☉</span>
-            <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-slate-100">Natal Birth Chart</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-              Our core offering. Renders your exact planetary layout, including zodiac degrees, houses, and elements, defining your authentic purpose and life journey patterns.
-            </p>
-            <ul class="text-[11px] text-slate-500 space-y-1 font-light pt-2">
-              <li>• Includes 25-page customized PDF</li>
-              <li>• Sun/Moon/Rising detailed analysis</li>
-              <li>• Key life-cycle milestones map</li>
-            </ul>
+          <!-- Category 1 (Hero Bento Item) -->
+          <div class="glass-panel p-8 rounded-xl md:col-span-2 md:row-span-2 relative overflow-hidden group border border-slate-300 dark:border-slate-800 hover:border-amber-500/50 transition-all flex flex-col justify-end">
+            <!-- Background Image -->
+            <div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-screen transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/images/readings_card.png');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent"></div>
+            
+            <div class="relative z-10 space-y-3">
+              <svg class="w-10 h-10 text-amber-400 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+              <h3 class="text-2xl lg:text-3xl font-serif font-bold text-white">Natal Birth Chart</h3>
+              <p class="text-sm text-slate-300 font-light leading-relaxed max-w-sm">
+                Our core offering. Renders your exact planetary layout, including zodiac degrees, houses, and elements, defining your authentic purpose and life journey patterns.
+              </p>
+              <ul class="text-xs text-amber-200/80 space-y-1 font-light pt-2 flex flex-wrap gap-x-4 gap-y-2">
+                <li class="flex items-center space-x-1"><span>•</span><span>25-page PDF</span></li>
+                <li class="flex items-center space-x-1"><span>•</span><span>Sun/Moon/Rising</span></li>
+                <li class="flex items-center space-x-1"><span>•</span><span>Life-cycle map</span></li>
+              </ul>
+            </div>
           </div>
 
           <!-- Category 2 -->
-          <div class="glass-panel p-8 rounded-lg space-y-4 hover:border-amber-500/50 transition-all group">
-            <span class="text-amber-500 text-4xl block group-hover:scale-110 transition-transform">💞</span>
-            <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-slate-100">Compatibility (Synastry)</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-              Compares the energetic alignment of two distinct charts to analyze attraction, communication triggers, emotional resonance, and shared path challenges.
-            </p>
-            <ul class="text-[11px] text-slate-500 space-y-1 font-light pt-2">
-              <li>• Dual overlapping chart graphic</li>
-              <li>• Detailed relationship index scoring</li>
-              <li>• Dynamic communication triggers</li>
-            </ul>
+          <div class="glass-panel p-6 rounded-xl space-y-4 hover:border-amber-500/50 transition-all group md:col-span-1 md:row-span-1 flex flex-col justify-between">
+            <svg class="w-8 h-8 text-amber-500 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            <div>
+              <h3 class="text-lg font-serif font-bold text-slate-900 dark:text-slate-100 mb-2">Synastry</h3>
+              <p class="text-[11px] text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                Compares the energetic alignment of two distinct charts to analyze attraction, communication triggers, and resonance.
+              </p>
+            </div>
           </div>
 
           <!-- Category 3 -->
-          <div class="glass-panel p-8 rounded-lg space-y-4 hover:border-amber-500/50 transition-all group">
-            <span class="text-amber-500 text-4xl block group-hover:scale-110 transition-transform">📅</span>
-            <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-slate-100">Forecast & Transits</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-              Maps real-time planetary orbits relative to your natal coordinates. Understand current windows of professional opportunities, Saturn transits, and Mercury retros.
-            </p>
-            <ul class="text-[11px] text-slate-500 space-y-1 font-light pt-2">
-              <li>• 12-month transit timeline calendar</li>
-              <li>• Major Saturn/Jupiter shift reports</li>
-              <li>• Weekly personal forecast alignments</li>
-            </ul>
+          <div class="glass-panel p-6 rounded-xl space-y-4 hover:border-amber-500/50 transition-all group md:col-span-1 lg:col-span-2 md:row-span-1 flex flex-col justify-between overflow-hidden relative">
+            <div class="absolute right-0 top-0 opacity-10 pointer-events-none -translate-y-4 translate-x-4">
+              <svg class="w-48 h-48 text-amber-500" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+            </div>
+            <svg class="w-8 h-8 text-amber-500 group-hover:scale-110 transition-transform relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <div class="relative z-10">
+              <h3 class="text-lg font-serif font-bold text-slate-900 dark:text-slate-100 mb-2">Forecast & Transits</h3>
+              <p class="text-[11px] text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-sm">
+                Maps real-time planetary orbits relative to your natal coordinates. Understand current windows of professional opportunities, Saturn transits, and Mercury retros.
+              </p>
+            </div>
           </div>
 
           <!-- Category 4 -->
-          <div class="glass-panel p-8 rounded-lg space-y-4 hover:border-amber-500/50 transition-all group">
-            <span class="text-amber-500 text-4xl block group-hover:scale-110 transition-transform">💼</span>
-            <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-slate-100">Career & Vocation</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-              Analyzes your Tenth House (Midheaven), Second House (wealth), and Sixth House (routine) to define professional callings, business opportunities, and timing.
-            </p>
-            <ul class="text-[11px] text-slate-500 space-y-1 font-light pt-2">
-              <li>• Midheaven/MC cusp detailed alignment</li>
-              <li>• Wealth houses aspect analysis</li>
-              <li>• Career timing transit schedule</li>
-            </ul>
+          <div class="glass-panel p-6 rounded-xl space-y-4 hover:border-amber-500/50 transition-all group md:col-span-1 md:row-span-1 flex flex-col justify-between">
+            <svg class="w-8 h-8 text-amber-500 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <div>
+              <h3 class="text-lg font-serif font-bold text-slate-900 dark:text-slate-100 mb-2">Career & Vocation</h3>
+              <p class="text-[11px] text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                Analyzes your Tenth House (Midheaven) and wealth houses to define professional callings.
+              </p>
+            </div>
           </div>
 
           <!-- Category 5 -->
-          <div class="glass-panel p-8 rounded-lg space-y-4 hover:border-amber-500/50 transition-all group">
-            <span class="text-amber-500 text-4xl block group-hover:scale-110 transition-transform">🌙</span>
-            <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-slate-100">Daily Lunar Horoscopes</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-              Provides daily, weekly, and monthly personalized horoscope feeds based on current planetary alignments, lunar configurations, and active transits.
-            </p>
-            <ul class="text-[11px] text-slate-500 space-y-1 font-light pt-2">
-              <li>• Daily mood and energy indicators</li>
-              <li>• Full & New Moon personal impacts</li>
-              <li>• Direct email updates</li>
-            </ul>
+          <div class="glass-panel p-6 rounded-xl space-y-4 hover:border-amber-500/50 transition-all group md:col-span-1 md:row-span-1 flex flex-col justify-between">
+            <svg class="w-8 h-8 text-amber-500 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <div>
+              <h3 class="text-lg font-serif font-bold text-slate-900 dark:text-slate-100 mb-2">Lunar Horoscopes</h3>
+              <p class="text-[11px] text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                Provides daily, weekly, and monthly personalized horoscope feeds based on current planetary alignments.
+              </p>
+            </div>
           </div>
 
           <!-- Category 6 (Add-on Consult) -->
-          <div class="glass-panel p-8 rounded-lg space-y-4 hover:border-amber-500/50 transition-all group bg-amber-500/5">
+          <div class="glass-panel p-6 rounded-xl space-y-4 hover:border-amber-500/50 transition-all group bg-gradient-to-br from-amber-500/10 to-indigo-900/20 border-amber-500/30 md:col-span-2 md:row-span-1 flex flex-col justify-between">
             <span class="text-amber-500 text-4xl block group-hover:scale-110 transition-transform">📞</span>
             <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-slate-100">Live Consultations</h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
@@ -231,19 +228,31 @@
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div class="space-y-2 p-4 bg-slate-100 dark:bg-indigo-950/20 rounded border border-slate-800/80">
-              <span class="text-amber-500 text-lg font-serif">📄 Written PDF Report</span>
+              <div class="flex items-center space-x-2">
+                <svg class="w-5 h-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span class="text-amber-500 text-lg font-serif">Written PDF Report</span>
+              </div>
               <p class="text-xs text-slate-500">25+ pages of detailed analysis explaining your personal planet locations, aspect pairs, and upcoming transits.</p>
             </div>
             <div class="space-y-2 p-4 bg-slate-100 dark:bg-indigo-950/20 rounded border border-slate-800/80">
-              <span class="text-amber-500 text-lg font-serif">⚛️ Vector SVG Wheel</span>
+              <div class="flex items-center space-x-2">
+                <svg class="w-5 h-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/></svg>
+                <span class="text-amber-500 text-lg font-serif">Vector SVG Wheel</span>
+              </div>
               <p class="text-xs text-slate-500">Interactive SVG birth chart rendering, letting you hover over nodes and trace aspect lines dynamically.</p>
             </div>
             <div class="space-y-2 p-4 bg-slate-100 dark:bg-indigo-950/20 rounded border border-slate-800/80">
-              <span class="text-amber-500 text-lg font-serif">📽️ Video Consultations</span>
+              <div class="flex items-center space-x-2">
+                <svg class="w-5 h-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span class="text-amber-500 text-lg font-serif">Video Consultations</span>
+              </div>
               <p class="text-xs text-slate-500">Optional 45-minute live screen-share call mapping your transit cycles and addressing personal questions.</p>
             </div>
             <div class="space-y-2 p-4 bg-slate-100 dark:bg-indigo-950/20 rounded border border-slate-800/80">
-              <span class="text-amber-500 text-lg font-serif">📲 Dashboard Access</span>
+              <div class="flex items-center space-x-2">
+                <svg class="w-5 h-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17h.01M15 5H9a2 2 0 00-2 2v10a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2z"/></svg>
+                <span class="text-amber-500 text-lg font-serif">Dashboard Access</span>
+              </div>
               <p class="text-xs text-slate-500">Personal client portal listing your files, daily horoscopes, compatibility calculators, and astrologer chat.</p>
             </div>
           </div>

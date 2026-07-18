@@ -66,7 +66,8 @@
       
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6 scroll-reveal">
         <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-semibold uppercase tracking-widest">
-          <span>👤 Our Philosophy</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          <span>Our Philosophy</span>
         </div>
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-slate-900 dark:text-slate-100 font-bold leading-tight">
           The Aura Astrology <span class="gradient-text-gold glow-gold">Philosophy</span>
@@ -105,10 +106,7 @@
           <!-- Bio 2 -->
           <div class="glass-panel p-8 rounded-lg space-y-4 hover:border-amber-500/30 transition-all flex flex-col justify-between">
             <div class="space-y-4">
-              <div class="w-full h-48 bg-slate-900 rounded border border-indigo-950/40 overflow-hidden relative">
-                <div class="absolute inset-0 bg-cover bg-center opacity-60" style="background-image: url('assets/images/nebula_bg.svg');"></div>
-                <div class="absolute inset-0 flex items-center justify-center font-serif text-4xl text-amber-500 font-bold">DV</div>
-              </div>
+              <img src="assets/images/astrologer_dv.png" alt="David Vance" class="w-full h-48 object-cover rounded border border-amber-500/10" />
               <h3 class="text-xl font-serif text-slate-900 dark:text-slate-100 font-bold">David Vance</h3>
               <p class="text-[10px] text-amber-500 font-semibold uppercase tracking-widest">Vedic Jyotish Specialist</p>
               <p class="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
@@ -123,10 +121,7 @@
           <!-- Bio 3 -->
           <div class="glass-panel p-8 rounded-lg space-y-4 hover:border-amber-500/30 transition-all flex flex-col justify-between">
             <div class="space-y-4">
-              <div class="w-full h-48 bg-slate-900 rounded border border-indigo-950/40 overflow-hidden relative">
-                <div class="absolute inset-0 bg-cover bg-center opacity-60" style="background-image: url('assets/images/nebula_bg.svg');"></div>
-                <div class="absolute inset-0 flex items-center justify-center font-serif text-4xl text-amber-500 font-bold">CP</div>
-              </div>
+              <img src="assets/images/astrologer_cp.png" alt="Chloe Park" class="w-full h-48 object-cover rounded border border-amber-500/10" />
               <h3 class="text-xl font-serif text-slate-900 dark:text-slate-100 font-bold">Chloe Park</h3>
               <p class="text-[10px] text-amber-500 font-semibold uppercase tracking-widest">Vocation & Transit Analyst</p>
               <p class="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
@@ -152,24 +147,30 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 scroll-reveal">
           <!-- Cert 1 -->
-          <div class="glass-panel p-6 rounded text-center space-y-2">
-            <div class="text-2xl text-amber-500">🛡️</div>
+          <div class="glass-panel p-6 rounded text-center flex flex-col items-center space-y-3">
+            <div class="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500 mb-2">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
             <h4 class="font-serif text-slate-900 dark:text-slate-100 font-bold text-sm">ISAR Membership</h4>
-            <p class="text-[11px] text-slate-600 dark:text-slate-400 font-light">Certified by the International Society for Astrological Research, adhering to ethical standards.</p>
+            <p class="text-[11px] text-slate-600 dark:text-slate-400 font-light border-t border-slate-900 pt-3 w-full">Certified by the International Society for Astrological Research, adhering to ethical standards.</p>
           </div>
 
           <!-- Cert 2 -->
-          <div class="glass-panel p-6 rounded text-center space-y-2">
-            <div class="text-2xl text-amber-500">📜</div>
+          <div class="glass-panel p-6 rounded text-center flex flex-col items-center space-y-3">
+            <div class="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500 mb-2">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
             <h4 class="font-serif text-slate-900 dark:text-slate-100 font-bold text-sm">NCGR-PAA Certification</h4>
-            <p class="text-[11px] text-slate-600 dark:text-slate-400 font-light">Subject tests on classical Western Placidus coordinate calculations and system mechanics.</p>
+            <p class="text-[11px] text-slate-600 dark:text-slate-400 font-light border-t border-slate-900 pt-3 w-full">Subject tests on classical Western Placidus coordinate calculations and system mechanics.</p>
           </div>
 
           <!-- Cert 3 -->
-          <div class="glass-panel p-6 rounded text-center space-y-2">
-            <div class="text-2xl text-amber-500">⚛️</div>
+          <div class="glass-panel p-6 rounded text-center flex flex-col items-center space-y-3">
+            <div class="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500 mb-2">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+            </div>
             <h4 class="font-serif text-slate-900 dark:text-slate-100 font-bold text-sm">Vedic Jyotish Parishad</h4>
-            <p class="text-[11px] text-slate-600 dark:text-slate-400 font-light">Sidereal calculation certifications, specializing in Lahiri Ayanamsa coordinate configurations.</p>
+            <p class="text-[11px] text-slate-600 dark:text-slate-400 font-light border-t border-slate-900 pt-3 w-full">Sidereal calculation certifications, specializing in Lahiri Ayanamsa coordinate configurations.</p>
           </div>
         </div>
       </div>
@@ -186,15 +187,19 @@
           </p>
           
           <div class="space-y-4">
-            <div class="flex items-start space-x-3 rtl:space-x-reverse text-xs">
-              <span class="text-amber-500 mt-0.5">✓</span>
+            <div class="flex items-start space-x-3 rtl:space-x-reverse text-xs group">
+              <div class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-amber-500 group-hover:text-slate-900 transition-colors">
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+              </div>
               <div>
                 <strong class="font-serif text-slate-900 dark:text-slate-100 block mb-1">Non-Fatalistic Approach</strong>
                 <p class="text-slate-600 dark:text-slate-400 font-light">We view birth charts as maps of potential. Planets show challenges and strengths; they do not dictate outcomes.</p>
               </div>
             </div>
-            <div class="flex items-start space-x-3 rtl:space-x-reverse text-xs">
-              <span class="text-amber-500 mt-0.5">✓</span>
+            <div class="flex items-start space-x-3 rtl:space-x-reverse text-xs group">
+              <div class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-amber-500 group-hover:text-slate-900 transition-colors">
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+              </div>
               <div>
                 <strong class="font-serif text-slate-900 dark:text-slate-100 block mb-1">Precision Calculations</strong>
                 <p class="text-slate-600 dark:text-slate-400 font-light">Our computations use exact coordinate angles, minimizing mathematical margins of error.</p>

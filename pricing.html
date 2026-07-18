@@ -80,7 +80,7 @@
     <!-- SECTION 2: PRICING PLANS -->
     <section class="py-24 border-b border-indigo-950/20 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch scroll-reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch scroll-reveal mb-8">
           
           <!-- Plan 1: Basic -->
           <div class="glass-panel p-8 rounded-lg flex flex-col justify-between border border-slate-300 dark:border-slate-800 relative hover:border-amber-500/30 transition-all">
@@ -95,11 +95,26 @@
               </div>
               <hr class="border-slate-300 dark:border-slate-800" />
               <ul class="space-y-3 text-xs text-slate-600 dark:text-slate-400 font-light">
-                <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-amber-500">✓</span> <span>Daily & Monthly Horoscope feeds</span></li>
-                <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-amber-500">✓</span> <span>Sun Sign planetary placements</span></li>
-                <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-amber-500">✓</span> <span>Basic client dashboard profile</span></li>
-                <li class="text-slate-600 line-through flex items-center space-x-2 rtl:space-x-reverse"><span>✗</span> <span>Detailed 25-page PDF report</span></li>
-                <li class="text-slate-600 line-through flex items-center space-x-2 rtl:space-x-reverse"><span>✗</span> <span>1-on-1 Astrologer consult</span></li>
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Daily & Monthly Horoscope feeds</span>
+                </li>
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Sun Sign planetary placements</span>
+                </li>
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Basic client dashboard profile</span>
+                </li>
+                <li class="text-slate-600 line-through flex items-center space-x-2 rtl:space-x-reverse opacity-50">
+                  <svg class="w-4 h-4 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                  <span>Detailed 25-page PDF report</span>
+                </li>
+                <li class="text-slate-600 line-through flex items-center space-x-2 rtl:space-x-reverse opacity-50">
+                  <svg class="w-4 h-4 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                  <span>1-on-1 Astrologer consult</span>
+                </li>
               </ul>
             </div>
             <div class="pt-8">
@@ -107,7 +122,7 @@
             </div>
           </div>
 
-          <!-- Plan 2: Standard (Highlighted) -->
+          <!-- Plan 2: Standard -->
           <div class="glass-panel p-8 rounded-lg flex flex-col justify-between border-2 border-amber-500/70 relative hover:shadow-2xl transition-all shadow-indigo-950/20 bg-indigo-950/30">
             <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-amber-500 text-slate-950 text-[10px] font-bold uppercase tracking-widest rounded-full">
               Most Popular
@@ -123,44 +138,95 @@
               </div>
               <hr class="border-amber-500/20" />
               <ul class="space-y-3 text-xs text-slate-700 dark:text-slate-300 font-light">
-                <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-amber-500">✓</span> <span>Full Birth Chart Wheel calculation</span></li>
-                <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-amber-500">✓</span> <span>25-page customized Natal PDF report</span></li>
-                <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-amber-500">✓</span> <span>12-Month Transit Forecast calendar</span></li>
-                <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-amber-500">✓</span> <span>Standard interactive Dashboard access</span></li>
-                <li class="text-slate-600 line-through flex items-center space-x-2 rtl:space-x-reverse"><span>✗</span> <span>1-on-1 Astrologer consult</span></li>
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Full Birth Chart Wheel calculation</span>
+                </li>
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>25-page customized Natal PDF report</span>
+                </li>
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>12-Month Transit Forecast calendar</span>
+                </li>
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Standard interactive Dashboard access</span>
+                </li>
+                <li class="text-slate-600 line-through flex items-center space-x-2 rtl:space-x-reverse opacity-50">
+                  <svg class="w-4 h-4 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                  <span>1-on-1 Astrologer consult</span>
+                </li>
               </ul>
             </div>
             <div class="pt-8">
               <a href="signup.html" class="block text-center w-full py-3 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-bold text-xs uppercase tracking-widest rounded shadow gold-hover-ring transition-all">Buy Standard Blueprint</a>
             </div>
           </div>
+        </div>
 
-          <!-- Plan 3: Premium -->
-          <div class="glass-panel p-8 rounded-lg flex flex-col justify-between border border-slate-300 dark:border-slate-800 relative hover:border-amber-500/30 transition-all">
+        <!-- Plan 3: VIP Spotlight -->
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-500 bg-slate-900 scroll-reveal">
+          <div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-screen" style="background-image: url('assets/images/pricing_vip.png');"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent"></div>
+          
+          <div class="relative z-10 p-10 lg:p-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
+              <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-amber-500 text-slate-950 text-[10px] font-bold uppercase tracking-widest">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                <span>VIP Premium Portal</span>
+              </div>
               <div>
-                <h3 class="text-xl font-serif text-slate-900 dark:text-slate-100 font-bold">Stellar Consultation</h3>
-                <p class="text-xs text-slate-500 font-light mt-1">Perfect for personalized answers & validation.</p>
+                <h3 class="text-3xl lg:text-4xl font-serif text-slate-100 font-bold leading-tight">Stellar Consultation</h3>
+                <p class="text-sm text-amber-500/80 font-light mt-2 max-w-md">The ultimate cosmic experience. Get personalized answers directly from our expert astrologers, guided by high-precision vector charts.</p>
               </div>
-              <div class="flex items-baseline space-x-2 rtl:space-x-reverse">
-                <span class="text-4xl font-serif font-bold text-amber-500">$99</span>
-                <span class="text-xs text-slate-500">/ one-time</span>
+              <div class="flex items-baseline space-x-2">
+                <span class="text-5xl font-serif font-bold text-white">$99</span>
+                <span class="text-sm text-slate-400">/ one-time</span>
               </div>
-              <hr class="border-slate-300 dark:border-slate-800" />
-              <ul class="space-y-3 text-xs text-slate-600 dark:text-slate-400 font-light">
-                <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-amber-500">✓</span> <span>Everything in Standard Blueprint</span></li>
-                <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-amber-500">✓</span> <span>45-Min Live Astrologer Video Session</span></li>
-                <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-amber-500">✓</span> <span>Partner Compatibility report bundle</span></li>
-                <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-amber-500">✓</span> <span>Direct chat with assigned astrologer</span></li>
-                <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-amber-500">✓</span> <span>Lifetime updates on forecast charts</span></li>
-              </ul>
             </div>
-            <div class="pt-8">
-              <a href="signup.html" class="block text-center w-full py-3 bg-slate-900 hover:bg-slate-800 border border-slate-300 dark:border-slate-800 text-slate-100 font-bold text-xs uppercase tracking-widest rounded transition-all">Purchase Premium Portal</a>
+            
+            <div class="glass-panel p-8 rounded-xl bg-slate-900/50 backdrop-blur-xl border border-amber-500/30">
+              <ul class="space-y-4 text-sm text-slate-200 font-light">
+                <li class="flex items-center space-x-3">
+                  <div class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span>Everything in Standard Blueprint</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <div class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span class="font-semibold text-white">45-Min Live Astrologer Video Session</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <div class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span>Partner Compatibility report bundle</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <div class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span>Direct chat with assigned astrologer</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <div class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span>Lifetime updates on forecast charts</span>
+                </li>
+              </ul>
+              <div class="pt-8">
+                <a href="signup.html" class="block text-center w-full py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-widest rounded shadow-lg shadow-amber-500/20 transition-all">Unlock Premium Access</a>
+              </div>
             </div>
           </div>
-
         </div>
+      </div>
       </div>
     </section>
 

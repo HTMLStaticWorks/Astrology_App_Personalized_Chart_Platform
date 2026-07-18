@@ -80,55 +80,80 @@
     <!-- SECTION 2: SUN, MOON & RISING BREAKDOWN -->
     <section class="py-24 border-b border-indigo-950/20 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center space-y-4 mb-16 scroll-reveal">
-          <h2 class="text-3xl sm:text-5xl font-bold text-indigo-950 dark:text-slate-100">The Cosmic Triad</h2>
-          <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto">The three primary anchors defining your external mask, internal emotional triggers, and core life goals.</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 scroll-reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 scroll-reveal items-start">
           
-          <!-- Sun Card -->
-          <div class="glass-panel p-8 rounded-lg border border-slate-300 dark:border-slate-800 flex flex-col h-full">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-              <span class="text-amber-500 text-3xl lg:text-2xl xl:text-3xl font-serif whitespace-nowrap">☉ Sun</span>
-              <span class="text-xs text-slate-500 font-semibold tracking-wider whitespace-nowrap">CANCER • 14°</span>
-            </div>
-            <p class="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-4 flex-grow">
-              <strong>Core Identity & Vitality.</strong> Your Sun in Cancer (10th House) directs your life path toward nurturing leadership. You find ultimate fulfillment in careers that allow you to protect, structure, and guide others.
+          <!-- Sticky Sidebar -->
+          <div class="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
+            <h2 class="text-3xl sm:text-5xl font-bold text-indigo-950 dark:text-slate-100">The Cosmic Triad</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-sm">
+              The three primary anchors defining your external mask, internal emotional triggers, and core life goals.
             </p>
-            <div class="pt-4 border-t border-slate-300 dark:border-slate-800 text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-auto">
-              Element: Water • Modality: Cardinal
-            </div>
+            <div class="hidden lg:block w-16 h-1 bg-gradient-to-r from-amber-500 to-amber-200 mt-8 rounded-full"></div>
           </div>
 
-          <!-- Moon Card -->
-          <div class="glass-panel p-8 rounded-lg border border-slate-300 dark:border-slate-800 flex flex-col h-full">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-              <span class="text-amber-500 text-3xl lg:text-2xl xl:text-3xl font-serif whitespace-nowrap">☽ Moon</span>
-              <span class="text-xs text-slate-500 font-semibold tracking-wider whitespace-nowrap">SCORPIO • 2°</span>
+          <!-- Cards List -->
+          <div class="lg:col-span-8 space-y-6">
+            <!-- Sun Card -->
+            <div class="glass-panel p-8 rounded-xl border border-slate-300 dark:border-slate-800 flex flex-col md:flex-row gap-6 hover:border-amber-500/50 transition-all">
+              <div class="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-amber-500/10 text-amber-500">
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="5" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" stroke-width="1.5"/></svg>
+              </div>
+              <div class="flex-grow">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                  <h3 class="text-2xl font-serif text-slate-900 dark:text-slate-100 font-bold">Sun</h3>
+                  <span class="px-3 py-1 bg-amber-500/20 text-amber-600 dark:text-amber-400 rounded-full text-xs font-semibold tracking-wider">CANCER • 14°</span>
+                </div>
+                <p class="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-4">
+                  <strong>Core Identity & Vitality.</strong> Your Sun in Cancer (10th House) directs your life path toward nurturing leadership. You find ultimate fulfillment in careers that allow you to protect, structure, and guide others.
+                </p>
+                <div class="text-[10px] text-slate-500 font-bold uppercase tracking-widest flex gap-4">
+                  <span>Element: <span class="text-indigo-400">Water</span></span>
+                  <span>Modality: Cardinal</span>
+                </div>
+              </div>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-4 flex-grow">
-              <strong>Subconscious & Emotional Security.</strong> With the Moon in Scorpio (2nd House), your inner security is tied to depth and emotional trust. You possess a private emotional register, feeling changes in your environment before they manifest.
-            </p>
-            <div class="pt-4 border-t border-slate-300 dark:border-slate-800 text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-auto">
-              Element: Water • Modality: Fixed
-            </div>
-          </div>
 
-          <!-- Ascendant Card -->
-          <div class="glass-panel p-8 rounded-lg border border-slate-300 dark:border-slate-800 flex flex-col h-full">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-              <span class="text-amber-500 text-3xl lg:text-2xl xl:text-3xl font-serif whitespace-nowrap">Ascendant</span>
-              <span class="text-xs text-slate-500 font-semibold tracking-wider whitespace-nowrap">LIBRA • 21°</span>
+            <!-- Moon Card -->
+            <div class="glass-panel p-8 rounded-xl border border-slate-300 dark:border-slate-800 flex flex-col md:flex-row gap-6 hover:border-amber-500/50 transition-all">
+              <div class="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-amber-500/10 text-amber-500">
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+              </div>
+              <div class="flex-grow">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                  <h3 class="text-2xl font-serif text-slate-900 dark:text-slate-100 font-bold">Moon</h3>
+                  <span class="px-3 py-1 bg-amber-500/20 text-amber-600 dark:text-amber-400 rounded-full text-xs font-semibold tracking-wider">SCORPIO • 2°</span>
+                </div>
+                <p class="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-4">
+                  <strong>Subconscious & Emotional Security.</strong> With the Moon in Scorpio (2nd House), your inner security is tied to depth and emotional trust. You possess a private emotional register, feeling changes in your environment before they manifest.
+                </p>
+                <div class="text-[10px] text-slate-500 font-bold uppercase tracking-widest flex gap-4">
+                  <span>Element: <span class="text-indigo-400">Water</span></span>
+                  <span>Modality: Fixed</span>
+                </div>
+              </div>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-4 flex-grow">
-              <strong>Perception, Presentation & Horizon.</strong> Ascendant in Libra (1st House) gives you a socially graceful, balanced presentation. You seek harmony, mediation, and design beauty in your surroundings, projecting calm.
-            </p>
-            <div class="pt-4 border-t border-slate-300 dark:border-slate-800 text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-auto">
-              Element: Air • Modality: Cardinal
-            </div>
-          </div>
 
+            <!-- Ascendant Card -->
+            <div class="glass-panel p-8 rounded-xl border border-slate-300 dark:border-slate-800 flex flex-col md:flex-row gap-6 hover:border-amber-500/50 transition-all">
+              <div class="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-amber-500/10 text-amber-500">
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/></svg>
+              </div>
+              <div class="flex-grow">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                  <h3 class="text-2xl font-serif text-slate-900 dark:text-slate-100 font-bold">Ascendant</h3>
+                  <span class="px-3 py-1 bg-amber-500/20 text-amber-600 dark:text-amber-400 rounded-full text-xs font-semibold tracking-wider">LIBRA • 21°</span>
+                </div>
+                <p class="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-4">
+                  <strong>Perception, Presentation & Horizon.</strong> Ascendant in Libra (1st House) gives you a socially graceful, balanced presentation. You seek harmony, mediation, and design beauty in your surroundings, projecting calm.
+                </p>
+                <div class="text-[10px] text-slate-500 font-bold uppercase tracking-widest flex gap-4">
+                  <span>Element: <span class="text-emerald-400">Air</span></span>
+                  <span>Modality: Cardinal</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
@@ -164,33 +189,48 @@
                 </tr>
               </thead>
               <tbody class="text-slate-700 dark:text-slate-300 font-light">
-                <tr class="border-b border-slate-900">
-                  <td class="py-3 font-serif font-semibold">☉ Sun</td>
-                  <td class="py-3">Cancer</td>
+                <tr class="border-b border-slate-900 group">
+                  <td class="py-3 font-serif font-semibold flex items-center gap-2 group-hover:text-amber-400 transition-colors">
+                    <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="5" stroke-width="2"/><circle cx="12" cy="12" r="1.5" stroke-width="2"/></svg>
+                    Sun
+                  </td>
+                  <td class="py-3 group-hover:text-amber-200 transition-colors">Cancer</td>
                   <td class="py-3">14° 22'</td>
                   <td class="py-3">House 10 (Midheaven)</td>
                 </tr>
-                <tr class="border-b border-slate-900">
-                  <td class="py-3 font-serif font-semibold">☽ Moon</td>
-                  <td class="py-3">Scorpio</td>
+                <tr class="border-b border-slate-900 group">
+                  <td class="py-3 font-serif font-semibold flex items-center gap-2 group-hover:text-amber-400 transition-colors">
+                    <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    Moon
+                  </td>
+                  <td class="py-3 group-hover:text-amber-200 transition-colors">Scorpio</td>
                   <td class="py-3">02° 11'</td>
                   <td class="py-3">House 2 (Assets)</td>
                 </tr>
-                <tr class="border-b border-slate-900">
-                  <td class="py-3 font-serif font-semibold">☿ Mercury</td>
-                  <td class="py-3">Cancer</td>
+                <tr class="border-b border-slate-900 group">
+                  <td class="py-3 font-serif font-semibold flex items-center gap-2 group-hover:text-amber-400 transition-colors">
+                    <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v4m0 0a4 4 0 100 8 4 4 0 000-8zm0 8v4m-3-12h6M9 6v2m6-2v2"/></svg>
+                    Mercury
+                  </td>
+                  <td class="py-3 group-hover:text-amber-200 transition-colors">Cancer</td>
                   <td class="py-3">28° 45'</td>
                   <td class="py-3">House 10 (Career)</td>
                 </tr>
-                <tr class="border-b border-slate-900">
-                  <td class="py-3 font-serif font-semibold">♀ Venus</td>
-                  <td class="py-3">Gemini</td>
+                <tr class="border-b border-slate-900 group">
+                  <td class="py-3 font-serif font-semibold flex items-center gap-2 group-hover:text-amber-400 transition-colors">
+                    <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 16v5m-3-2h6M12 16a6 6 0 100-12 6 6 0 000 12z"/></svg>
+                    Venus
+                  </td>
+                  <td class="py-3 group-hover:text-amber-200 transition-colors">Gemini</td>
                   <td class="py-3">04° 19'</td>
                   <td class="py-3">House 9 (Wisdom)</td>
                 </tr>
-                <tr class="border-b border-slate-900">
-                  <td class="py-3 font-serif font-semibold">♂ Mars</td>
-                  <td class="py-3">Leo</td>
+                <tr class="border-b border-slate-900 group">
+                  <td class="py-3 font-serif font-semibold flex items-center gap-2 group-hover:text-amber-400 transition-colors">
+                    <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 9.5L19 5m0 0h-4m4 0v4M5.5 18.5a6 6 0 108.485-8.485 6 6 0 00-8.485 8.485z"/></svg>
+                    Mars
+                  </td>
+                  <td class="py-3 group-hover:text-amber-200 transition-colors">Leo</td>
                   <td class="py-3">18° 33'</td>
                   <td class="py-3">House 11 (Alliances)</td>
                 </tr>
@@ -242,7 +282,9 @@
     <section class="py-24 border-b border-indigo-950/20 bg-slate-950/20 relative">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="glass-panel p-8 rounded-lg border border-amber-500/20 relative scroll-reveal">
-          <div class="absolute -top-5 start-8 w-10 h-10 rounded-full bg-slate-950 border border-amber-500 flex items-center justify-center text-amber-500 text-lg">✍️</div>
+          <div class="absolute -top-5 start-8 w-10 h-10 rounded-full bg-slate-950 border border-amber-500 flex items-center justify-center text-amber-500 text-lg">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+          </div>
           <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-4 pt-2">Senior Astrologer Interpretation Notes</h3>
           
           <div class="space-y-4 text-xs font-light text-slate-700 dark:text-slate-300 leading-relaxed italic">

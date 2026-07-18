@@ -64,16 +64,27 @@
       <div class="starfield" data-stars="40"></div>
       <div class="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-color-dodge" style="background-image: url('assets/images/cosmic_bg.webp');"></div>
       
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6 scroll-reveal">
-        <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-semibold uppercase tracking-widest">
-          <span>📞 Connect With Us</span>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Text Column -->
+        <div class="space-y-6 scroll-reveal">
+          <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-semibold uppercase tracking-widest">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span>Connect With Us</span>
+          </div>
+          <h1 class="text-4xl sm:text-6xl font-serif text-slate-900 dark:text-slate-100 font-bold leading-tight">
+            Connect With The <span class="gradient-text-gold glow-gold">Cosmos</span>
+          </h1>
+          <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-lg">
+            Submit pre-booking coordinates or schedule a live video consultation with a certified astrologer.
+          </p>
         </div>
-        <h1 class="text-4xl sm:text-6xl font-serif text-slate-900 dark:text-slate-100 font-bold leading-tight">
-          Connect With The <span class="gradient-text-gold glow-gold">Cosmos</span>
-        </h1>
-        <p class="text-sm text-slate-600 dark:text-slate-400 font-light max-w-xl mx-auto">
-          Submit pre-booking coordinates or schedule a live video consultation with a certified astrologer.
-        </p>
+        <!-- Image Column -->
+        <div class="scroll-reveal hidden lg:block">
+          <div class="relative">
+            <div class="absolute inset-0 bg-amber-500/20 blur-3xl rounded-full"></div>
+            <img src="assets/images/contact_support.png" alt="Cosmic Support" class="relative z-10 w-full max-w-md mx-auto drop-shadow-[0_0_25px_rgba(245,158,11,0.3)] animate-float" />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -178,27 +189,33 @@
     <section class="py-24 border-b border-indigo-950/20 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center scroll-reveal">
         <!-- Card 1 -->
-        <div class="glass-panel p-6 rounded-lg space-y-2 border border-slate-300 dark:border-slate-800">
-          <div class="text-amber-500 text-2xl">✉️</div>
+        <div class="glass-panel p-6 rounded-lg space-y-3 border border-slate-300 dark:border-slate-800 flex flex-col items-center">
+          <div class="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500 mb-2">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
           <h4 class="font-serif text-slate-900 dark:text-slate-100 font-bold text-sm">Email Address</h4>
           <p class="text-xs text-slate-600 dark:text-slate-400 font-light">consult@auraastrology.com</p>
-          <p class="text-[10px] text-slate-500 font-light">Standard response in 24 hours.</p>
+          <p class="text-[10px] text-slate-500 font-light border-t border-slate-900 pt-3 w-full">Standard response in 24 hours.</p>
         </div>
 
         <!-- Card 2 -->
-        <div class="glass-panel p-6 rounded-lg space-y-2 border border-slate-300 dark:border-slate-800">
-          <div class="text-amber-500 text-2xl">📞</div>
+        <div class="glass-panel p-6 rounded-lg space-y-3 border border-slate-300 dark:border-slate-800 flex flex-col items-center">
+          <div class="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500 mb-2">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
           <h4 class="font-serif text-slate-900 dark:text-slate-100 font-bold text-sm">Direct Phone</h4>
           <p class="text-xs text-slate-600 dark:text-slate-400 font-light">+1 (800) 555-AURA</p>
-          <p class="text-[10px] text-slate-500 font-light">Mon-Fri, 9AM - 5PM UTC.</p>
+          <p class="text-[10px] text-slate-500 font-light border-t border-slate-900 pt-3 w-full">Mon-Fri, 9AM - 5PM UTC.</p>
         </div>
 
         <!-- Card 3 -->
-        <div class="glass-panel p-6 rounded-lg space-y-2 border border-slate-300 dark:border-slate-800">
-          <div class="text-amber-500 text-2xl">🪐</div>
+        <div class="glass-panel p-6 rounded-lg space-y-3 border border-slate-300 dark:border-slate-800 flex flex-col items-center">
+          <div class="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500 mb-2">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+          </div>
           <h4 class="font-serif text-slate-900 dark:text-slate-100 font-bold text-sm">Social Coordinates</h4>
           <p class="text-xs text-slate-600 dark:text-slate-400 font-light">@AuraAstro • Instagram / Twitter</p>
-          <p class="text-[10px] text-slate-500 font-light">Daily planetary alerts feed.</p>
+          <p class="text-[10px] text-slate-500 font-light border-t border-slate-900 pt-3 w-full">Daily planetary alerts feed.</p>
         </div>
       </div>
     </section>
@@ -235,7 +252,9 @@
     <section class="py-24 border-b border-indigo-950/20 relative">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="glass-panel p-8 rounded-lg border border-slate-300 dark:border-slate-800 text-center space-y-4 scroll-reveal">
-          <div class="text-2xl text-amber-500">🌍</div>
+          <div class="flex justify-center mb-4">
+            <svg class="w-12 h-12 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
           <h3 class="text-xl font-serif text-slate-900 dark:text-slate-100 font-bold">Global Timezone Calculations</h3>
           <p class="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-xl mx-auto">
             All booking options on our calendars default to UTC. Once you initialize your client profile, the scheduler dynamically converts available slots to match your local timezone, avoiding coordination errors.
