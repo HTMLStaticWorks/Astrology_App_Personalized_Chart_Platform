@@ -102,6 +102,7 @@ function initRTL() {
     document.documentElement.setAttribute('dir', 'ltr');
     document.documentElement.classList.remove('rtl-active');
   }
+  document.documentElement.setAttribute('lang', 'en');
   updateRTLUI();
 }
 
@@ -116,14 +117,14 @@ function toggleRTL() {
     document.documentElement.classList.add('rtl-active');
     localStorage.setItem('rtl', 'true');
   }
+  document.documentElement.setAttribute('lang', 'en');
   updateRTLUI();
   translateLayout();
 }
 
 function updateRTLUI() {
   const rtlToggles = document.querySelectorAll('.rtl-toggle');
-  const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
-  const lang = isRtl ? 'ar' : 'en';
+  const lang = 'en';
   const t = translations[lang];
   rtlToggles.forEach(toggle => {
     toggle.textContent = t.rtlToggle;
@@ -131,8 +132,7 @@ function updateRTLUI() {
 }
 
 function translateLayout() {
-  const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
-  const lang = isRtl ? 'ar' : 'en';
+  const lang = 'en';
   const t = translations[lang];
 
   // Dynamic navbar translates
@@ -158,8 +158,7 @@ function injectComponents() {
   const headerRoot = document.getElementById('header-root');
   const footerRoot = document.getElementById('footer-root');
   
-  const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
-  const lang = isRtl ? 'ar' : 'en';
+  const lang = 'en';
   const t = translations[lang];
   
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
