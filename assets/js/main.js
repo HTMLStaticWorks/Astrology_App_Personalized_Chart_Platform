@@ -60,6 +60,7 @@ const translations = {
   en: {
     logo: 'ASTRO',
     home: 'Home',
+    home2: 'Home 2',
     readings: 'Readings',
     pricing: 'Pricing',
     samples: 'Sample Reports',
@@ -69,12 +70,14 @@ const translations = {
     dashboard: 'Dashboard',
     ctaPrimary: 'Get My Birth Chart',
     ctaSecondary: 'View Sample Reading',
+    rtlToggle: 'RTL',
     copyright: '© 2026 Aura Astrology. All cosmic rights reserved.',
     footerTag: 'Guiding your path through celestial science.'
   },
   ar: {
     logo: 'أسترو',
     home: 'الرئيسية',
+    home2: 'الرئيسية ٢',
     readings: 'القراءات',
     pricing: 'الأسعار',
     samples: 'تقارير عينة',
@@ -84,6 +87,7 @@ const translations = {
     dashboard: 'لوحة التحكم',
     ctaPrimary: 'احصل على خريطتي',
     ctaSecondary: 'عرض قراءة عينة',
+    rtlToggle: 'عربي',
     copyright: '© ٢٠٢٦ أورا أسترو. كل الحقوق الكونية محفوظة.',
     footerTag: 'إرشاد طريقك من خلال العلوم السماوية.'
   }
@@ -119,8 +123,10 @@ function toggleRTL() {
 function updateRTLUI() {
   const rtlToggles = document.querySelectorAll('.rtl-toggle');
   const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+  const lang = isRtl ? 'ar' : 'en';
+  const t = translations[lang];
   rtlToggles.forEach(toggle => {
-    toggle.textContent = isRtl ? 'EN' : 'عربي';
+    toggle.textContent = t.rtlToggle;
   });
 }
 
@@ -132,6 +138,7 @@ function translateLayout() {
   // Dynamic navbar translates
   document.querySelectorAll('[data-t-logo]').forEach(el => el.textContent = t.logo);
   document.querySelectorAll('[data-t-home]').forEach(el => el.textContent = t.home);
+  document.querySelectorAll('[data-t-home2]').forEach(el => el.textContent = t.home2);
   document.querySelectorAll('[data-t-readings]').forEach(el => el.textContent = t.readings);
   document.querySelectorAll('[data-t-pricing]').forEach(el => el.textContent = t.pricing);
   document.querySelectorAll('[data-t-samples]').forEach(el => el.textContent = t.samples);
@@ -141,6 +148,7 @@ function translateLayout() {
   document.querySelectorAll('[data-t-dashboard]').forEach(el => el.textContent = t.dashboard);
   document.querySelectorAll('[data-t-cta-primary]').forEach(el => el.textContent = t.ctaPrimary);
   document.querySelectorAll('[data-t-cta-secondary]').forEach(el => el.textContent = t.ctaSecondary);
+  document.querySelectorAll('.rtl-toggle').forEach(el => el.textContent = t.rtlToggle);
   document.querySelectorAll('[data-t-footer-tag]').forEach(el => el.textContent = t.footerTag);
   document.querySelectorAll('[data-t-copyright]').forEach(el => el.textContent = t.copyright);
 }
@@ -162,7 +170,7 @@ function injectComponents() {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex items-center justify-between h-20">
             <!-- Brand Logo -->
-            <div class="flex items-center lg:flex-1">
+            <div class="flex items-center flex-shrink-0">
               <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse text-[#cf9b44] font-bold text-xl tracking-wider whitespace-nowrap">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-15deg);">
                   <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -172,8 +180,23 @@ function injectComponents() {
             </div>
 
             <!-- Navigation Links -->
-            <div class="hidden lg:flex items-center gap-4 text-xs xl:text-sm font-medium">
-              <a href="index.html" data-t-home class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'index.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.home}</a>
+            <div class="hidden xl:flex items-center justify-center gap-3 xl:gap-5 text-xs xl:text-sm font-medium flex-1 px-4">
+              <!-- Home Dropdown -->
+              <div class="relative group">
+                <button class="hover:text-amber-500 transition-colors whitespace-nowrap ${(currentPath === 'index.html' || currentPath === 'index2.html') ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'} inline-flex items-center py-2">
+                  <span data-t-home>${t.home}</span>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="absolute left-0 top-full pt-2 w-40 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50">
+                  <div class="rounded-md shadow-lg py-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                    <a href="index.html" data-t-home class="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-500 ${currentPath === 'index.html' ? 'text-amber-500 font-semibold bg-amber-500/10' : 'text-slate-600 dark:text-slate-300'}">${t.home}</a>
+                    <a href="index2.html" data-t-home2 class="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-500 ${currentPath === 'index2.html' ? 'text-amber-500 font-semibold bg-amber-500/10' : 'text-slate-600 dark:text-slate-300'}">${t.home2}</a>
+                  </div>
+                </div>
+              </div>
+
               <a href="about.html" data-t-about class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'about.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.about}</a>
               <a href="pricing.html" data-t-pricing class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'pricing.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.pricing}</a>
               <a href="sample-reports.html" data-t-samples class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'sample-reports.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.samples}</a>
@@ -183,7 +206,7 @@ function injectComponents() {
             </div>
 
             <!-- Right-Side Utilities & CTAs -->
-            <div class="hidden lg:flex items-center justify-end lg:flex-1 gap-1.5 xl:gap-2">
+            <div class="hidden xl:flex items-center justify-end flex-shrink-0 gap-1.5 xl:gap-2">
               <!-- Secondary CTA -->
               <a href="sample-reports.html" data-t-cta-secondary class="h-10 flex items-center justify-center px-2.5 xl:px-4 border border-amber-500/30 hover:border-amber-500/80 hover:bg-amber-500/5 text-amber-400 font-semibold text-[11px] xl:text-xs tracking-wider uppercase rounded transition-all duration-300 whitespace-nowrap flex-shrink-0">${t.ctaSecondary}</a>
               
@@ -200,12 +223,12 @@ function injectComponents() {
 
               <!-- RTL Toggle -->
               <button onclick="toggleRTL()" class="rtl-toggle h-10 w-10 xl:w-12 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-700 dark:text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
-                ${isRtl ? 'EN' : 'عربي'}
+                ${t.rtlToggle}
               </button>
             </div>
 
             <!-- Mobile Hamburger Toggle -->
-            <div class="flex lg:hidden items-center gap-2">
+            <div class="flex xl:hidden items-center gap-2">
               <!-- Dark/Light Theme Toggle -->
               <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
                 <!-- Inner HTML is dynamically generated by updateThemeUI() -->
@@ -213,7 +236,7 @@ function injectComponents() {
 
               <!-- RTL Toggle -->
               <button onclick="toggleRTL()" class="rtl-toggle h-10 w-10 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-700 dark:text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
-                ${isRtl ? 'EN' : 'عربي'}
+                ${t.rtlToggle}
               </button>
 
               <!-- Mobile Hamburger Toggle -->
@@ -230,8 +253,19 @@ function injectComponents() {
         </div>
 
         <!-- Mobile Menu Container -->
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-indigo-950/20 bg-white dark:bg-slate-950/95 px-4 pt-2 pb-6 space-y-3 flex flex-col text-base font-medium shadow-2xl transition-all duration-300">
-          <a href="index.html" data-t-home class="py-2 border-b border-slate-800/40 ${currentPath === 'index.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.home}</a>
+        <div id="mobile-menu" class="hidden xl:hidden border-t border-indigo-950/20 bg-white dark:bg-slate-950/95 px-4 pt-2 pb-6 space-y-3 flex flex-col text-base font-medium shadow-2xl transition-all duration-300">
+          <div class="py-2 border-b border-slate-800/40">
+            <button onclick="document.getElementById('mobile-home-dropdown').classList.toggle('hidden')" class="w-full flex items-center justify-between ${(currentPath === 'index.html' || currentPath === 'index2.html') ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">
+              <span data-t-home>${t.home}</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="mobile-home-dropdown" class="hidden pl-4 mt-2 space-y-2 flex flex-col">
+              <a href="index.html" data-t-home class="py-1 ${currentPath === 'index.html' ? 'text-amber-500 font-semibold' : 'text-slate-500 dark:text-slate-400 hover:text-amber-500'}">${t.home}</a>
+              <a href="index2.html" data-t-home2 class="py-1 ${currentPath === 'index2.html' ? 'text-amber-500 font-semibold' : 'text-slate-500 dark:text-slate-400 hover:text-amber-500'}">${t.home2}</a>
+            </div>
+          </div>
           <a href="about.html" data-t-about class="py-2 border-b border-slate-800/40 ${currentPath === 'about.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.about}</a>
           <a href="pricing.html" data-t-pricing class="py-2 border-b border-slate-800/40 ${currentPath === 'pricing.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.pricing}</a>
           <a href="sample-reports.html" data-t-samples class="py-2 border-b border-slate-800/40 ${currentPath === 'sample-reports.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.samples}</a>

@@ -37,7 +37,7 @@ function toggleTheme() {
 function updateThemeUI() {
   const themeToggles = document.querySelectorAll('.theme-toggle');
   const isLight = document.documentElement.classList.contains('light');
-  
+
   themeToggles.forEach(toggle => {
     if (isLight) {
       toggle.innerHTML = `
@@ -121,8 +121,10 @@ function toggleRTL() {
 function updateRTLUI() {
   const rtlToggles = document.querySelectorAll('.rtl-toggle');
   const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+  const lang = isRtl ? 'ar' : 'en';
+  const t = translations[lang];
   rtlToggles.forEach(toggle => {
-    toggle.textContent = isRtl ? 'EN' : 'عربي';
+    toggle.textContent = t.rtlToggle;
   });
 }
 
@@ -161,65 +163,81 @@ function injectComponents() {
 
   if (headerRoot) {
     headerRoot.innerHTML = `
-      <nav class="fixed top-0 start-0 w-full z-50 border-b border-indigo-950/20 bg-slate-950/70 backdrop-blur-md transition-all duration-300">
+      <nav class="fixed top-0 start-0 w-full z-50 border-b border-indigo-950/20 bg-white/80 dark:bg-slate-950/70 backdrop-blur-md transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex items-center justify-between h-20">
             <!-- Brand Logo -->
-            <div class="flex items-center xl:flex-1">
-              <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse text-amber-500 font-bold text-xl tracking-wider whitespace-nowrap">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            <div class="flex items-center flex-shrink-0">
+              <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse text-[#cf9b44] font-bold text-xl tracking-wider whitespace-nowrap">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-15deg);">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
-                <span data-t-logo class="font-serif text-slate-100 whitespace-nowrap">${t.logo}</span>
+                <span data-t-logo class="font-serif text-slate-900 dark:text-slate-100 whitespace-nowrap tracking-[0.2em]">${t.logo}</span>
               </a>
             </div>
 
             <!-- Navigation Links -->
-            <div class="hidden xl:flex items-center justify-center space-x-2 xl:space-x-4 rtl:space-x-reverse text-xs xl:text-sm font-medium">
-              <a href="index.html" data-t-home class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'index.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.home}</a>
-              <a href="index2.html" data-t-home2 class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'index2.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.home2}</a>
-              <a href="about.html" data-t-about class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'about.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.about}</a>
-              <a href="pricing.html" data-t-pricing class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'pricing.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.pricing}</a>
-              <a href="sample-reports.html" data-t-samples class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'sample-reports.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.samples}</a>
-              <a href="compatibility.html" data-t-compatibility class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'compatibility.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.compatibility}</a>
-              <a href="contact.html" data-t-contact class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'contact.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.contact}</a>
-              <a href="dashboard.html" data-t-dashboard class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'dashboard.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.dashboard}</a>
+            <div class="hidden xl:flex items-center justify-center gap-3 xl:gap-5 text-xs xl:text-sm font-medium flex-1 px-4">
+              <!-- Home Dropdown -->
+              <div class="relative group">
+                <button class="hover:text-amber-500 transition-colors whitespace-nowrap ${(currentPath === 'index.html' || currentPath === 'index2.html') ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'} inline-flex items-center py-2">
+                  <span data-t-home>${t.home}</span>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="absolute left-0 top-full pt-2 w-40 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50">
+                  <div class="rounded-md shadow-lg py-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                    <a href="index.html" data-t-home class="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-500 ${currentPath === 'index.html' ? 'text-amber-500 font-semibold bg-amber-500/10' : 'text-slate-600 dark:text-slate-300'}">${t.home}</a>
+                    <a href="index2.html" data-t-home2 class="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-500 ${currentPath === 'index2.html' ? 'text-amber-500 font-semibold bg-amber-500/10' : 'text-slate-600 dark:text-slate-300'}">${t.home2}</a>
+                  </div>
+                </div>
+              </div>
+
+              <a href="about.html" data-t-about class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'about.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.about}</a>
+              <a href="pricing.html" data-t-pricing class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'pricing.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.pricing}</a>
+              <a href="sample-reports.html" data-t-samples class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'sample-reports.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.samples}</a>
+              <a href="compatibility.html" data-t-compatibility class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'compatibility.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.compatibility}</a>
+              <a href="contact.html" data-t-contact class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'contact.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.contact}</a>
+              <a href="dashboard.html" data-t-dashboard class="hover:text-amber-500 transition-colors whitespace-nowrap ${currentPath === 'dashboard.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.dashboard}</a>
             </div>
 
             <!-- Right-Side Utilities & CTAs -->
-            <div class="hidden xl:flex items-center justify-end xl:flex-1 space-x-1.5 xl:space-x-2 rtl:space-x-reverse">
-              <!-- Secondary CTA Removed -->
+            <div class="hidden xl:flex items-center justify-end flex-shrink-0 gap-1.5 xl:gap-2">
+              <!-- Secondary CTA -->
+              <a href="sample-reports.html" data-t-cta-secondary class="h-10 flex items-center justify-center px-2.5 xl:px-4 border border-amber-500/30 hover:border-amber-500/80 hover:bg-amber-500/5 text-amber-400 font-semibold text-[11px] xl:text-xs tracking-wider uppercase rounded transition-all duration-300 whitespace-nowrap flex-shrink-0">${t.ctaSecondary}</a>
+              
               <!-- Primary CTA -->
               <a href="signup.html" data-t-cta-primary class="h-10 flex items-center justify-center px-2.5 xl:px-4 bg-gradient-to-r from-violet-700 to-indigo-800 hover:from-violet-600 hover:to-indigo-700 text-white font-semibold text-[11px] xl:text-xs tracking-wider uppercase rounded shadow-lg shadow-indigo-900/30 transition-all duration-300 gold-hover-ring whitespace-nowrap flex-shrink-0">${t.ctaPrimary}</a>
               
               <!-- Divider -->
-              <div class="w-px h-6 bg-slate-800"></div>
+              <div class="w-px h-6 bg-slate-200 dark:bg-slate-800"></div>
 
               <!-- Dark/Light Theme Toggle -->
-              <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-800 hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
+              <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
                 <!-- Inner HTML is dynamically generated by updateThemeUI() -->
               </button>
 
               <!-- RTL Toggle -->
-              <button onclick="toggleRTL()" class="rtl-toggle h-10 w-10 xl:w-12 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
-                ${isRtl ? 'EN' : 'عربي'}
+              <button onclick="toggleRTL()" class="rtl-toggle h-10 w-10 xl:w-12 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-700 dark:text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
+                ${t.rtlToggle}
               </button>
             </div>
 
             <!-- Mobile Hamburger Toggle -->
-            <div class="flex xl:hidden items-center space-x-2 rtl:space-x-reverse">
+            <div class="flex xl:hidden items-center gap-2">
               <!-- Dark/Light Theme Toggle -->
-              <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-800 hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
+              <button onclick="toggleTheme()" class="theme-toggle w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900/30 transition-all duration-200 flex-shrink-0">
                 <!-- Inner HTML is dynamically generated by updateThemeUI() -->
               </button>
 
               <!-- RTL Toggle -->
-              <button onclick="toggleRTL()" class="rtl-toggle h-10 w-10 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
-                ${isRtl ? 'EN' : 'عربي'}
+              <button onclick="toggleRTL()" class="rtl-toggle h-10 w-10 flex items-center justify-center border border-slate-700 hover:border-amber-500 rounded text-xs text-slate-700 dark:text-slate-300 hover:text-amber-400 font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0">
+                ${t.rtlToggle}
               </button>
 
               <!-- Mobile Hamburger Toggle -->
-              <button onclick="toggleMobileNav()" class="w-10 h-10 flex items-center justify-center rounded border border-slate-800 hover:bg-slate-900/30 text-slate-300 hover:text-amber-500 focus:outline-none transition-all duration-200 flex-shrink-0">
+              <button onclick="toggleMobileNav()" class="w-10 h-10 flex items-center justify-center rounded border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900/30 text-slate-700 dark:text-slate-300 hover:text-amber-500 focus:outline-none transition-all duration-200 flex-shrink-0">
                 <svg id="mobile-menu-burger" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
@@ -232,17 +250,28 @@ function injectComponents() {
         </div>
 
         <!-- Mobile Menu Container -->
-        <div id="mobile-menu" class="hidden xl:hidden border-t border-indigo-950/20 bg-slate-950/95 px-4 pt-2 pb-6 space-y-3 flex flex-col text-base font-medium shadow-2xl transition-all duration-300">
-          <a href="index.html" data-t-home class="py-2 border-b border-slate-800/40 ${currentPath === 'index.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.home}</a>
-          <a href="index2.html" data-t-home2 class="py-2 border-b border-slate-800/40 ${currentPath === 'index2.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.home2}</a>
-          <a href="about.html" data-t-about class="py-2 border-b border-slate-800/40 ${currentPath === 'about.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.about}</a>
-          <a href="pricing.html" data-t-pricing class="py-2 border-b border-slate-800/40 ${currentPath === 'pricing.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.pricing}</a>
-          <a href="sample-reports.html" data-t-samples class="py-2 border-b border-slate-800/40 ${currentPath === 'sample-reports.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.samples}</a>
-          <a href="compatibility.html" data-t-compatibility class="py-2 border-b border-slate-800/40 ${currentPath === 'compatibility.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.compatibility}</a>
-          <a href="contact.html" data-t-contact class="py-2 border-b border-slate-800/40 ${currentPath === 'contact.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.contact}</a>
-          <a href="dashboard.html" data-t-dashboard class="py-2 border-b border-slate-800/40 ${currentPath === 'dashboard.html' ? 'text-amber-500 font-semibold' : 'text-slate-300'}">${t.dashboard}</a>
+        <div id="mobile-menu" class="hidden xl:hidden border-t border-indigo-950/20 bg-white dark:bg-slate-950/95 px-4 pt-2 pb-6 space-y-3 flex flex-col text-base font-medium shadow-2xl transition-all duration-300">
+          <div class="py-2 border-b border-slate-800/40">
+            <button onclick="document.getElementById('mobile-home-dropdown').classList.toggle('hidden')" class="w-full flex items-center justify-between ${(currentPath === 'index.html' || currentPath === 'index2.html') ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">
+              <span data-t-home>${t.home}</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="mobile-home-dropdown" class="hidden pl-4 mt-2 space-y-2 flex flex-col">
+              <a href="index.html" data-t-home class="py-1 ${currentPath === 'index.html' ? 'text-amber-500 font-semibold' : 'text-slate-500 dark:text-slate-400 hover:text-amber-500'}">${t.home}</a>
+              <a href="index2.html" data-t-home2 class="py-1 ${currentPath === 'index2.html' ? 'text-amber-500 font-semibold' : 'text-slate-500 dark:text-slate-400 hover:text-amber-500'}">${t.home2}</a>
+            </div>
+          </div>
+          <a href="about.html" data-t-about class="py-2 border-b border-slate-800/40 ${currentPath === 'about.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.about}</a>
+          <a href="pricing.html" data-t-pricing class="py-2 border-b border-slate-800/40 ${currentPath === 'pricing.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.pricing}</a>
+          <a href="sample-reports.html" data-t-samples class="py-2 border-b border-slate-800/40 ${currentPath === 'sample-reports.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.samples}</a>
+          <a href="compatibility.html" data-t-compatibility class="py-2 border-b border-slate-800/40 ${currentPath === 'compatibility.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.compatibility}</a>
+          <a href="contact.html" data-t-contact class="py-2 border-b border-slate-800/40 ${currentPath === 'contact.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.contact}</a>
+          <a href="dashboard.html" data-t-dashboard class="py-2 border-b border-slate-800/40 ${currentPath === 'dashboard.html' ? 'text-amber-500 font-semibold' : 'text-slate-600 dark:text-slate-300'}">${t.dashboard}</a>
           
           <div class="flex flex-col gap-2 pt-2">
+            <a href="sample-reports.html" data-t-cta-secondary class="w-full text-center px-4 py-2 border border-amber-500/30 text-amber-400 font-semibold text-sm rounded transition-all">${t.ctaSecondary}</a>
             <a href="signup.html" data-t-cta-primary class="w-full text-center px-4 py-2 bg-gradient-to-r from-violet-700 to-indigo-800 text-white font-semibold text-sm rounded shadow-lg transition-all">${t.ctaPrimary}</a>
           </div>
         </div>
@@ -323,7 +352,7 @@ function injectComponents() {
       </footer>
     `;
   }
-  
+
   // Make sure layout matches standard active states on startup
   translateLayout();
 }
@@ -333,7 +362,7 @@ function toggleMobileNav() {
   const menu = document.getElementById('mobile-menu');
   const burger = document.getElementById('mobile-menu-burger');
   const close = document.getElementById('mobile-menu-close');
-  
+
   if (menu.classList.contains('hidden')) {
     menu.classList.remove('hidden');
     burger.classList.add('hidden');
@@ -351,11 +380,11 @@ function generateStarfields() {
   starfields.forEach(field => {
     field.innerHTML = ''; // Clear out
     const numStars = field.dataset.stars || 40;
-    
+
     for (let i = 0; i < numStars; i++) {
       const star = document.createElement('div');
       star.className = 'absolute bg-white rounded-full twinkle-star';
-      
+
       // Random coordinates
       const x = Math.random() * 100;
       const y = Math.random() * 100;
@@ -365,7 +394,7 @@ function generateStarfields() {
       const duration = 2 + Math.random() * 4;
       const delay = Math.random() * 3;
       const opacity = 0.1 + Math.random() * 0.8;
-      
+
       star.style.left = `${x}%`;
       star.style.top = `${y}%`;
       star.style.width = size;
@@ -373,7 +402,7 @@ function generateStarfields() {
       star.style.opacity = opacity;
       star.style.animationDuration = `${duration}s`;
       star.style.animationDelay = `${delay}s`;
-      
+
       field.appendChild(star);
     }
   });
@@ -386,7 +415,7 @@ function initScrollReveal() {
     threshold: 0.1,
     rootMargin: '0px'
   };
-  
+
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -396,7 +425,7 @@ function initScrollReveal() {
       }
     });
   }, options);
-  
+
   // Tag elements with 'scroll-reveal' and starting classes 'opacity-0 translate-y-8 transition duration-700 ease-out'
   const revealElements = document.querySelectorAll('.scroll-reveal');
   revealElements.forEach(el => {
@@ -418,7 +447,7 @@ function initScrollToTop() {
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7" />
     </svg>
   `;
-  
+
   document.body.appendChild(btn);
 
   window.addEventListener('scroll', () => {
